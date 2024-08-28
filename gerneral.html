@@ -575,7 +575,10 @@
                             aria-labelledby="staticBackdropLabel"
                             aria-hidden="true"
                           >
-                            <div class="modal-dialog" id="myInput">
+                            <div
+                              class="modal-dialog modal-dialog-centered"
+                              id="myInput"
+                            >
                               <div class="modal-content">
                                 <div class="modal-header">
                                   <h1
@@ -728,6 +731,21 @@
                           <i class="fas fa-circle text-warning"></i> Daily Dead
                         </span>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="modal fade"
+                id="successModal"
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-body text-center">
+                      <h5>Data saved successfully!</h5>
                     </div>
                   </div>
                 </div>
@@ -1497,6 +1515,33 @@
           },
         },
       });
+
+      // Function to set max date
+      function setMaxDate() {
+        var today = new Date().toISOString().split("T")[0];
+        document.getElementById("datePicker").setAttribute("max", today);
+      }
+
+      // Call the function on page load
+      window.onload = setMaxDate;
+
+      document
+        .querySelector('button[type="submit"]')
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent form submission if needed
+
+          // Show the success modal
+          var successModal = new bootstrap.Modal(
+            document.getElementById("successModal")
+          );
+          successModal.show();
+
+          // Hide the modal after 3 seconds
+          setTimeout(function () {
+            successModal.hide();
+          }, 3000);
+        });
+
       //numberofchickmodal
       document
         .getElementById("openModalButton")
