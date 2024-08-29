@@ -345,11 +345,17 @@
 
 	
                     <!-- Content Row -------------------------------------------------------BOX----------------------->
-                    <h4 class="h4 mb-4 text-gray-800">Current Farming (3 Coops)</h4>
+                    <div class="d-flex">
+                        <h4 class="h4 mb-4 text-gray-800">Current Farming (3 Coops)</h4>
+                        <div class="px-2" data-toggle="tooltip" title="เพิ่มฟาร์ม" >
+                            <a class="btn btn-primary btn-circle btn-sm" type="button" data-toggle="modal" data-target="#AddCoopModal">
+                                <i class="fas fa-plus"></i>
+                            </a>
+                        </div>
+                     </div>
 
 
-                    <div class="row">
-
+                    <div class="row" class="row" id="cardContainer">
                         <div class="col-lg-3">
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
@@ -520,12 +526,14 @@
 
                         </div>
 
-                        <div class="col-lg-3">
+                        
+
+                        <!--<div class="col-lg-3">
                             <div class="card shadow mb-4">
                                 <div class="card-body py-5 mh-100">
                                     <div class="py-4 my-2"></div>
-                                    <div class="d-flex justify-content-center py-5 my-5">
-                                        <a href="#" class="btn btn-primary btn-circle btn-lg" data-toggle="tooltip" title="เพิ่มฟาร์ม" data-toggle="modal" data-target="#AddCoopModal">
+                                    <div class="d-flex justify-content-center py-5 my-5" data-toggle="tooltip" title="เพิ่มฟาร์ม" >
+                                        <a class="btn btn-primary btn-circle btn-lg" type="button" data-toggle="modal" data-target="#AddCoopModal">
                                             <i class="fas fa-plus"></i>
                                         </a>
                                     </div>
@@ -533,9 +541,11 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div>-->
 
                     </div>
+
+                    
 
                     
                     
@@ -608,7 +618,7 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <form class="p-3">
+                <form class="p-3" >
                     <div class="form-group">
                         <label for="start-date" class="font-weight-bold">Start Date</label>
                         <input type="date" class="form-control" id="start-date" aria-describedby="dateHelp" placeholder="DD/MM/YYYY">                      
@@ -617,13 +627,17 @@
                         <label for="end-date" class="font-weight-bold">End Date</label>
                         <input type="date" class="form-control" id="end-date" placeholder="DD/MM/YYYY">
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="amount-chicken" class="font-weight-bold">Amount of chickens</label>
-                        <input class="form-control" type="text" placeholder="Amount of chickens">
+                        <input class="form-control" type="text" id="amount-chicken" placeholder="Amount of chickens">
+                    </div>
+                    <div class="form-group"> 
+                        <label for="expected-weight" class="font-weight-bold">Expected Weight</label>
+                        <input class="form-control" type="text" id="expected-weight" placeholder="Expected Weight">
                     </div>
                 </form>
                 <div class="p-3">
-                    <button class="btn btn-info btn-user btn-block mt-3 mb-3" type="button" data-dismiss="modal">Save information</button>
+                    <button class="btn btn-info btn-user btn-block mt-3 mb-3" type="button" data-dismiss="modal" id="saveFarmButton">Save information</button>
                 </div>
                 <!--<div class="px-3 py-2">
                     <h6 class="font-weight-bold">Start Date</h6>
@@ -665,4 +679,90 @@
     $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip();
     });
+</script>
+
+<script>
+    var coopNo = 4;
+    document.getElementById('saveFarmButton').addEventListener('click', function() {
+    // ดึงข้อมูลจากฟอร์ม
+    var startDate = document.getElementById('start-date').value;
+    var endDate = document.getElementById('end-date').value;
+    var aliveChickens = parseInt(document.getElementById('amount-chicken').value);
+    var expectedWeight = parseInt(document.getElementById('expected-weight').value);
+    var deadChickens = 0; // สามารถตั้งค่าเริ่มต้นที่ 0 หรือตามที่ผู้ใช้ต้องการ
+    var currentWeight = 0; // สามารถตั้งค่าเริ่มต้นที่ 0 หรือตามที่ผู้ใช้ต้องการ
+    
+
+    // สร้าง card body ใหม่พร้อมข้อมูลจากฟอร์ม
+    var newCardBody = `
+        <div class="col-lg-3">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <div class="d-sm-flex align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Coop No.#${coopNo}</h6>
+                        <H6 class="m-0 font-weight-bold text-gray-600"> ATTA Farm</H6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="col-lg-12">
+                        <table style="width: 100%;">
+                            <tr><td class="text-gray-800">Start Date : </td><td align="right">${startDate}</td></tr>
+                            <tr><td class="text-gray-800">End Date : </td><td align="right">${endDate}</td></tr>
+                            <tr><td class="text-gray-800">Age : </td><td align="right">0/75 Days</td></tr>                        
+                        </table>
+                    </div>
+                    <div class="col-lg-12 pb-3">
+						<div class="progress progress-sm mr-2">
+					        <div class="progress-bar bg-info" role="progressbar"
+					        style="width: 0%" aria-valuenow="50" aria-valuemin="0"
+					        aria-valuemax="100"></div>
+				        </div>
+                    </div>
+                    <div class="col-lg-12">
+					    <table style="width: 100%;">
+						    <tr><td class="text-gray-800">Alive Chickens : </td><td align="right">${aliveChickens}</td></tr>
+						    <tr><td class="text-gray-800">Dead Chicken : </td><td align="right">${deadChickens}</td></tr>
+						    <tr><td class="text-gray-800">Total Chicken : </td><td align="right">${aliveChickens-deadChickens}</td></tr>
+                        </table>
+				    </div>
+                    <div class="col-lg-12 pb-3">
+						<div class="progress progress-sm mr-2">
+						    <div class="progress-bar bg-success" role="progressbar"
+							    style="width: ${(aliveChickens / (aliveChickens) + deadChickens) * 100}%" aria-valuenow="50" aria-valuemin="0"
+							    aria-valuemax="100">
+                            </div>
+					    </div>
+				    </div>
+                    <div class="col-lg-12">
+					    <table style="width: 100%;">
+						    <tr><td class="text-gray-800">Current Weight : </td><td align="right">${currentWeight} kg.</td></tr>
+						    <tr><td class="text-gray-800">Adding Weight : </td><td align="right">${expectedWeight-currentWeight} kg.</td></tr>
+						    <tr><td class="text-gray-800">Expected Weight: </td><td align="right">${parseFloat(expectedWeight)} kg.</td></tr>	
+                        </table>
+				    </div>
+                    <div class="col-lg-12 pb-3">
+					    <div class="progress progress-sm mr-2">
+						    <div class="progress-bar bg-info" role="progressbar"
+							    style="width: 0%" aria-valuenow="50" aria-valuemin="0"
+							    aria-valuemax="100">
+                            </div>
+					    </div>
+				    </div>
+                    <a href="gerneral.html" class="btn btn-info btn-user btn-block mt-3 mb-1"> More Information </a>
+                </div>
+            </div>
+        </div>
+    `;
+
+    
+
+    // เพิ่ม card body ใหม่ใน card container
+    document.getElementById('cardContainer').insertAdjacentHTML('beforeend', newCardBody);
+
+    coopNo++;
+
+    // ปิด popup
+    $('#AddCoopModal').modal('hide');
+});
+
 </script>
