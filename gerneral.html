@@ -1525,23 +1525,6 @@
       // Call the function on page load
       window.onload = setMaxDate;
 
-      document
-        .querySelector('button[type="submit"]')
-        .addEventListener("click", function (event) {
-          event.preventDefault(); // Prevent form submission if needed
-
-          // Show the success modal
-          var successModal = new bootstrap.Modal(
-            document.getElementById("successModal")
-          );
-          successModal.show();
-
-          // Hide the modal after 3 seconds
-          setTimeout(function () {
-            successModal.hide();
-          }, 3000);
-        });
-
       //numberofchickmodal
       document
         .getElementById("openModalButton")
@@ -1569,6 +1552,24 @@
           }
         });
       });
+
+      // Add event listener for the submit button
+      document
+        .querySelector("#staticBackdrop .btn-primary")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default form submission
+
+          // Show the success modal
+          const successModal = new bootstrap.Modal(
+            document.getElementById("successModal")
+          );
+          successModal.show();
+
+          // Clear the form fields
+          const form = document.querySelector("#staticBackdrop form");
+          form.reset();
+        });
+
       //weightofchickmodal
       document
         .getElementById("WeightOfChicken")
