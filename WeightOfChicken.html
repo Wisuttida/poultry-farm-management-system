@@ -28,7 +28,9 @@
     />
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="css/stlye.css" rel="stylesheet">
+    <link href="css/stlye-2.css" rel="stylesheet">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- bootstrap 4.5.0 from title -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -128,86 +130,58 @@
       }
       </style>
 
-      <!-- scirpt of table add weight from title -->
-      <script>
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();
-            var actions = $("table td:last-child").html();
+
+<script>
+// disable future date
+
+
+
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('dateInput').setAttribute('max', today);
+
+
+
+// Add info
+  function addRow()
+  {
+      // get input values
+      var weight = document.getElementById('weight').value;
+      var date = document.getElementById('dateInput').value;
+      var actions = $("table td:last-child").html();
+        
+        
+        // get the html table
+        // 0 = the first table
+        var table = document.getElementsByTagName('table')[0];
+        
+        // add new empty row to the table
+        // 0 = in the top 
+        // table.rows.length = the end
+        // table.rows.length/2+1 = the center
+        var newRow = table.insertRow(table.rows.length/2+3);
+        
+        // add cells to the row
+        var cel1 = newRow.insertCell(0);
+        var cel2 = newRow.insertCell(1);
+        var cel3 = newRow.insertCell(2);
+        // add values to the cells
+        cel1.innerHTML = date;
+        cel2.innerHTML = weight;
+        cel3.innerHTML = '<a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>';
+
     
-            // Get today's date in the format YYYY-MM-DD
-            var today = new Date().toISOString().split('T')[0];
-    
-            // Append table with add row form on add new button click
-            $(".add-new").click(function(){
-                $(this).attr("disabled", "disabled");
-                var index = $("table tbody tr:last-child").index();
-                var row = '<tr>' +
-                    '<td><input type="number" class="form-control" name="id" id="id"></td>' +
-                    '<td><input type="number" class="form-control" name="weight" id="weight"></td>' +
-                    '<td><input type="date" class="form-control" name="date" id="date" max="' + today + '"></td>' +
-                    '<td>' + actions + '</td>' +
-                    '</tr>';
-                $("table").append(row);		
-                $("table tbody tr").eq(index + 1).find(".add, .edit").toggle();
-                $('[data-toggle="tooltip"]').tooltip();
-            });
-    
-            // Add row on add button click
-            $(document).on("click", ".add", function(){
-                var empty = false;
-                var input = $(this).parents("tr").find('input[type="text"], input[type="number"]');
-                var dateInput = $(this).parents("tr").find('input[type="date"]');
-    
-                input.each(function(){
-                    if(!$(this).val()){
-                        $(this).addClass("error");
-                        empty = true;
-                    } else {
-                        $(this).removeClass("error");
-                    }
-                });
-    
-                // Check if the date is not in the future
-                dateInput.each(function(){
-                    if($(this).val() > today){
-                        $(this).addClass("error");
-                        empty = true;
-                        alert("The date cannot be in the future.");
-                    } else {
-                        $(this).removeClass("error");
-                    }
-                });
-    
-                $(this).parents("tr").find(".error").first().focus();
-                if(!empty){
-                    input.each(function(){
-                        $(this).parent("td").html($(this).val());
-                    });	
-                    dateInput.each(function(){
-                        $(this).parent("td").html($(this).val());
-                    });		
-                    $(this).parents("tr").find(".add, .edit").toggle();
-                    $(".add-new").removeAttr("disabled");
-                }		
-            });
-    
-            // Edit row on edit button click
-            $(document).on("click", ".edit", function(){		
-                $(this).parents("tr").find("td:not(:last-child)").each(function(){
-                    $(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
-                });		
-                $(this).parents("tr").find(".add, .edit").toggle();
-                $(".add-new").attr("disabled", "disabled");
-            });
-    
-            // Delete row on delete button click
-            $(document).on("click", ".delete", function(){
-                $(this).parents("tr").remove();
-                $(".add-new").removeAttr("disabled");
-            });
-        });
-    </script>
-    
+              
+  }
+  
+  // Delete row on delete button click
+  function delInfo(Stud){
+        var s=Stud.parentNode.parentNode;
+        s.parentNode.removeChild(s);
+    }
+
+</script>
+
+   
 
   </head>
 
@@ -223,7 +197,7 @@
             class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow"
           >
             <!-- Sidebar Toggle (Topbar) -->
-            <a class="nav-link" href="home_print.html">
+            <a class="nav-link" href="home.html">
               <button
                 id="sidebarToggleTop"
                 class="btn btn-link rounded-circle mr-3"
@@ -495,7 +469,7 @@
           <!-- End of Topbar -->
 
           <!-- Begin Page Content -------------------------------------------------------------------------------------------->
-          <div class="container-fluid">
+          <div class="container-fluid"  style="  width: 800px;">
             <!-- Page Heading -->
             <!--h1 class="h3 mb-4 text-gray-800">Blank Page</h1-->
 
@@ -517,85 +491,172 @@
 
             <!-- Content Row -------------------------------------------------------BOX----------------------->
             <hr>
-            <h4 class="h4 text-gray-800">Information of chicken's weight</h4>
-            <div>
-              <div class="table-responsive">
+            <h4 class="h5 text-gray-800">Information of chicken's weight</h4>
+            <div >
+              <div class="table-responsive"  >
                   <div class="table-wrapper">
                       <div class="table-title">
                           <div class="row">
-                              <div class="col-sm-8"><h2>บันทึกน้ำหนักไก่</h2></div>
+                              <div class="col-sm-8"><h6>บันทึกน้ำหนักไก่</h6></div>
                               <div class="col-sm-4">
-                                  <button type="button" class="btn btn-info btn-lg add-new " data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="เพิ่มข้อมูล"><i class="fa fa-plus"></i> Add New</button>
+                                <button type="button" class="btn btn-info btn-lg add-new " data-toggle="modal" data-target="#myModal">Add new</button>
+                                <div class="modal fade" id="myModal" role="dialog">
+                                    <div class="modal-dialog">
+                                    
+                                      <!-- Modal content-->
+                                      <div  class="modal-content">
+                                        <div class="modal-header">
+                                        <h4 class="modal-title">Add chicken's weight</h4>
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>   
+                                        </div>
+                                        <div class="modal-body">
+                                          
+                                            <div class="col">
+                                              <p>Weight <input
+                                                type="text"
+                                                id="weight"
+                                                class="form-control"
+                                                placeholder="น้ำหนักไก่"
+                                                data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title="น้ำหนักไก่"
+                                              /></p>
+                                                
+                                              </div>
+                                              <div class="col" style="margin-top: 2%;">
+                                                <p>Date <input
+                                                  type="date" 
+                                                  id="dateInput"
+                                                  max="2024-09-06"
+                                                  class="form-control" 
+                                                  data-toggle="tooltip"
+                                                data-placement="bottom"
+                                                title="วันที่บันทึก"
+                                              
+                                                /></p>
+                                                
+                                              </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" id="add" class="btn btn-primary" data-dismiss="modal" onclick="addRow();">Save</button>
+                                        </div>
+                                      </div>
+                                      
+                                    </div>
+                                  </div>
+                                  <!-- <button id="myBtn" class="btn btn-info btn-lg add-new " data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="เพิ่มข้อมูล"><i class="fa fa-plus"></i> Add New</button> -->
                               </div>
                           </div>
                       </div>
-                      <table class="table table-bordered">
-                          <thead>
-                              <tr>
-                                  <th data-toggle="tooltip" data-placement="bottom" title="รหัสของไก่">ID</th>
-                                  <th data-toggle="tooltip" data-placement="bottom" title="น้ำหนักของไก่(กิโลกรัม)">Weight(Kg)</th>
-                                  <th data-toggle="tooltip" data-placement="bottom" title="วันที่ตั้งแต่อดีตจนถึงปัจจุบัน">Date</th>
-                                  <th data-toggle="tooltip" data-placement="bottom" title="แก้ไขหรือลบข้อมูล">Actions</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                                <td>001</td>
-                                <td>0.5</td>
-                                <td>08/08/2024</td>
-                                <td>
-                                    <a class="add" title="Add" data-toggle="tooltip" ><i class="material-icons">&#xE03B;</i></a>
-                                    <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                    <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>002</td>
-                                <td>0.6</td>
-                                <td>08/08/2024</td>
-                                <td>
-                                    <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                                    <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                    <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>003</td>
-                                <td>0.9</td>
-                                <td>08/08/2024</td>
-                                <td>
-                                    <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                                    <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                                    <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                                </td>
-                            </tr>      
-                        </tbody>
-                      </table>
+                      <div class="container-fluid">
+                        <!-- DataTales Example -->
+                        <div class="card shadow mb-4" style="margin-top: 3%;">
+                            <div class="card-header py-3">
+                                <h6>น้ำหนักไก่</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="text-align: center;">
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Weight(Kg)</th>
+                                                <th>Actions</th>   
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                              <th>Date</th>
+                                              <th>Weight(Kg)</th>
+                                              <th>Actions</th>
+                                               
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                          <tr>
+                                            <td>2024-08-28</td>
+                                            <td>0.5</td>                              
+                                            <td>
+                                                <a class="add" title="Add" data-toggle="tooltip" ><i class="material-icons">&#xE03B;</i></a>                                   
+                                                <a class="delete" title="Delete" onclick="delInfo(this);"  data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2024-08-28</td>
+                                            <td>0.6</td>                              
+                                            <td>
+                                                <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> 
+                                                <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                          <td>2024-08-28</td>
+                                          <td>0.9</td>                               
+                                          <td>
+                                              <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                                              <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                          </td>
+                                      </tr>      
+                                      <tr>
+                                        <td>2024-08-28</td>
+                                        <td>0.5</td>                              
+                                        <td>
+                                            <a class="add" title="Add" data-toggle="tooltip" ><i class="material-icons">&#xE03B;</i></a>                                   
+                                            <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2024-08-28</td>
+                                        <td>0.6</td>                              
+                                        <td>
+                                            <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> 
+                                            <a class="delete" title="Delete" onclick="delInfo(this);"  data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                      <td>2024-08-28</td>
+                                      <td>0.9</td>                               
+                                      <td>
+                                          <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                                          <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                                      </td>
+                                  </tr>      
+                                        
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                      
+                      </div>
+                      <!-- /.container-fluid -->
+                       <!-- Begin Page Content -->
+ 
                   </div>
               </div>
           </div> 
 
         <!-- End of Main Content -->
 
-        <!-- Footer -->
-
-        <footer class="sticky-footer bg-white">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Copyright © ENG-KPS 5 July 2023</span>
-            </div>
-          </div>
-        </footer>
-        <!-- End of Footer -->
-      </div>
-      <!-- End of Content Wrapper -->
+        
     </div>
     <!-- End of Page Wrapper -->
 
+    <!-- Footer -->
+
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright © ENG-KPS 5 July 2023</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
+    
 
     <!-- Logout Modal-->
     <div
