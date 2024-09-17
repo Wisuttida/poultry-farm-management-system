@@ -550,7 +550,7 @@
                                                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                                   <div class="modal-content">
                                                     <div class="modal-header">
-                                                      <h1 class="modal-title fs-5" id="staticBackdropLabel">Information of chicken</h1>
+                                                      <h1 class="modal-title fs-5" id="staticBackdropLabel">รูปภาพของไก่ที่ตาย</h1>
                                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
@@ -563,13 +563,13 @@
                                                         </div>
                                                         <div class="carousel-inner">
                                                           <div class="carousel-item active">
-                                                            <img src="..." class="d-block w-100" alt="...">
+                                                            <img src="img/login1.png" class="d-block w-100" alt="...">
                                                           </div>
                                                           <div class="carousel-item">
-                                                            <img src="..." class="d-block w-100" alt="...">
+                                                            <img src="img/login2.jpg" class="d-block w-100" alt="...">
                                                           </div>
                                                           <div class="carousel-item">
-                                                            <img src="..." class="d-block w-100" alt="...">
+                                                            <img src="img/login3.png" class="d-block w-100" alt="...">
                                                           </div>
                                                         </div>
                                                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -586,25 +586,118 @@
                                                   </div>
                                                 </div>
                                               </div>
-                                            </td>
-                                            
-                                                                           
+                                            </td>                      
                                             <td>
-                                                <a class="add" title="Add" data-toggle="tooltip" ><i class="material-icons">&#xE03B;</i></a>                                   
                                                 <a class="delete" title="Delete" onclick="delInfo(this);"  data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>2024-08-28</td>
-                                            <td>0.6</td>                              
+                                            <td>20</td>
                                             <td>
-                                                <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> 
+                                              <!-- Button trigger modal -->
+                                              <button class="btn btn-sm btn-primary" type="button" id="openModalButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                เปิดรูปภาพทั้งหมด
+                                              </button>
+                                            
+                                              <!-- Modal -->
+                                              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <h1 class="modal-title fs-5" id="staticBackdropLabel">รูปภาพของไก่ที่ตาย</h1>
+                                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                      <!--carousel-->
+                                                      <div id="carouselExampleIndicators" class="carousel slide">
+                                                        <div class="carousel-indicators">
+                                                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                        </div>
+                                                        <div class="carousel-inner">
+                                                          <div class="carousel-item active">
+                                                            <img src="img/login1.png" class="d-block w-100" alt="...">
+                                                          </div>
+                                                          <div class="carousel-item">
+                                                            <img src="img/login2.jpg" class="d-block w-100" alt="...">
+                                                          </div>
+                                                          <div class="carousel-item">
+                                                            <img src="img/login3.png" class="d-block w-100" alt="...">
+                                                          </div>
+                                                        </div>
+                                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                          <span class="visually-hidden">Previous</span>
+                                                        </button>
+                                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                          <span class="visually-hidden">Next</span>
+                                                        </button>
+                                                      </div>
+                                                    </div>
+                                                    
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </td>                               
+                                            <td>
+                                                
                                                 <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                                             </td>
                                         </tr>
                                         <tr>
                                           <td>2024-08-28</td>
-                                          <td>0.9</td>                               
+                                          <td>5</td>
+                                          <td>
+                                            <!-- Button trigger modal -->
+                                            <button class="btn btn-sm btn-primary" type="button" id="openModalButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                              เปิดรูปภาพทั้งหมด
+                                            </button>
+                                          
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">รูปภาพของไก่ที่ตาย</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <!--carousel-->
+                                                    <div id="carouselExampleIndicators" class="carousel slide">
+                                                      <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                      </div>
+                                                      <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                          <img src="img/login1.png" class="d-block w-100" alt="...">
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                          <img src="img/login2.jpg" class="d-block w-100" alt="...">
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                          <img src="img/login3.png" class="d-block w-100" alt="...">
+                                                        </div>
+                                                      </div>
+                                                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Previous</span>
+                                                      </button>
+                                                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                        <span class="visually-hidden">Next</span>
+                                                      </button>
+                                                    </div>
+                                                  </div>
+                                                  
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </td>                               
                                           <td>
                                               <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
                                               <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
@@ -612,7 +705,55 @@
                                       </tr>      
                                       <tr>
                                         <td>2024-08-28</td>
-                                        <td>0.5</td>                              
+                                        <td>12</td>
+                                        <td>
+                                          <!-- Button trigger modal -->
+                                          <button class="btn btn-sm btn-primary" type="button" id="openModalButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            เปิดรูปภาพทั้งหมด
+                                          </button>
+                                        
+                                          <!-- Modal -->
+                                          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h1 class="modal-title fs-5" id="staticBackdropLabel">รูปภาพของไก่ที่ตาย</h1>
+                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                  <!--carousel-->
+                                                  <div id="carouselExampleIndicators" class="carousel slide">
+                                                    <div class="carousel-indicators">
+                                                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                    </div>
+                                                    <div class="carousel-inner">
+                                                      <div class="carousel-item active">
+                                                        <img src="img/login1.png" class="d-block w-100" alt="...">
+                                                      </div>
+                                                      <div class="carousel-item">
+                                                        <img src="img/login2.jpg" class="d-block w-100" alt="...">
+                                                      </div>
+                                                      <div class="carousel-item">
+                                                        <img src="img/login3.png" class="d-block w-100" alt="...">
+                                                      </div>
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                      <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                      <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                  </div>
+                                                </div>
+                                                
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </td>                              
                                         <td>
                                             <a class="add" title="Add" data-toggle="tooltip" ><i class="material-icons">&#xE03B;</i></a>                                   
                                             <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
@@ -620,17 +761,111 @@
                                     </tr>
                                     <tr>
                                         <td>2024-08-28</td>
-                                        <td>0.6</td>                              
+                                        <td>15</td>
                                         <td>
-                                            <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a> 
+                                          <!-- Button trigger modal -->
+                                          <button class="btn btn-sm btn-primary" type="button" id="openModalButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                            เปิดรูปภาพทั้งหมด
+                                          </button>
+                                        
+                                          <!-- Modal -->
+                                          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h1 class="modal-title fs-5" id="staticBackdropLabel">รูปภาพของไก่ที่ตาย</h1>
+                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                  <!--carousel-->
+                                                  <div id="carouselExampleIndicators" class="carousel slide">
+                                                    <div class="carousel-indicators">
+                                                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                    </div>
+                                                    <div class="carousel-inner">
+                                                      <div class="carousel-item active">
+                                                        <img src="img/login1.png" class="d-block w-100" alt="...">
+                                                      </div>
+                                                      <div class="carousel-item">
+                                                        <img src="img/login2.jpg" class="d-block w-100" alt="...">
+                                                      </div>
+                                                      <div class="carousel-item">
+                                                        <img src="img/login3.png" class="d-block w-100" alt="...">
+                                                      </div>
+                                                    </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                      <span class="visually-hidden">Previous</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                      <span class="visually-hidden">Next</span>
+                                                    </button>
+                                                  </div>
+                                                </div>
+                                                
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </td>                              
+                                        <td>
                                             <a class="delete" title="Delete" onclick="delInfo(this);"  data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                                         </td>
                                     </tr>
                                     <tr>
                                       <td>2024-08-28</td>
-                                      <td>0.9</td>                               
+                                      <td>19</td>
                                       <td>
-                                          <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                                        <!-- Button trigger modal -->
+                                        <button class="btn btn-sm btn-primary" type="button" id="openModalButton" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                          เปิดรูปภาพทั้งหมด
+                                        </button>
+                                      
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                          <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">รูปภาพของไก่ที่ตาย</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                              </div>
+                                              <div class="modal-body">
+                                                <!--carousel-->
+                                                <div id="carouselExampleIndicators" class="carousel slide">
+                                                  <div class="carousel-indicators">
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                  </div>
+                                                  <div class="carousel-inner">
+                                                    <div class="carousel-item active">
+                                                      <img src="img/login1.png" class="d-block w-100" alt="...">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                      <img src="img/login2.jpg" class="d-block w-100" alt="...">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                      <img src="img/login3.png" class="d-block w-100" alt="...">
+                                                    </div>
+                                                  </div>
+                                                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                  </button>
+                                                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                  </button>
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </td>                               
+                                      <td>
                                           <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                                       </td>
                                   </tr>      
