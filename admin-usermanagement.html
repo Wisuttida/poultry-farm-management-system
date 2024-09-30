@@ -11,8 +11,8 @@
     <meta name="author" content="" />
 
     <title>Admin-Dashboard</title>
-
-    <!-- Custom fonts for this template-->
+    <!-- import table css core-->
+    <!-- Custom fonts for this template -->
     <link
       href="vendor/fontawesome-free/css/all.min.css"
       rel="stylesheet"
@@ -22,11 +22,158 @@
       href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
       rel="stylesheet"
     />
-
-    <!-- Custom styles for this template-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet" />
-  </head>
+    <link href="css/stlye.css" rel="stylesheet" />
+    <link href="css/stlye-2.css" rel="stylesheet" />
 
+    <!-- Custom styles for this page -->
+    <link
+      href="vendor/datatables/dataTables.bootstrap4.min.css"
+      rel="stylesheet"
+    />
+    <!-- bootstrap 4.5.0 from title -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+    <!-- bootstrap icon from title -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+
+    <!-- import manage core-->
+    <style>
+      body {
+        color: #404e67;
+        /* background: #F5F7FA; */
+        /* font-family: 'Open Sans', sans-serif; */
+      }
+      .table-wrapper {
+        width: fit-content;
+        margin: auto;
+        /* background: #F5F7FA; */
+        /* padding: 20px; */
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+      }
+      .table-title {
+        padding-bottom: 10px;
+        margin: 0 0 10px;
+      }
+      .table-title h2 {
+        margin: 6px 0 0;
+        font-size: 22px;
+      }
+      .table-title .add-new {
+        float: right;
+        height: 30px;
+        font-weight: bold;
+        font-size: 12px;
+        text-shadow: none;
+        min-width: 100px;
+        border-radius: 50px;
+        line-height: 13px;
+      }
+      .table-title .add-new i {
+        margin-right: 4px;
+      }
+      table.table {
+        table-layout: fixed;
+      }
+      table.table tr th,
+      table.table tr td {
+        border-color: #e9e9e9;
+      }
+      table.table th i {
+        font-size: 13px;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+      table.table th:last-child {
+        width: 100px;
+      }
+      table.table td a {
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 5px;
+        min-width: 24px;
+      }
+      table.table td a.add {
+        color: #27c46b;
+      }
+      table.table td a.edit {
+        color: #ffc107;
+      }
+      table.table td a.delete {
+        color: #e34724;
+      }
+      table.table td i {
+        font-size: 19px;
+      }
+      table.table td a.add i {
+        font-size: 24px;
+        margin-right: -1px;
+        position: relative;
+        top: 3px;
+      }
+      table.table .form-control {
+        height: 32px;
+        line-height: 32px;
+        box-shadow: none;
+        border-radius: 2px;
+      }
+      table.table .form-control.error {
+        border-color: #f50000;
+      }
+      table.table td .add {
+        display: none;
+      }
+    </style>
+    <script>
+      // Add info
+      function addRow() {
+        // Get input values
+        var weight = document.getElementById("weight").value;
+        var date = document.getElementById("dateInput").value;
+
+        // Get the html table
+        var table = document.getElementsByTagName("table")[0];
+
+        // Add new row to the table
+        var newRow = table.insertRow(table.rows.length / 2 + 3);
+
+        // Add cells to the row
+        var cel1 = newRow.insertCell(0);
+        var cel2 = newRow.insertCell(1);
+        var cel3 = newRow.insertCell(2);
+
+        // Add values to the cells
+        cel1.innerHTML = date;
+        cel2.innerHTML = weight;
+        cel3.innerHTML =
+          '<a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>';
+      }
+
+      // Delete row on delete button click
+      function delInfo(btn) {
+        var row = btn.parentNode.parentNode.parentNode; // Access the row
+        row.parentNode.removeChild(row); // Remove the row
+      }
+    </script>
+  </head>
   <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -37,13 +184,13 @@
       >
         <!-- Sidebar - Brand -->
         <a
-          class="sidebar-brand d-flex align-items-center justify-content-center"
+          class="sidebar-brand d-flex align-items-center"
           href="admin-dashboard.html"
         >
-          <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+          <div class="sidebar-brand-icon mb-2">
+            <i class="bi bi-laptop"></i>
           </div>
-          <div class="sidebar-brand-text mx-3">Admin</div>
+          <div class="sidebar-brand-text mx-3">ผู้ดูแลระบบ</div>
         </a>
 
         <!-- Divider -->
@@ -66,7 +213,7 @@
         <!-- Nav Item - Charts -->
         <li class="nav-item">
           <a class="nav-link" href="admin-usermanagement.html">
-            <i class="fas fa-fw fa-chart-area"></i>
+            <i class="bi bi-person-fill"></i>
             <span>การจัดการบัญชีผู้ใช้งาน</span></a
           >
         </li>
@@ -358,7 +505,275 @@
           <!-- End of Topbar -->
 
           <!-- Begin Page Content -->
+          <div class="container-fluid">
+            <!-- Page Heading -->
+            <h1 class="h3 mb-2 text-gray-800">การจัดการบัญชีผู้ใช้งาน</h1>
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+              <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">
+                  บัญชีผู้ใช้งานทั้งหมด
+                </h6>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table
+                    class="table table-bordered"
+                    id="dataTable"
+                    width="100%"
+                    cellspacing="0"
+                  >
+                    <thead>
+                      <tr>
+                        <th>Username</th>
+                        <th>Line</th>
+                        <th>Gmail</th>
+                        <th>Role</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th>Username</th>
+                        <th>Line</th>
+                        <th>Gmail</th>
+                        <th>Role</th>
+                        <th>Action</th>
+                      </tr>
+                    </tfoot>
+                    <tbody>
+                      <tr>
+                        <td>thaaek32</td>
+                        <td>paaritaaphrrsaaskul</td>
+                        <td>paaritaaphrrsaaskul@gmail.com</td>
+                        <td>เจ้าของฟาร์ม</td>
+                        <td>
+                          <div style="display: flex; align-items: center">
+                            <div class="form-check mb-1.5">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              ></label>
+                            </div>
+                            <a
+                              class="edit mb-2"
+                              title="Edit"
+                              onclick="openModal('thaaek32', 'Regionalpaaritaaphrrsaaskul', 'paaritaaphrrsaaskul@gmail.com', 'owner')"
+                              ><i class="bi bi-pencil-square"></i
+                            ></a>
+                            <a
+                              class="delete"
+                              title="Delete"
+                              onclick="delInfo(this);"
+                              data-toggle="tooltip"
+                            >
+                              <i class="material-icons">&#xE872;</i>
+                            </a>
+                          </div>
+                        </td>
+                      </tr>
 
+                      <tr>
+                        <td>hecchriyramy</td>
+                        <td>kkhanthulaa</td>
+                        <td>kkhanthulaa@gmail.com</td>
+                        <td>เจ้าของฟาร์ม</td>
+
+                        <td>
+                          <div style="display: flex; align-items: center">
+                            <div class="form-check mb-1.5">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              ></label>
+                            </div>
+                            <a
+                              class="edit mb-2"
+                              title="Edit"
+                              onclick="openModal('hecchriyramy', 'kkhanthulaa', 'kkhanthulaa@gmail.com', 'owner')"
+                              ><i class="bi bi-pencil-square"></i
+                            ></a>
+                            <a
+                              class="delete"
+                              title="Delete"
+                              onclick="delInfo(this);"
+                              data-toggle="tooltip"
+                            >
+                              <i class="material-icons">&#xE872;</i>
+                            </a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>sraayuth90</td>
+                        <td>phdungphl51</td>
+                        <td>phdungphl51@gmail.com</td>
+                        <td>เจ้าของฟาร์ม</td>
+
+                        <td>
+                          <div style="display: flex; align-items: center">
+                            <div class="form-check mb-1.5">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              ></label>
+                            </div>
+                            <a
+                              class="edit mb-2"
+                              title="Edit"
+                              onclick="openModal('sraayuth90', 'phdungphl51', 'phdungphl51@gmail.com', 'owner')"
+                              ><i class="bi bi-pencil-square"></i
+                            ></a>
+                            <a
+                              class="delete"
+                              title="Delete"
+                              onclick="delInfo(this);"
+                              data-toggle="tooltip"
+                            >
+                              <i class="material-icons">&#xE872;</i>
+                            </a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>cchilaaphrnyaapaolhit</td>
+                        <td>yaphaaphrpraanii</td>
+                        <td>yaphaaphrpraannii@gmail.com</td>
+                        <td>เจ้าของฟาร์ม</td>
+
+                        <td>
+                          <div style="display: flex; align-items: center">
+                            <div class="form-check mb-1.5">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              ></label>
+                            </div>
+                            <a
+                              class="edit mb-2"
+                              title="Edit"
+                              onclick="openModal('cchilaaphrnyaapaolhit', 'yaphaaphrpraanii', 'yaphaaphrpraannii@gmail.com', 'owner')"
+                              ><i class="bi bi-pencil-square"></i
+                            ></a>
+                            <a
+                              class="delete"
+                              title="Delete"
+                              onclick="delInfo(this);"
+                              data-toggle="tooltip"
+                            >
+                              <i class="material-icons">&#xE872;</i>
+                            </a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>nathcchsakdinaksamhrwcch</td>
+                        <td>sdis49</td>
+                        <td>sdis49@gmail.com</td>
+                        <td>ผู้ดูแลระบบ</td>
+
+                        <td>
+                          <div style="display: flex; align-items: center">
+                            <div class="form-check mb-1.5">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              ></label>
+                            </div>
+                            <a
+                              class="edit mb-2"
+                              title="Edit"
+                              onclick="openModal('hecchriyramy', 'kkhanthulaa', 'kkhanthulaa@gmail.com', 'admin')"
+                              ><i class="bi bi-pencil-square"></i
+                            ></a>
+                            <a
+                              class="delete"
+                              title="Delete"
+                              onclick="delInfo(this);"
+                              data-toggle="tooltip"
+                            >
+                              <i class="material-icons">&#xE872;</i>
+                            </a>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>phaarwii67</td>
+                        <td>pkhamenk</td>
+                        <td>pkhamenk@gmail.com</td>
+                        <td>คนงาน</td>
+
+                        <td>
+                          <div style="display: flex; align-items: center">
+                            <div class="form-check mb-1.5">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                              ></label>
+                            </div>
+                            <a
+                              class="edit mb-2"
+                              title="Edit"
+                              onclick="openModal('hecchriyramy', 'kkhanthulaa', 'kkhanthulaa@gmail.com', 'admin')"
+                              ><i class="bi bi-pencil-square"></i
+                            ></a>
+                            <a
+                              class="delete"
+                              title="Delete"
+                              onclick="delInfo(this);"
+                              data-toggle="tooltip"
+                            >
+                              <i class="material-icons">&#xE872;</i>
+                            </a>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- /.container-fluid -->
         </div>
         <!-- End of Main Content -->
@@ -420,10 +835,199 @@
         </div>
       </div>
     </div>
+    <!-- Modal HTML -->
+    <div
+      class="modal fade"
+      id="editUserModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              การจัดการบัญชีผู้ใช้งาน (แก้ไขข้อมูลผู้ใช้งาน)
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col align-items-center">
+                  <img
+                    class="img-profile rounded-circle" width="100"
+                    src="img/login1.png"
+                  />
+                  <div class="mb-3">
+                    <label for="line" class="form-label">Line</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="line"
+                      required
+                    />
+                    <div class="invalid-feedback">โปรดกรอก Line</div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="gmail" class="form-label">Gmail</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="gmail"
+                      required
+                    />
+                    <div class="invalid-feedback">โปรดกรอก Gmail</div>
+                  </div>
+                </div>
+                <div class="col">
+                  <form
+                    id="editAccountForm"
+                    class="needs-validation"
+                    novalidate
+                  >
+                    <div class="mb-3">
+                      <label for="firstname" class="form-label">ชื่อ</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="firstname"
+                        required
+                      />
+                      <div class="invalid-feedback">โปรดกรอกชื่อ</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="lastname" class="form-label">นามสกุล</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="lastname"
+                        required
+                      />
+                      <div class="invalid-feedback">โปรดกรอกนามสกุล</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="username" class="form-label"
+                        >ชื่อบัญชีผู้ใช้</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        โปรดกรอกชื่อบัญชีผู้ใช้
+                      </div>
+                    </div>
 
+                    <div class="mb-3">
+                      <label for="role" class="form-label">ตำแหน่ง</label>
+                      <select
+                        name="role"
+                        class="form-select"
+                        id="role"
+                        required
+                      >
+                        <option value="" disabled selected>เลือกตำแหน่ง</option>
+                        <option value="admin">ผู้ดูแลระบบ</option>
+                        <option value="owner">เจ้าของฟาร์ม</option>
+                        <option value="labour">คนงาน</option>
+                      </select>
+                      <div class="invalid-feedback">โปรดเลือกตำแหน่ง</div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              ยกเลิก
+            </button>
+            <button type="button" class="btn btn-primary" id="saveChangesBtn">
+              บันทึกการเปลี่ยนแปลง
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // JavaScript for handling the form validation and submission
+      document
+        .getElementById("saveChangesBtn")
+        .addEventListener("click", function () {
+          var form = document.getElementById("editAccountForm");
+
+          // Trigger validation
+          if (form.checkValidity() === false) {
+            form.classList.add("was-validated");
+          } else {
+            // Handle form submission logic
+            alert("Account updated successfully!");
+
+            // Close the modal
+            var modal = bootstrap.Modal.getInstance(
+              document.getElementById("editUserModal")
+            );
+            modal.hide();
+          }
+        });
+
+      // Function to open the modal and populate the fields with user details
+      function openModal(username, line, gmail, role) {
+        document.getElementById("username").value = username;
+        document.getElementById("line").value = line;
+        document.getElementById("gmail").value = gmail;
+        document.getElementById("role").value = role;
+
+        var modal = new bootstrap.Modal(
+          document.getElementById("editUserModal"),
+          {
+            keyboard: false,
+          }
+        );
+        modal.show();
+      }
+
+      // Function to open the modal and populate the fields with user details
+      function openModal(username, line, gmail, role) {
+        document.getElementById("username").value = username;
+        document.getElementById("line").value = line;
+        document.getElementById("gmail").value = gmail;
+        document.getElementById("role").value = role;
+
+        var modal = new bootstrap.Modal(
+          document.getElementById("editUserModal"),
+          {
+            keyboard: false,
+          }
+        );
+        modal.show();
+      }
+    </script>
+    <!-- import table js core-->
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -432,120 +1036,10 @@
     <script src="js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script>
-      // Set new default font family and font color to mimic Bootstrap's default styling
-      (Chart.defaults.global.defaultFontFamily = "Nunito"),
-        '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
-      Chart.defaults.global.defaultFontColor = "#858796";
-
-      // Pie Chart Example
-      var ctx = document.getElementById("userTypePiechart");
-      var userTypePiechart = new Chart(ctx, {
-        type: "doughnut",
-        data: {
-          labels: ["ผู้ดูแลระบบ", "เจ้าของฟาร์ม", "เจ้าหน้าที่ประจำเล้าไก่"],
-          datasets: [
-            {
-              data: [100, 100, 800],
-              backgroundColor: ["#4e73df", "#1cc88a", "#36b9cc"],
-              hoverBackgroundColor: ["#2e59d9", "#17a673", "#2c9faf"],
-              hoverBorderColor: "rgba(234, 236, 244, 1)",
-            },
-          ],
-        },
-        options: {
-          maintainAspectRatio: false,
-          tooltips: {
-            backgroundColor: "rgb(255,255,255)",
-            bodyFontColor: "#858796",
-            borderColor: "#dddfeb",
-            borderWidth: 1,
-            xPadding: 15,
-            yPadding: 15,
-            displayColors: false,
-            caretPadding: 10,
-          },
-          legend: {
-            display: false,
-          },
-          cutoutPercentage: 80,
-        },
-      });
-
-      // Pie Chart Example
-      var ctx = document.getElementById("accountVerifyPiechart");
-      var accountVerifyPiechart = new Chart(ctx, {
-        type: "doughnut",
-        data: {
-          labels: [
-            "บัญชีที่ได้รับการยืนยันแล้ว",
-            "บัญชีที่ไม่ได้รับการยืนยัน",
-            "บัญชีที่ถูกระงับ",
-          ],
-          datasets: [
-            {
-              data: [850, 100, 50],
-              backgroundColor: ["#1cc88a", "#f6c23e", "#e74a3b"],
-              hoverBackgroundColor: ["#17a673", "#f5a623", "#c1212e"],
-              hoverBorderColor: "rgba(234, 236, 244, 1)",
-            },
-          ],
-        },
-        options: {
-          maintainAspectRatio: false,
-          tooltips: {
-            backgroundColor: "rgb(255,255,255)",
-            bodyFontColor: "#858796",
-            borderColor: "#dddfeb",
-            borderWidth: 1,
-            xPadding: 15,
-            yPadding: 15,
-            displayColors: false,
-            caretPadding: 10,
-          },
-          legend: {
-            display: false,
-          },
-          cutoutPercentage: 80,
-        },
-      });
-
-      // Pie Chart Example
-      var ctx = document.getElementById("isChickenAlivePiechart");
-      var isChickenAlivePiechart = new Chart(ctx, {
-        type: "doughnut",
-        data: {
-          labels: ["มีชีวิต", "ตาย"],
-          datasets: [
-            {
-              data: [100, 10],
-              backgroundColor: ["#1cc88a", "#e74a3b"],
-              hoverBackgroundColor: ["#17a673", "#c1212e"],
-              hoverBorderColor: "rgba(234, 236, 244, 1)",
-            },
-          ],
-        },
-        options: {
-          maintainAspectRatio: false,
-          tooltips: {
-            backgroundColor: "rgb(255,255,255)",
-            bodyFontColor: "#858796",
-            borderColor: "#dddfeb",
-            borderWidth: 1,
-            xPadding: 15,
-            yPadding: 15,
-            displayColors: false,
-            caretPadding: 10,
-          },
-          legend: {
-            display: false,
-          },
-          cutoutPercentage: 80,
-        },
-      });
-    </script>
+    <script src="js/demo/datatables-demo.js"></script>
   </body>
 </html>
