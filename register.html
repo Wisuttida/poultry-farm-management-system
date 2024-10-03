@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    
 
 </head>
 
@@ -33,41 +34,75 @@
                 <!-- Nested Row within Card Body -->
                 <div class="row mb-10">
                     <!--div class="col-lg-5 d-none d-lg-block bg-register-image"></div-->
-                    <div class="col-lg-6 d-none d-lg-block text-center">
-                    	<img src="./img/login3.png" height="452">
+                    <div class="col-lg-6 d-none d-lg-block text-center" style="margin-top: 10%;">
+                    	<img src="./img/login3.png" height="600" width="452">
                     </div>
                     <div class="col-lg-6">
                         <div class="pt-5 pb-3 pr-4 pl-4">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                                <h1 class="h4 text-gray-900 mb-4">สร้างบัญชีผู้ใช้</h1>
                             </div>
-                            <form class="user">
+                            <form class="user" style="font-size: 15px;">
+                                <div class="form-group">
+                                    <span style="color: red;">*</span>คำนำหน้า<br>
+                                    <input type="username" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="คำนำหน้า">
+                                </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <span style="color: red;">*</span>ชื่อ<br>
                                         <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="First Name">
+                                            placeholder="ชื่อ">
                                     </div>
                                     <div class="col-sm-6">
+                                        <span style="color: red;">*</span>นามสกุล<br>
                                         <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Last Name">
+                                            placeholder="นามสกุล">
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <span style="color: red;">*</span>ชื่อบัญชีผู้ใช้<br>
+                                    <input type="username" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="ชื่อบัญชีผู้ใช้">
+                                </div>
+                                <div class="form-group" style="margin-left: 1%;">
+                                    <span style="color: red;">*</span>ตำแหน่ง<br>
+                                     <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="owner" id="owner" value="option1">
+                                        <label class="form-check-label" for="owner">เจ้าของฟาร์ม</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="labour" id="labour" value="option2">
+                                        <label class="form-check-label" for="labour">คนงาน</label>
+                                      </div>
+                                </div>
+                                <div class="form-group">
+                                    <span style="color: red;">*</span>Email Address<br>
                                     <input type="email" class="form-control form-control-user" id="exampleInputEmail"
                                         placeholder="Email Address">
                                 </div>
+                                <div class="form-group">
+                                    <span style="color: red;">*</span>Line ID<br>
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                        placeholder="Line ID">
+                                </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <span style="color: red;">*</span>รหัสผ่าน<br>
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
+                                            id="exampleInputPassword" placeholder="รหัสผ่าน">
+                                            <small id="passwordHelpInline" class="text-muted">
+                                                ควรมีความยาว 8-20 ตัวอักษร
+                                              </small>
                                     </div>
                                     <div class="col-sm-6">
+                                        <span style="color: red;">*</span>ยืนยันรหัสผ่าน<br>
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password">
+                                            id="exampleRepeatPassword" placeholder="ยืนยันรหัสผ่าน">
                                     </div>
                                 </div>
                                 <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                    Register Account
+                                    สร้างบัญชีผู้ใช้
                                 </a>
                                 <!--hr>
                                 <a href="index.html" class="btn btn-google btn-user btn-block">
@@ -79,10 +114,10 @@
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                <a class="small" href="forgot-password.html">ลืมรหัสผ่าน?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="login.html">Already have an account? Login!</a>
+                                <a class="small" href="login.html">มีบัญชีผู้ใช้แล้ว? เข้าสู่ระบบ!</a>
                             </div>
                         </div>
                     </div>
