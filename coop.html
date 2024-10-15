@@ -35,6 +35,67 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+    <style>
+        table.table tr th,
+  table.table tr td {
+    border-color: #e9e9e9;
+  }
+
+  table.table th i {
+    font-size: 13px;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+
+  table.table th:last-child {
+    width: 100px;
+  }
+
+  table.table td a {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 5px;
+    min-width: 24px;
+  }
+
+  table.table td a.add {
+    color: #27C46B;
+  }
+
+  table.table td a.edit {
+    color: #FFC107;
+  }
+
+  table.table td a.delete {
+    color: #E34724;
+  }
+
+  table.table td i {
+    font-size: 19px;
+  }
+
+  table.table td a.add i {
+    font-size: 24px;
+    margin-right: -1px;
+    position: relative;
+    top: 3px;
+  }
+
+  table.table .form-control {
+    height: 32px;
+    line-height: 32px;
+    box-shadow: none;
+    border-radius: 2px;
+  }
+
+  table.table .form-control.error {
+    border-color: #f50000;
+  }
+
+  table.table td .add {
+    display: none;
+  }
+    </style>
     </head>
 
     <body id="page-top">
@@ -216,14 +277,13 @@
                                             <td>10</td>
                                             <td>สมคิด</td>
                                             <td>
-                                                <a href="#" data-toggle="modal" data-target="#addWeight"><img src="img/scales.png" style="width:18px ; height: 18px;" data-toggle="tooltip" data-placement="top" title="เพิ่มน้ำหนักไก่"></a>
-                                                <a href="#" data-toggle="modal" data-target="#addDieChick"><img src="img/chicken.png" style="width:20px ; height: 20px;" data-toggle="tooltip" data-placement="top" title="เพิ่มไก่ตาย"></a>
-                                                <a href="#" data-toggle="modal" data-target="#editCoop"><i class="fa fa-pencil-square-o" data-toggle="tooltip" data-placement="top" title="แก้ไขเล้า"></i></a>
-                                                <a href="#"><i class='fas fa-trash-alt' data-toggle="tooltip" data-placement="top" title="ลบเล้า"></i></a>
+                                                <a href="#" data-toggle="modal" data-target="#addWeight"><img src="img/scales_grey.png" style="width:18px ; height: 18px;" data-toggle="tooltip" data-placement="top" title="เพิ่มน้ำหนักไก่"></a>
+                                                <a href="#" data-toggle="modal" data-target="#addDieChick"><img src="img/chicken_grey.png" style="width:20px ; height: 20px;" data-toggle="tooltip" data-placement="top" title="เพิ่มไก่ตาย"></a>
+                                                <a href="coop_general.html"><i class="fas fa-clipboard-list" data-toggle="tooltip" data-placement="top" title="ข้อมูลทั่วไป" style="color: #808080;"></i></a>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>2</td>
+                                            <td>1</td>
                                             <td>2024-09-10</td>
                                             <td>2024-10-10</td>
                                             <td>1.5</td>
@@ -232,44 +292,28 @@
                                             <td>10</td>
                                             <td>สมคิด</td>
                                             <td>
-                                                <a href="#" data-toggle="modal" data-target="#addWeight"><img src="img/scales.png" style="width:18px ; height: 18px;" data-toggle="tooltip" data-placement="top" title="เพิ่มน้ำหนักไก่"></a>
-                                                <a href="#" data-toggle="modal" data-target="#addDieChick"><img src="img/chicken.png" style="width:20px ; height: 20px; color:#4e73df;" data-toggle="tooltip" data-placement="top" title="เพิ่มไก่ตาย"></a>
-                                                <a href="#"><i class="fa fa-pencil-square-o" data-toggle="tooltip" data-placement="top" title="แก้ไขเล้า"></i></a>
-                                                <a href="#"><i class='fas fa-trash-alt' data-toggle="tooltip" data-placement="top" title="ลบเล้า"></i></a>
+                                                <a href="#" data-toggle="modal" data-target="#addWeight"><img src="img/scales_grey.png" style="width:18px ; height: 18px;" data-toggle="tooltip" data-placement="top" title="เพิ่มน้ำหนักไก่"></a>
+                                                <a href="#" data-toggle="modal" data-target="#addDieChick"><img src="img/chicken_grey.png" style="width:20px ; height: 20px;" data-toggle="tooltip" data-placement="top" title="เพิ่มไก่ตาย"></a>
+                                                <a href="coop_general.html"><i class="fas fa-clipboard-list" data-toggle="tooltip" data-placement="top" title="ข้อมูลทั่วไป" style="color: #808080;"></i></a>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>3</td>
-                                            <td>2024-09-15</td>
-                                            <td>2024-14-14</td>
-                                            <td>1.5</td>
-                                            <td>0.8</td>
-                                            <td>100</td>
-                                            <td>15</td>
-                                            <td>มานะ</td>
-                                            <td>
-                                                <a href="#" data-toggle="modal" data-target="#addWeight"><img src="img/scales.png" style="width:18px ; height: 18px;" data-toggle="tooltip" data-placement="top" title="เพิ่มน้ำหนักไก่"></a>
-                                                <a href="#" data-toggle="modal" data-target="#addDieChick"><img src="img/chicken.png" style="width:20px ; height: 20px; color:#4e73df;" data-toggle="tooltip" data-placement="top" title="เพิ่มไก่ตาย"></a>
-                                                <a href="#"><i class="fa fa-pencil-square-o" data-toggle="tooltip" data-placement="top" title="แก้ไขเล้า"></i></a>
-                                                <a href="#"><i class='fas fa-trash-alt' data-toggle="tooltip" data-placement="top" title="ลบเล้า"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>2024-10-01</td>
-                                            <td>2024-11-20</td>
                                             <td>1</td>
-                                            <td>0.9</td>
+                                            <td>2024-09-10</td>
+                                            <td>2024-10-10</td>
+                                            <td>1.5</td>
+                                            <td>0.6</td>
                                             <td>100</td>
-                                            <td>9</td>
-                                            <td>วิเชียร</td>
+                                            <td>10</td>
+                                            <td>สมคิด</td>
                                             <td>
-                                                <a href="#" data-toggle="modal" data-target="#addWeight"><img src="img/scales.png" style="width:18px ; height: 18px;" data-toggle="tooltip" data-placement="top" title="เพิ่มน้ำหนักไก่"></a>
-                                                <a href="#" data-toggle="modal" data-target="#addDieChick"><img src="img/chicken.png" style="width:20px ; height: 20px; color:#4e73df;" data-toggle="tooltip" data-placement="top" title="เพิ่มไก่ตาย"></a>
-                                                <a href="#"><i class="fa fa-pencil-square-o" data-toggle="tooltip" data-placement="top" title="แก้ไขเล้า"></i></a>
-                                                <a href="#"><i class='fas fa-trash-alt' data-toggle="tooltip" data-placement="top" title="ลบเล้า"></i></a>
+                                                <a href="#" data-toggle="modal" data-target="#addWeight"><img src="img/scales_grey.png" style="width:18px ; height: 18px;" data-toggle="tooltip" data-placement="top" title="เพิ่มน้ำหนักไก่"></a>
+                                                <a href="#" data-toggle="modal" data-target="#addDieChick"><img src="img/chicken_grey.png" style="width:20px ; height: 20px;" data-toggle="tooltip" data-placement="top" title="เพิ่มไก่ตาย"></a>
+                                                <a href="coop_general.html"><i class="fas fa-clipboard-list" data-toggle="tooltip" data-placement="top" title="ข้อมูลทั่วไป" style="color: #808080;"></i></a>
                                             </td>
                                         </tr>
+                                        
+                                       
                                     </tbody>
                                 </table>
                             </div>  
@@ -299,7 +343,7 @@
             </div>
             <div class="modal-body">
                 <form class="needs-validation" novalidate>
-                      <div class="col">
+                      <div class="col mb-4">
                         <label for="dateAdd" class="form-label"><span style="color: #f50000;">*</span>วันที่บันทึก</label>
                         <input type="date" class="form-control" id="dateAdd" required>
                         <div class="invalid-feedback">
