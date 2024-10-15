@@ -108,6 +108,14 @@
             <!-- <i class="img/beehive-farm-svgrepo-com.svg"></i> -->
             <span>การจัดการข้อมูลคนงานไม่มีสังกัด</span></a>
         </li>
+
+        <!-- Nav Item - Charts -->
+        <li class="nav-item">
+            <a class="nav-link" href="admin-newLabour.html">
+              <img src="img/beehive-farm-svgrepo-com.svg" class="img-profile py-2 px-2 ">
+              <!-- <i class="img/beehive-farm-svgrepo-com.svg"></i> -->
+              <span>การจัดการข้อมูลคนงานมีสังกัด</span></a>
+          </li>
         
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block" />
@@ -405,263 +413,39 @@
                   class="card-header py-3 d-flex justify-content-between align-items-center"
                 >
                   <h6 class="m-0 font-weight-bold text-primary">
-                    ข้อมูลของฟาร์มไก่
+                    ข้อมูลของคนงานที่ไม่มีสังกัด
                   </h6>
-                  <!-- Add Farm Button -->
-                  <button
-                    class="btn btn-primary"
-                    data-toggle="modal"
-                    data-target="#AddCoopModal"
-                  >
-                    เพิ่มฟาร์มโดยผู้ดูแลระบบ
-                  </button>
+                  
                 </div>
 
-                <!--AddFarm-->
-                <div class="modal fade" id="AddCoopModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <div class="flex-column">
-                                    <h3 class="modal-title font-weight-bold text-primary" id="exampleModalLabel"> เพิ่มฟาร์มโดยผู้ดูแลระบบ</h3>
-                                </div>
-                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-                            <form class="p-3" >
-                                <div class="form-group">
-                                    <label for="nameFarm" class="font-weight-bold">ชื่อ</label>
-                                    <input class="form-control" type="text" id="nameFarm" placeholder="*ชื่อฟาร์ม">
-                                </div>
-                                <div class="form-group">
-                                  <label for="nameFarm" class="font-weight-bold">ชื่อเจ้าของฟาร์ม</label>
-                                  <input class="form-control" type="text" id="nameOwnFarm" placeholder="*ชื่อเจ้าฟาร์ม">
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="dateAddFarm" class="font-weight-bold">วันที่เพิ่มฟาร์ม</label>
-                                    <input type="date" class="form-control" id="dateAddFarm" placeholder="DD/MM/YYYY">
-                                </div>
-                                <div class="m-0 form-group">
-                                    <label for="baseFarm" class="font-weight-bold">ที่ตั้งฟาร์ม</label>
-                                    <div class="form-group">
-                                        <label for="baseFarm" class="font-weight-normal">ที่อยู่</label>
-                                        <input class="form-control" type="text" id="ownerFarm" placeholder="*บ้านเลขที่ หมู่ ซอย ถนน">
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col-xl-6 form-group">
-                                            <label for="baseFarm" class="font-weight-normal">แขวง/ตำบล</label>
-                                            <select id="inputState" class="form-control">
-                                                <option selected>แขวง/ตำบล</option>
-                                                <option>...</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xl-6 form-group">
-                                            <label for="baseFarm" class="font-weight-normal">เขตอำเภอ</label>
-                                            <select id="inputState" class="form-control" placeholder="*">
-                                                <option>เขตอำเภอ</option>
-                                                <option>...</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col-xl-6 form-group">
-                                            <label for="baseFarm" class="font-weight-normal">จังหวัด</label>
-                                            <select id="inputState" class="form-control">
-                                                <option selected>จังหวัด</option>
-                                                <option>...</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xl-6 form-group">
-                                            <label for="baseFarm" class="font-weight-normal">รหัสไปรษณีย์</label>
-                                            <select id="inputState" class="form-control" placeholder="*">
-                                                <option>รหัสไปรษณีย์</option>
-                                                <option>...</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="p-3">
-                                <button class="btn btn-info btn-user btn-block mt-3 mb-3" type="button" data-dismiss="modal" id="saveFarmButton">บันทึกข้อมูล</button>
-                            </div>
-                        
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Scroll to Top Button-->
-                <a class="scroll-to-top rounded" href="#page-top">
-                    <i class="fas fa-angle-up"></i>
-                </a>
-
-                <!--saveFarmButton-->
-                <script>
-                  document
-                    .getElementById("saveFarmButton")
-                    .addEventListener("click", function () {
-                      const farmName = document.getElementById("nameFarm").value.trim();
-                      const owner = document.getElementById("nameOwnFarm").value.trim();
-                      const dateAdded = document.getElementById("dateAddFarm").value;
-                      const location = document.getElementById("ownerFarm").value.trim();
-
-                      if (farmName && owner && dateAdded && location) {
-                        // ค่าเริ่มต้นสำหรับจำนวนเล้า, จำนวนคนงาน, และจำนวนไก่
-                        const numCoops = 0;
-                        const numWorkers = 0;
-                        const numChickens = 0;
-
-                        // เพิ่มข้อมูลลงในตาราง
-                        const table = document.querySelector("#dataTable tbody");
-                        const newRow = `
-                          <tr>
-                            <td>${farmName}</td>
-                            <td>${owner}</td>
-                            <td>${numCoops}</td>
-                            <td>${numWorkers}</td>
-                            <td>${numChickens}</td>
-                            <td>
-                              <div style="display: flex; align-items: center">
-                                <div class="form-check mb-1">
-                                  <input class="form-check-input" type="checkbox" value="" />
-                                  <label class="form-check-label"></label>
-                                </div>
-                                <a class="edit" title="Edit">
-                                  <i class="fas fa-clipboard-list" style="font-size: 19px"></i>
-                                </a>
-                                <a class="delete" title="Delete">
-                                  <i class="fas fa-trash-alt" style="font-size: 16px"></i>
-                                </a>
-                              </div>
-                            </td>
-                          </tr>
-                        `;
-                        table.insertAdjacentHTML("beforeend", newRow);
-
-                        // ปิดโมดอลเมื่อเพิ่มข้อมูลเสร็จแล้ว
-                        $('#AddCoopModal').modal('hide');
-
-                        // ล้างฟอร์มหลังจากการบันทึก
-                        document.getElementById("nameFarm").value = '';
-                        document.getElementById("nameOwnFarm").value = '';
-                        document.getElementById("dateAddFarm").value = '';
-                        document.getElementById("ownerFarm").value = '';
-                      } else {
-                        alert("กรุณากรอกข้อมูลให้ครบทุกช่องที่บังคับ");
-                      }
-                    });
-                </script>
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th>ชื่อของฟาร์ม</th>
-                          <th>ชื่อเจ้าของฟาร์ม</th>
-                          <th>จำนวนเล้าทั้งหมด</th>
-                          <th>จำนวนคนงานทั้งหมด</th>
-                          <th>จำนวนไก่ทั้งหมด</th>
-                          <th>การจัดการฟาร์ม</th>
+                          <th>ชื่อคนงาน</th>
+                          <th>ชื่อบัญชีผู้ใช้</th>
+                          <th>การจัดการคนงานไม่มีสังกัด</th>
                         </tr>
                       </thead>
+                      <tfoot>
+                        <tr>
+                            <th>ชื่อคนงาน</th>
+                            <th>ชื่อบัญชีผู้ใช้</th>
+                            <th>การจัดการคนงานไม่มีสังกัด</th>
+                          </tr>
+                      </tfoot>
                       <tbody>
                         <tr>
-                          <td id="farmNameCell">ฟาร์มเรือนขวัญ</td>
-                          <td id="ownerNameCell">มลิวรรณ ทวนทอง</td>
-                          <td>10</td>
-                          <td>61</td>
-                          <td>1000</td>
+                          <td >ฟาร์มเรือนขวัญ</td>
+                          <td >มลิวรรณ ทวนทอง</td>
                           <td>
-                              <div style="display: flex; align-items: center;">
-                                  <a class="edit" title="Edit" onclick="openModal('ฟาร์มเรือนขวัญ', 'มลิวรรณ ทวนทอง', '123 ถนน หมู่บ้าน', this)">
-                                      <i class="fas fa-clipboard-list" style="font-size: 19px;"></i>
-                                  </a>
-                                  <a class="delete" title="Delete">
-                                      <i class="fas fa-trash-alt" style="font-size: 16px;"></i>
-                                  </a>
-                              </div>
                           </td>
                       </tr>
                       </tbody>
                     </table>
                   </div>
                 </div>
-                
-                <!-- Edit Farm Modal -->
-                <div class="modal fade" id="editFarmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h3 class="modal-title font-weight-bold text-primary" id="exampleModalLabel">แก้ไขฟาร์มโดยผู้ดูแลระบบ</h3>
-                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-                            <form class="p-3">
-                                <div class="form-group">
-                                    <label for="editNameFarm" class="font-weight-bold">ชื่อ</label>
-                                    <input class="form-control" type="text" id="editNameFarm" placeholder="*ชื่อฟาร์ม">
-                                </div>
-                                <div class="form-group">
-                                    <label for="editNameOwnFarm" class="font-weight-bold">ชื่อเจ้าของฟาร์ม</label>
-                                    <input class="form-control" type="text" id="editNameOwnFarm" placeholder="*ชื่อเจ้าของฟาร์ม">
-                                </div>
-                                <div class="form-group">
-                                    <label for="editLocationFarm" class="font-weight-bold">ที่ตั้งฟาร์ม</label>
-                                    <input class="form-control" type="text" id="editLocationFarm" placeholder="*ที่อยู่ฟาร์ม">
-                                </div>
-                            </form>
-                            <div class="p-3">
-                                <button class="btn btn-info btn-user btn-block" type="button" id="saveEditButton">บันทึกข้อมูล</button>
-                                <button class="btn btn-secondary btn-user btn-block" type="button" data-dismiss="modal">ยกเลิก</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <script>
-                  let selectedRow = null;
-
-                  function openModal(farmName, ownerName, farmLocation, element) {
-                      // ใส่ข้อมูลเดิมลงในฟอร์มโมดอล
-                      document.getElementById('editNameFarm').value = farmName;
-                      document.getElementById('editNameOwnFarm').value = ownerName;
-                      document.getElementById('editLocationFarm').value = farmLocation;
-
-                      // กำหนดแถวที่เลือกสำหรับการแก้ไข
-                      selectedRow = element.closest('tr');
-
-                      // เปิดโมดาล
-                      $('#editFarmModal').modal('show');
-                  }
-
-                  document.getElementById('saveEditButton').addEventListener('click', function() {
-                      const updatedFarmName = document.getElementById('editNameFarm').value;
-                      const updatedOwnerName = document.getElementById('editNameOwnFarm').value;
-                      const updatedLocation = document.getElementById('editLocationFarm').value;
-
-                      if (selectedRow) {
-                          
-                          selectedRow.querySelector('#farmNameCell').innerText = updatedFarmName;
-                          selectedRow.querySelector('#ownerNameCell').innerText = updatedOwnerName;
-
-                          $('#editFarmModal').modal('hide');
-                      }
-                    });
-                </script>
-                <script>
-                  document.addEventListener("click", function(event) {
-                    if (event.target.closest(".delete")) {
-                      const row = event.target.closest("tr");
-                      if (confirm("คุณแน่ใจหรือว่าต้องการลบข้อมูลนี้?")) {
-                        row.remove();  // ลบแถว
-                      }
-                    }
-                  });
-                </script>
-                
             </div>
           </div>
 
