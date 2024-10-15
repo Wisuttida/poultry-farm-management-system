@@ -135,6 +135,45 @@
   table.table td .add {
     display: none;
   }
+  /* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
 </style>
 
 <script>
@@ -231,76 +270,21 @@
     </nav>
 
     <div id="wrapper">
-      <!--sidebar-->
-      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">
-            <img src="img/Farm by iconSvg.co (1).svg" class="img-profile pb-2">
-            <span>ฟาร์ม</span>
-          </a>
-        </li>
-
-        <!-- Divider -->
-        <hr class="mb-0 sidebar-divider">
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFarm" aria-expanded="true"
-            aria-controls="collapseFarm">
+        <!-- slide bar -->
+      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">                                      
+        <li class="nav-item active ">
+        <a class="nav-link " href="#">
             <img src="img/beehive-farm-svgrepo-com.svg" class="img-profile py-2 px-2">
             <span>เล้าไก่</span>
-          </a>
-          <div id="collapseFarm" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="#">ฟาร์มโชคชัย</a>
-              <a class="collapse-item" href="#">ฟาร์มไก่เนื้อรุ่งเรือง</a>
-              <a class="collapse-item" href="#">ฟาร์มไก่เจริญกิจ</a>
-            </div>
-          </div>
+        </a>
         </li>
-
-        <hr class="mb-0 sidebar-divider">
-
-        <!--<li class="nav-item ">
-                        <a class="nav-link collapsed" href="#"> 
-                            <img src="img/farmer.png" class="img-profile py-2 px-2">
-                            <span>คนงาน</span>
-                        </a>
-                        <div class="">
-                            <a class="pt-0 nav-link active" href="#"><span class="ml-5">คนงานดูแลเล้า</span></a>
-                            <a class="pt-0 nav-link active" href="#"><span class="ml-5">คนงานใหม่</span></a>
-                        </div>
-                        
-                    </li>-->
         <!-- Divider -->
-        <hr class="mb-0 sidebar-divider">
-
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-            aria-controls="collapseTwo">
-            <img src="img/farmer.png" class="img-profile py-2 px-2">
-            <span>คนงาน</span>
-          </a>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="#">คนงานดูแลเล้า</a>
-              <a class="collapse-item" href="#">คนงานใหม่</a>
-            </div>
-          </div>
-        </li>
-
-        <hr class="mb-0 sidebar-divider">
-
-        <!-- Divider -->
-        <hr class="sidebar-divider">
-
-
+        <hr class="sidebar-divider">                                
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
-          <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
-
-      </ul>
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>                                 
+    </ul>
       <div class="container-fluid pt-4">
         <!-- Page Heading -->
         <h1 class="h3 mb-2 text-gray-800 col-sm-8" style="margin-top: 2%;">ฟาร์มรุ่งเรือง</h1>
@@ -457,97 +441,74 @@
                   <td>10</td>
                   <td>
                     <!-- Button trigger modal -->
-                    <button class="btn btn-sm btn-primary" type="button" id="openModalButton" data-bs-toggle="modal"
-                      data-bs-target="#staticBackdrop">
-                      เปิดรูปภาพทั้งหมด
-                    </button>
-
-
+                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#openPic" data-toggle="tooltip" data-placement="top" title="ดูรูปภาพ">ดูรูปภาพ</button>
                   </td>
                   <td>
-                    <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i
+                    <a class="delete"  onclick="delInfo(this);" data-toggle="tooltip" data-placement="top" title="ลบ"><i
                         class="material-icons">&#xE872;</i></a>
                   </td>
                 </tr>
                 <tr>
                   <td>2024-08-28</td>
-                  <td>20</td>
+                  <td>10</td>
                   <td>
                     <!-- Button trigger modal -->
-                    <button class="btn btn-sm btn-primary" type="button" id="openModalButton" data-bs-toggle="modal"
-                      data-bs-target="#staticBackdrop">
-                      เปิดรูปภาพทั้งหมด
-                    </button>
+                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#openPic" data-toggle="tooltip" data-placement="top" title="ดูรูปภาพ">ดูรูปภาพ</button>
                   </td>
                   <td>
-
-                    <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i
+                    <a class="delete"  onclick="delInfo(this);" data-toggle="tooltip" data-placement="top" title="ลบ"><i
                         class="material-icons">&#xE872;</i></a>
                   </td>
                 </tr>
                 <tr>
                   <td>2024-08-28</td>
-                  <td>5</td>
+                  <td>10</td>
                   <td>
                     <!-- Button trigger modal -->
-                    <button class="btn btn-sm btn-primary" type="button" id="openModalButton" data-bs-toggle="modal"
-                      data-bs-target="#staticBackdrop">
-                      เปิดรูปภาพทั้งหมด
-                    </button>
+                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#openPic" data-toggle="tooltip" data-placement="top" title="ดูรูปภาพ">ดูรูปภาพ</button>
                   </td>
                   <td>
-                    <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                    <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i
+                    <a class="delete"  onclick="delInfo(this);" data-toggle="tooltip" data-placement="top" title="ลบ"><i
                         class="material-icons">&#xE872;</i></a>
                   </td>
                 </tr>
                 <tr>
                   <td>2024-08-28</td>
-                  <td>12</td>
+                  <td>10</td>
                   <td>
                     <!-- Button trigger modal -->
-                    <button class="btn btn-sm btn-primary" type="button" id="openModalButton" data-bs-toggle="modal"
-                      data-bs-target="#staticBackdrop">
-                      เปิดรูปภาพทั้งหมด
-                    </button>
+                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#openPic" data-toggle="tooltip" data-placement="top" title="ดูรูปภาพ">ดูรูปภาพ</button>
                   </td>
                   <td>
-                    <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                    <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i
+                    <a class="delete"  onclick="delInfo(this);" data-toggle="tooltip" data-placement="top" title="ลบ"><i
                         class="material-icons">&#xE872;</i></a>
                   </td>
                 </tr>
                 <tr>
                   <td>2024-08-28</td>
-                  <td>15</td>
+                  <td>10</td>
                   <td>
                     <!-- Button trigger modal -->
-                    <button class="btn btn-sm btn-primary" type="button" id="openModalButton" data-bs-toggle="modal"
-                      data-bs-target="#staticBackdrop">
-                      เปิดรูปภาพทั้งหมด
-                    </button>
+                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#openPic" data-toggle="tooltip" data-placement="top" title="ดูรูปภาพ">ดูรูปภาพ</button>
                   </td>
                   <td>
-                    <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i
+                    <a class="delete"  onclick="delInfo(this);" data-toggle="tooltip" data-placement="top" title="ลบ"><i
                         class="material-icons">&#xE872;</i></a>
                   </td>
                 </tr>
                 <tr>
                   <td>2024-08-28</td>
-                  <td>19</td>
+                  <td>10</td>
                   <td>
                     <!-- Button trigger modal -->
-                    <button class="btn btn-sm btn-primary" type="button" id="openModalButton" data-bs-toggle="modal"
-                      data-bs-target="#staticBackdrop">
-                      เปิดรูปภาพทั้งหมด
-                    </button>
+                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#openPic" data-toggle="tooltip" data-placement="top" title="ดูรูปภาพ">ดูรูปภาพ</button>
                   </td>
                   <td>
-                    <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i
+                    <a class="delete"  onclick="delInfo(this);" data-toggle="tooltip" data-placement="top" title="ลบ"><i
                         class="material-icons">&#xE872;</i></a>
                   </td>
                 </tr>
-
+               
 
               </tbody>
             </table>
@@ -575,9 +536,49 @@
   </div>
   <!-- End of Page Wrapper -->
 
+  <!-- The Modal/Lightbox -->
+
+
+<!-- add coop -->
+<div class="modal fade" id="openPic" tabindex="-1" role="dialog" aria-labelledby="openPic" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+         <h5 class="modal-title" id="openPic">รูปภาพ</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+           
+    <div class="mySlides">
+        <div class="numbertext">1 / 3</div>
+        <img src="img/login1.png" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">2 / 3</div>
+        <img src="img/login2.jpg" style="width:100%">
+      </div>
+  
+      <div class="mySlides">
+        <div class="numbertext">3 / 3</div>
+        <img src="img/login3.png" style="width:100%">
+      </div>
+      
+      
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        </div>
+    </div>
+    </div>
+</div>
   <!-- picture modal -->
   <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content">
@@ -585,9 +586,9 @@
           <h1 class="modal-title fs-5" id="staticBackdropLabel">รูปภาพของไก่ที่ตาย</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body"> -->
           <!--carousel-->
-          <div id="carouselExampleIndicators" class="carousel slide">
+          <!-- <div id="carouselExampleIndicators" class="carousel slide">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -622,7 +623,46 @@
 
       </div>
     </div>
-  </div>
+  </div> -->
+  <script>
+    function openModal() {
+      document.getElementById("myModal").style.display = "block";
+    }
+    
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+    
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      var captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+    </script>
+
 
   <!-- Bootstrap core JavaScript-->
   <script src="vendor/jquery/jquery.min.js"></script>
