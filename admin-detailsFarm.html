@@ -84,6 +84,21 @@
         </li>
 
         <!-- Divider -->
+        <hr class="sidebar-divider" />
+
+        <!-- Heading -->
+        <div class="sidebar-heading">ข้อมูลของฟาร์มไก่</div>
+
+        <!-- Nav Item - Charts -->
+        <li class="nav-item">
+          <a class="nav-link" href="admin-detailsFarm.html">
+            <img src="img/beehive-farm-svgrepo-com.svg" class="img-profile py-2 px-2 ">
+            <!-- <i class="img/beehive-farm-svgrepo-com.svg"></i> -->
+            <span>การจัดการข้อมูลของฟาร์มไก่</span></a>
+          >
+        </li>
+        
+        <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block" />
 
         <!-- Sidebar Toggler (Sidebar) -->
@@ -374,134 +389,86 @@
           <div class="container-fluid">
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
-              <div class="card-header py-3">
+              <div class="card-header py-3 d-flex justify-content-between align-items-center">
                 <h6 class="m-0 font-weight-bold text-primary">
                   ข้อมูลของฟาร์มไก่
                 </h6>
                 <!-- Add Farm Button -->
-                <div class="justify-content-md-end">
-                  <button
-                    class="btn btn-primary"
-                    data-toggle="modal"
-                    data-target="#addFarmModal"
-                  >
-                    เพิ่มฟาร์มโดยผู้ดูแลระบบ
-                  </button>
-                </div>
-
-                <!-- Add Farm Modal -->
-                <div
-                  class="modal fade"
-                  id="addFarmModal"
-                  tabindex="-1"
-                  role="dialog"
-                  aria-labelledby="addFarmModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="addFarmModalLabel">
-                          Add New Farm
-                        </h5>
-                        <button
-                          type="button"
-                          class="close"
-                          data-dismiss="modal"
-                          aria-label="Close"
-                        >
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        <form id="addFarmForm">
-                          <div class="form-group">
-                            <label for="farmName">ชื่อของฟาร์ม</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="farmName"
-                              required
-                            />
-                          </div>
-                          <div class="form-group">
-                            <label for="ownerName">ชื่อเจ้าของฟาร์ม</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="ownerName"
-                              required
-                            />
-                          </div>
-                          <div class="form-group">
-                            <label for="farmDate">วันที่ก่อตั้งฟาร์ม</label>
-                            <input
-                              type="date"
-                              class="form-control"
-                              id="farmDate"
-                              required
-                            />
-                          </div>
-
-                          <div class="form-group">
-                            <label for="ownerName">ที่อยู่ของฟาร์ม</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="addressFarm"
-                              required
-                            />
-                          </div>
-
-                          <div class="form-group">
-                            <label for="numSheds">จำนวนเล้าทั้งหมด</label>
-                            <input
-                              type="number"
-                              class="form-control"
-                              id="numSheds"
-                              required
-                            />
-                          </div>
-                          <div class="form-group">
-                            <label for="numWorkers">จำนวนคนงานทั้งหมด</label>
-                            <input
-                              type="number"
-                              class="form-control"
-                              id="numWorkers"
-                              required
-                            />
-                          </div>
-                          <div class="form-group">
-                            <label for="numChickens">จำนวนไก่ทั้งหมด</label>
-                            <input
-                              type="number"
-                              class="form-control"
-                              id="numChickens"
-                              required
-                            />
-                          </div>
-                        </form>
-                      </div>
-                      <div class="modal-footer">
-                        <button
-                          type="button"
-                          class="btn btn-secondary"
-                          data-dismiss="modal"
-                        >
-                          Cancel
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-primary"
-                          id="saveFarmBtn"
-                        >
-                          Save
-                        </button>
-                      </div>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#addFarmModal">
+                  เพิ่มฟาร์มโดยผู้ดูแลระบบ
+                </button>
+              </div>
+          
+              <!-- Add Farm Modal -->
+              <div
+                class="modal fade"
+                id="addFarmModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="addFarmModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="addFarmModalLabel">Add New Farm</h5>
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="addFarmForm">
+                        <div class="form-group">
+                          <label for="farmName">ชื่อของฟาร์ม</label>
+                          <input type="text" class="form-control" id="farmName" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="ownerName">ชื่อเจ้าของฟาร์ม</label>
+                          <input type="text" class="form-control" id="ownerName" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="farmDate">วันที่ก่อตั้งฟาร์ม</label>
+                          <input type="date" class="form-control" id="farmDate" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="addressFarm">ที่อยู่ของฟาร์ม</label>
+                          <input type="text" class="form-control" id="addressFarm" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="numSheds">จำนวนเล้าทั้งหมด</label>
+                          <input type="number" class="form-control" id="numSheds" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="numWorkers">จำนวนคนงานทั้งหมด</label>
+                          <input type="number" class="form-control" id="numWorkers" required />
+                        </div>
+                        <div class="form-group">
+                          <label for="numChickens">จำนวนไก่ทั้งหมด</label>
+                          <input type="number" class="form-control" id="numChickens" required />
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-dismiss="modal"
+                      >
+                        Cancel
+                      </button>
+                      <button type="button" class="btn btn-primary" id="saveFarmBtn">
+                        Save
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
+            
               <div class="card-body">
                 <div class="table-responsive">
                   <table
