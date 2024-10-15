@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="th">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>own-Farm</title>
+
+        
+        <!-- Custom fonts for this template -->
+        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="css/sb-admin-2.min.css" rel="stylesheet">
+        <link href="css/owner.css" rel="stylesheet">
+        <!-- Custom styles for this page -->
+        <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        
+
+    <body id="page-top">
+        <!--topbar-->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
+            <a href="own_Dashboard.html" class="nav-link">
+                <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+                    <i class="fas fa-dove"></i>
+                </button>
+                <span class="d-none d-sm-inline-block tex-primary">Home Page</span>
+            </a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown no-arrow mx-1">
+                    <a href="#" class="nav-link dropdown-toggle" id="alertDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-bell fa-fw"></i>
+                        <span class="badge badge-danger badge-counter">1+</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown no-arrow mx-1">
+                    <a href="#" class="nav-link dropdown-toggle" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-envelope fa-fw"></i>
+                        <span class="badge badge-danger badge-counter">4</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown no-arrow">
+                    <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">username</span>
+                        <img class="img-profile rounded-circle" src="img/undraw_profile_3.svg">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                บัญชีผู้ใช้
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                ตั้งค่า
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                ออกจากระบบ
+                            </a>
+                        </div>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="wrapper">
+            <!--sidebar-->
+            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">                                      
+                <li class="nav-item active">
+                    <a class="nav-link" href="own_Farm.html">
+                        <img src="img/Farm by iconSvg.co (1).svg" class="img-profile pb-2">
+                        <span>ฟาร์ม</span>
+                    </a>
+                </li>
+    
+                <!-- Divider -->
+                <hr class="mb-0 sidebar-divider">
+                                                        
+                <!-- Nav Item - Pages Collapse Menu -->
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFarm"
+                        aria-expanded="true" aria-controls="collapseFarm">
+                        <img src="img/beehive-farm-svgrepo-com.svg" class="img-profile py-1 px-1">
+                        <span>เล้าไก่</span>
+                    </a>
+                    <div id="collapseFarm" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="own_coopFarm.html">ฟาร์มโชคชัย</a>
+                            <a class="collapse-item" href="own_coopFarm2.html">ฟาร์มไก่เนื้อรุ่งเรือง</a>
+                            <a class="collapse-item" href="own_coopFarm3.html">ฟาร์มไก่เจริญกิจ</a>
+                        </div>
+                    </div>
+                </li>
+
+                <hr class="mb-0 sidebar-divider">
+    
+                <!--<li class="nav-item ">
+                    <a class="nav-link collapsed" href="#"> 
+                        <img src="img/farmer.png" class="img-profile py-2 px-2">
+                        <span>คนงาน</span>
+                    </a>
+                    <div class="">
+                        <a class="pt-0 nav-link active" href="#"><span class="ml-5">คนงานดูแลเล้า</span></a>
+                        <a class="pt-0 nav-link active" href="#"><span class="ml-5">คนงานใหม่</span></a>
+                    </div>
+                    
+                </li>-->
+                <!-- Divider -->
+                <hr class="mb-0 sidebar-divider">
+                
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLabourer"
+                        aria-expanded="true" aria-controls="collapseLabourer">
+                        <img src="img/farmer.png" class="img-profile py-1 px-1">
+                        <span>คนงาน</span>
+                    </a>
+                    <div id="collapseLabourer" class="collapse" aria-labelledby="headingLabourer" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="own_labourInFarm.html">คนงานดูแลเล้า</a>
+                            <a class="collapse-item" href="own_labourNew.html">คนงานใหม่</a>
+                        </div>
+                    </div>
+                </li>
+
+                <hr class="mb-0 sidebar-divider">
+    
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+                       
+                                                   
+                <!-- Sidebar Toggler (Sidebar) -->
+                <div class="text-center d-none d-md-inline">
+                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
+                                
+            </ul>
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+                <div id="content">
+                    <div class="container-fluid pt-4">
+
+                        <!-- Page Heading -->
+                        <div class="d-flex align-items-center mb-3">
+                            <h1 class="m-0 h3 text-gray-800">ฟาร์ม</h1>
+                            <div class="px-2" data-toggle="tooltip" title="เพิ่มฟาร์ม" >
+                                <a class="btn btn-primary btn-circle btn-sm" type="button" data-toggle="modal" data-target="#AddCoopModal">
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                            </div>
+                         </div>
+                        
+                        
+                        <!-- DataTales Example Farm -->
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">ข้อมูลฟาร์ม</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>ฟาร์ม</th>
+                                                <th>เจ้าของฟาร์ม</th>
+                                                <th>เล้าไก่ปัจจุบัน(เล้า)</th>
+                                                <th>เล้าไก่ที่จำหน่ายไป(เล้า)</th>
+                                                <th>คนงาน(คน)</th>
+                                                <th>อุปกรณ์</th>
+                                                <th>การจัดการ</th>
+                                            </tr>
+                                        </thead>
+                                        
+                                        <tbody>
+                                            <tr>
+                                                <td class="align-items-center">ฟาร์มไก่เนื้อรุ่งเรือง</td>
+                                                <td>โชค รุ่งเรืองกิจ</td>
+                                                <td class="text-right">6</td>
+                                                <td class="text-right">10</td>
+                                                <td class="text-right">15</td>
+                                                <td class="text-right">15</td>
+                                                <td class="d-flex align-items-center justify-content-center">
+                                                    <div class="d-flex align-items-center ">
+                                                        <a class="btn"  data-toggle="tooltip"  title="#">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </a>  
+                                                        <a class="btn" data-toggle="tooltip"  title="#">
+                                                            <i class="fas fa-clipboard-list"></i>
+                                                        </a>  
+                                                        <a class="btn" data-toggle="tooltip"  title="#">
+                                                            <img src="img/farmer (1).png" class="btn-small-block mb-1">
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>ฟาร์มโชคชัย</td>
+                                                <td>โชค รุ่งเรืองกิจ</td>
+                                                <td class="text-right">4</td>
+                                                <td class="text-right">5</td>
+                                                <td class="text-right">12</td>
+                                                <td class="text-right">12</td>
+                                                <td class="d-flex align-items-center justify-content-center">
+                                                    <div class="d-flex align-items-center ">
+                                                        <a class="btn"  data-toggle="tooltip"  title="#">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </a>  
+                                                        <a class="btn" data-toggle="tooltip"  title="#">
+                                                            <i class="fas fa-clipboard-list"></i>
+                                                        </a>  
+                                                        <a class="btn" data-toggle="tooltip"  title="#">
+                                                            <img src="img/farmer (1).png" class="btn-small-block mb-1">
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                                <tr>
+                                                    <td>ฟาร์มไก่เจริญกิจ</td>
+                                                    <td>โชค รุ่งเรืองกิจ</td>
+                                                    <td class="text-right">3</td>
+                                                    <td class="text-right">5</td>
+                                                    <td class="text-right">10</td>
+                                                    <td class="text-right align-items-center">10</td>
+                                                    <td class="d-flex align-items-center justify-content-center">
+                                                        <div class="d-flex ">
+                                                            <a class="btn"  data-toggle="tooltip"  title="#">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </a>  
+                                                            <a class="btn" data-toggle="tooltip"  title="#">
+                                                                <i class="fas fa-clipboard-list"></i>
+                                                            </a>  
+                                                            <a class="btn" data-toggle="tooltip"  title="#">
+                                                                <img src="img/farmer (1).png" class="btn-small-block mb-1">
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="google-map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d968.3650787681742!2d100.00109071938537!3d13.87140218425948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2e4a2a723804f%3A0x17ed444f0eb82240!2z4LmC4Lij4LiH4Liq4Li14LmA4LiB4Lip4LiV4Lij4LiY4Lij4Lij4Lih!5e0!3m2!1sth!2sth!4v1727970064335!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+    
+                    </div>
+                    <!-- /.container-fluid -->
+                </div>
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Your Website 2020</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+            </div>
+            
+        </div>
+
+        <!--AddFarm-->
+        <div class="modal fade" id="AddCoopModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="flex-column">
+                            <h3 class="modal-title font-weight-bold text-primary" id="exampleModalLabel">เพิ่มฟาร์ม</h3>
+                            
+                        </div>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <form class="p-3" >
+                        <div class="form-group">
+                            <label for="nameFarm" class="font-weight-bold">ชื่อ</label>
+                            <input class="form-control" type="text" id="nameFarm" placeholder="*ชื่อฟาร์ม">
+                        </div>
+                        <div class="form-group">
+                            <label for="ownerFarm" class="font-weight-bold">เจ้าของฟาร์ม</label>
+                            <input class="form-control" type="text" id="ownerFarm" placeholder="โชค รุ่งเรืองกิจ" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="dateAddFarm" class="font-weight-bold">วันที่เพิ่มฟาร์ม</label>
+                            <input type="date" class="form-control" id="dateAddFarm" placeholder="DD/MM/YYYY">
+                        </div>
+                        <div class="m-0 form-group">
+                            <label for="baseFarm" class="font-weight-bold">ที่ตั้งฟาร์ม</label>
+                            <div class="form-group">
+                                <label for="baseFarm" class="font-weight-normal">ที่อยู่</label>
+                                <input class="form-control" type="text" id="ownerFarm" placeholder="*บ้านเลขที่ หมู่ ซอย ถนน">
+                            </div>
+                            <div class="form-row">
+                                <div class="col-xl-6 form-group">
+                                    <label for="baseFarm" class="font-weight-normal">แขวง/ตำบล</label>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-6 form-group">
+                                    <label for="baseFarm" class="font-weight-normal">เขตอำเภอ</label>
+                                    <select id="inputState" class="form-control" placeholder="*">
+                                        <option>Choose...</option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-xl-6 form-group">
+                                    <label for="baseFarm" class="font-weight-normal">จังหวัด</label>
+                                    <select id="inputState" class="form-control">
+                                        <option selected>Choose...</option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-6 form-group">
+                                    <label for="baseFarm" class="font-weight-normal">รหัสไปรษณีย์</label>
+                                    <select id="inputState" class="form-control" placeholder="*">
+                                        <option>Choose...</option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="p-3">
+                        <button class="btn btn-info btn-user btn-block mt-3 mb-3" type="button" data-dismiss="modal" id="saveFarmButton">Save information</button>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!--saveFarmButton-->
+        <script>
+            document
+                .getElementById("saveFarmButton")
+                .addEventListener("click",function() {
+                    const farmName = document.getElementById("ฟาร์ม").value;
+                    const owner = 'โชค รุ่งเรืองกิจ';
+                    const numCoop = document.getElementById("เล้าไก่ปัจจุบัน(เล้า)").value;
+                    const numCoopFinish = document.getElementById("เล้าไก่ที่จำหน่ายไป(เล้า)").value;
+                    const numLabour = document.getElementById("คนงาน(คน)").value;
+                    const tech = 10;
+
+                    if(
+                        farmName &&
+                        numCoop &&
+                        numCoopFinish
+                    ){}
+
+                });
+        </script>
+
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
+
+        <!-- Page level plugins -->
+        <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+        <!-- Page level custom scripts -->
+        <script src="js/demo/datatables-demo.js"></script>
+
+    </body>
+</html>
