@@ -43,10 +43,20 @@
                                 <h1 class="h4 text-gray-900 mb-4">สร้างบัญชีผู้ใช้</h1>
                             </div>
                             <form class="user" style="font-size: 15px;">
-                                <div class="form-group">
+                                <div class="form-group" style="margin-left: 1%;">
                                     <span style="color: red;">*</span>คำนำหน้า<br>
-                                    <input type="username" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="คำนำหน้า">
+                                     <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="owner" id="mr" value="นาย">
+                                        <label class="form-check-label" for="owner">นาย</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="labour" id="mrs" value="นาง">
+                                        <label class="form-check-label" for="labour">นาง</label>
+                                      </div>
+                                      <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="labour" id="ms" value="นางสาว">
+                                        <label class="form-check-label" for="labour">นางสาว</label>
+                                      </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
