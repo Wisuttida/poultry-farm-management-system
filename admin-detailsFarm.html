@@ -373,13 +373,16 @@
           <!-- Begin Page Content -->
           <div class="container-fluid">
             <!-- DataTales Example -->
-            <div class="card shadow mb-4">
-              <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">
-                  ข้อมูลของฟาร์มไก่
-                </h6>
-                <!-- Add Farm Button -->
-                <div class="justify-content-md-end">
+            <div class="container-fluid">
+              <!-- DataTales Example -->
+              <div class="card shadow mb-4">
+                <div
+                  class="card-header py-3 d-flex justify-content-between align-items-center"
+                >
+                  <h6 class="m-0 font-weight-bold text-primary">
+                    ข้อมูลของฟาร์มไก่
+                  </h6>
+                  <!-- Add Farm Button -->
                   <button
                     class="btn btn-primary"
                     data-toggle="modal"
@@ -402,7 +405,7 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="addFarmModalLabel">
-                          Add New Farm
+                          เพิ่มฟาร์มโดยผู้ดูแลระบบ
                         </h5>
                         <button
                           type="button"
@@ -442,9 +445,8 @@
                               required
                             />
                           </div>
-
                           <div class="form-group">
-                            <label for="ownerName">ที่อยู่ของฟาร์ม</label>
+                            <label for="addressFarm">ที่อยู่ของฟาร์ม</label>
                             <input
                               type="text"
                               class="form-control"
@@ -452,7 +454,6 @@
                               required
                             />
                           </div>
-
                           <div class="form-group">
                             <label for="numSheds">จำนวนเล้าทั้งหมด</label>
                             <input
@@ -488,20 +489,21 @@
                           class="btn btn-secondary"
                           data-dismiss="modal"
                         >
-                          Cancel
+                          ยกเลิก
                         </button>
                         <button
                           type="button"
                           class="btn btn-primary"
                           id="saveFarmBtn"
                         >
-                          Save
+                          บันทึก
                         </button>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              
+
               <div class="card-body">
                 <div class="table-responsive">
                   <table
