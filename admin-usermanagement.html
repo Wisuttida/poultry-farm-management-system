@@ -901,7 +901,8 @@
         </div>
       </div>
     </div>
-    <!-- Modal HTML -->
+
+    <!-- Modal edit user -->
     <div
       class="modal fade"
       id="editUserModal"
@@ -925,13 +926,14 @@
           <div class="modal-body">
             <div class="container">
               <div class="row">
-                <div class="col align-items-center">
+                <div class="col d-flex flex-column align-items-center">
                   <img
-                    class="img-profile rounded-circle"
-                    width="100"
+                    class="img-profile rounded-circle mb-3"
+                    width="139"
                     src="img/login1.png"
                   />
-                  <div class="mb-3">
+
+                  <div class="mb-3 w-100">
                     <label for="line" class="form-label">Line</label>
                     <input
                       type="text"
@@ -941,7 +943,8 @@
                     />
                     <div class="invalid-feedback">โปรดกรอก Line</div>
                   </div>
-                  <div class="mb-3">
+
+                  <div class="mb-3 w-100">
                     <label for="gmail" class="form-label">Gmail</label>
                     <input
                       type="email"
@@ -951,7 +954,14 @@
                     />
                     <div class="invalid-feedback">โปรดกรอก Gmail</div>
                   </div>
+
+                  <div class="d-grid gap-2 w-100 mb-3">
+                    <button class="btn btn-outline-success" type="button">
+                      ส่ง line สำหรับเปลี่ยนรหัสผ่าน
+                    </button>
+                  </div>
                 </div>
+
                 <div class="col">
                   <form
                     id="editAccountForm"
@@ -968,6 +978,7 @@
                       />
                       <div class="invalid-feedback">โปรดกรอกชื่อ</div>
                     </div>
+
                     <div class="mb-3">
                       <label for="lastname" class="form-label">นามสกุล</label>
                       <input
@@ -978,6 +989,7 @@
                       />
                       <div class="invalid-feedback">โปรดกรอกนามสกุล</div>
                     </div>
+
                     <div class="mb-3">
                       <label for="username" class="form-label"
                         >ชื่อบัญชีผู้ใช้</label
@@ -1007,6 +1019,11 @@
                         <option value="labour">คนงาน</option>
                       </select>
                       <div class="invalid-feedback">โปรดเลือกตำแหน่ง</div>
+                    </div>
+                    <div class="d-grid gap-2 w-100 mb-3">
+                      <button class="btn btn-outline-success" type="button">
+                        ส่ง gmail สำหรับเปลี่ยนรหัสผ่าน
+                      </button>
                     </div>
                   </form>
                 </div>

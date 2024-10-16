@@ -37,6 +37,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
     />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7x1q3YC7PJnX+qCQl5gxS1hge8+tN1R7XlM" crossorigin="anonymous">
+
   </head>
 
   <body id="page-top">
@@ -423,29 +427,47 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                       <thead>
                         <tr>
-                          <th>ชื่อคนงาน</th>
                           <th>ชื่อบัญชีผู้ใช้</th>
+                          <th>ชื่อคนงาน</th>                          
                           <th>การจัดการคนงานไม่มีสังกัด</th>
                         </tr>
                       </thead>
                       <tfoot>
                         <tr>
-                            <th>ชื่อคนงาน</th>
                             <th>ชื่อบัญชีผู้ใช้</th>
+                            <th>ชื่อคนงาน</th>
                             <th>การจัดการคนงานไม่มีสังกัด</th>
                           </tr>
                       </tfoot>
                       <tbody>
                         <tr>
-                          <td >ฟาร์มเรือนขวัญ</td>
-                          <td >มลิวรรณ ทวนทอง</td>
+                          <td>phaarwii67</td>
+                          <td>พันเกล้า	ติณรัตน์</td>
                           <td>
+                            <div style="display: flex; align-items: center">
+                              <a class="edit" title="Edit" onclick="openModal('phaarwii67','พันเกล้า ติณรัตน์')">
+                                <i class="fas fa-clipboard-list" style="font-size: 19px"></i>
+                              </a>
+                              <a
+                                class="delete"
+                                title="Delete"
+                                onclick="delInfo(this);"
+                                data-toggle="tooltip"
+                              >
+                                <i
+                                  class="fas fa-trash-alt"
+                                  style="font-size: 16px"
+                                ></i>
+                              </a>
+                            </div>
                           </td>
                       </tr>
                       </tbody>
                     </table>
                   </div>
                 </div>
+
+
             </div>
           </div>
 
@@ -512,6 +534,123 @@
       </div>
     </div>
 
+    <!-- modals add labour to farm -->
+    <div class="modal fade" id="addLabourToFarmModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog ">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">การเพิ่มคนงานเข้าสู่ฟาร์ม</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <form id="farmWorkerForm">
+                <!-- Username Field (Readonly) -->
+                <div class="mb-3">
+                  <label for="username" class="form-label">ชื่อผู้ใช้งาน</label>
+                  <input type="text" class="form-control" id="username" readonly>
+                </div>
+                
+                <!-- Full Name Field (Readonly) -->
+                <div class="mb-3">
+                  <label for="fullName" class="form-label">ชื่อ</label>
+                  <input type="text" class="form-control" id="fullName" readonly>
+                </div>
+                
+                <!-- date add labour -->
+                <div class="form-group">
+                  <label for="dateAddFarm" class="font-weight-bold">วันที่เพิ่มคนงาน</label>
+                  <input type="date" class="form-control" id="dateAddFarm" placeholder="DD/MM/YYYY">
+                </div>
+
+                <!-- Farm Selection (Dropdown) -->
+                <div class="mb-3">
+                  <label for="farm" class="form-label">ฟาร์ม</label>
+                  <select class="form-select" id="farm" required>
+                    <option value="" disabled selected>เลือกฟาร์ม</option>
+                    <option value="farm1">ฟาร์ม A</option>
+                    <option value="farm2">ฟาร์ม B</option>
+                  </select>
+                  <div class="invalid-feedback">โปรดเลือกฟาร์ม</div>
+                </div>
+                
+                <!-- Chicken Coop Selection (Dropdown) -->
+                <div class="mb-3">
+                  <label for="coop" class="form-label">เล้าไก่</label>
+                  <select class="form-select" id="coop" required>
+                    <option value="" disabled selected>เลือกเล้าไก่</option>
+                    <option value="1">เล้า 1</option>
+                    <option value="2">เล้า 2</option>
+                    <option value="3">เล้า 3</option>
+                  </select>
+                  <div class="invalid-feedback">โปรดเลือกเล้า</div>
+                </div>
+    
+                <!-- Submit Button -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
+                  <button type="submit" class="btn btn-primary">บันทึกการเปลี่ยนแปลง</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- script for add labour to farm -->
+    <script>
+      // Function to open the modal and set username, full name dynamically
+      function openModal(id, name) {
+        document.getElementById('username').value = id;
+        document.getElementById('fullName').value = name;
+
+        var myModal = new bootstrap.Modal(document.getElementById('addLabourToFarmModal'), {
+          keyboard: false
+        });
+        myModal.show();
+      }
+
+      // Function to handle form submission and remove the row from the table
+      document.getElementById('farmWorkerForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get selected values
+      const username = document.getElementById('username').value;
+      const fullName = document.getElementById('fullName').value;
+      const farm = document.getElementById('farm').value;
+      const coop = document.getElementById('coop').value;
+
+      // Check if all values are valid (you can add more validation if necessary)
+      if (!farm || !coop) {
+        alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+        return;
+      }
+
+      // Perform the row removal action
+      const row = document.querySelector(`tr[data-username="${username}"]`);
+      if (row) {
+        row.remove(); // Remove the row from the table
+      }
+
+      // Close the modal
+      const modal = bootstrap.Modal.getInstance(document.getElementById('addLabourToFarmModal'));
+      modal.hide();
+    });
+
+    </script>
+
+    <!--delete-->
+    <script>
+      document.addEventListener("click", function(event) {
+        if (event.target.closest(".delete")) {
+          const row = event.target.closest("tr");
+          if (confirm("คุณแน่ใจหรือว่าต้องการลบข้อมูลนี้?")) {
+            row.remove();  // ลบแถว
+          }
+        }
+      });
+    </script>
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -528,5 +667,10 @@
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+
+    <!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybZuecKFnPQcI9i1MOsQpq6rQpK7l11m57j0eNK2fAYjHkVf" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0ey6+5O2p7u6y4PMLT24Mb6I1jvuZJ9z5jq6cazvKsv+f5Z5IH413L3" crossorigin="anonymous"></script>
+
   </body>
 </html>
