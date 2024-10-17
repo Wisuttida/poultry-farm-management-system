@@ -451,7 +451,7 @@
                           <td>1 2 3</td>
                           <td>
                             <div style="display: flex; align-items: center">
-                              <a class="edit" title="Edit" onclick="openModal('phaarwii67','พันเกล้า ติณรัตน์')">
+                              <a class="edit" title="Edit" onclick="openModal('phaarwii67','พันเกล้า ติณรัตน์','ฟาร์มไก่ขาว')">
                                 <i class="fas fa-clipboard-list" style="font-size: 19px"></i>
                               </a>
                               <a
@@ -540,7 +540,7 @@
       </div>
     </div>
 
-    <!-- modals add labour to farm -->
+    <!-- modals add labour to another coop -->
     <div class="modal fade" id="addLabourToFarmModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog ">
         <div class="modal-content">
@@ -563,21 +563,10 @@
                   <input type="text" class="form-control" id="fullName" readonly>
                 </div>
                 
-                <!-- date add labour -->
-                <div class="form-group">
-                  <label for="dateAddFarm" class="font-weight-bold">วันที่เพิ่มคนงาน</label>
-                  <input type="date" class="form-control" id="dateAddFarm" placeholder="DD/MM/YYYY">
-                </div>
-
-                <!-- Farm Selection (Dropdown) -->
+                <!-- Full Name Field (Readonly) -->
                 <div class="mb-3">
-                  <label for="farm" class="form-label">ฟาร์ม</label>
-                  <select class="form-select" id="farm" required>
-                    <option value="" disabled selected>เลือกฟาร์ม</option>
-                    <option value="farm1">ฟาร์ม A</option>
-                    <option value="farm2">ฟาร์ม B</option>
-                  </select>
-                  <div class="invalid-feedback">โปรดเลือกฟาร์ม</div>
+                  <label for="farmName" class="form-label">ฟาร์ม</label>
+                  <input type="text" class="form-control" id="farmName" readonly>
                 </div>
                 
                 <!-- Chicken Coop Selection (Dropdown) -->
@@ -603,13 +592,13 @@
         </div>
       </div>
     </div>
-    <!-- script for add labour to farm -->
+    <!-- script for add labour to another coop -->
     <script>
       // Function to open the modal and set username, full name dynamically
       function openModal(id, name) {
         document.getElementById('username').value = id;
         document.getElementById('fullName').value = name;
-
+        document.getElementById('farmName').value = farmName;
         var myModal = new bootstrap.Modal(document.getElementById('addLabourToFarmModal'), {
           keyboard: false
         });
@@ -675,8 +664,8 @@
     <script src="js/demo/datatables-demo.js"></script>
 
     <!-- Bootstrap JS and Popper.js -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybZuecKFnPQcI9i1MOsQpq6rQpK7l11m57j0eNK2fAYjHkVf" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0ey6+5O2p7u6y4PMLT24Mb6I1jvuZJ9z5jq6cazvKsv+f5Z5IH413L3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybZuecKFnPQcI9i1MOsQpq6rQpK7l11m57j0eNK2fAYjHkVf" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0ey6+5O2p7u6y4PMLT24Mb6I1jvuZJ9z5jq6cazvKsv+f5Z5IH413L3" crossorigin="anonymous"></script>
 
   </body>
 </html>
