@@ -186,14 +186,14 @@
                                             <td>
                                                 <div class="d-flex justify-content-center align-items-center">
                                                     <a class="text-decoration-none card shadow bg-success text-center mx-1"
-                                                        type="button" data-toggle="modal" data-target="#ShowDataLabour">
+                                                        type="button">
                                                         <span class="p-1 text-white small">1</span>
                                                     </a>
                                                     <!--<a class="btn btn-primary btn-circle btn-sm" type="button" data-toggle="modal" data-target="#AddCoopModal">
                                                             <i class="fas fa-plus"></i>
                                                         </a>-->
                                                     <a class="text-decoration-none card shadow bg-success text-center mx-1"
-                                                        type="button" data-toggle="modal" data-target="#ShowDataLabour">
+                                                        type="button">
                                                         <span class="p-1 text-white small">2</span>
                                                     </a>
                                                 </div>
@@ -223,14 +223,14 @@
                                             <td>
                                                 <div class="d-flex justify-content-center align-items-center">
                                                     <a class="text-decoration-none card shadow bg-success text-center mx-1"
-                                                        type="button" data-toggle="modal" data-target="#ShowDataLabour">
+                                                        type="button">
                                                         <span class="p-1 text-white small">1</span>
                                                     </a>
                                                     <!--<a class="btn btn-primary btn-circle btn-sm" type="button" data-toggle="modal" data-target="#AddCoopModal">
                                                             <i class="fas fa-plus"></i>
                                                         </a>-->
                                                     <a class="text-decoration-none card shadow bg-success text-center mx-1"
-                                                        type="button" data-toggle="modal" data-target="#ShowDataLabour">
+                                                        type="button">
                                                         <span class="p-1 text-white small">2</span>
                                                     </a>
                                                 </div>
@@ -719,23 +719,17 @@
                 <div class="modal-body">
                     <form class="needs-validation" novalidate>
                         <div class="form-group">
-                            <label for="farm"><span style="color: #f50000">*</span>ฟาร์มที่สังกัด</label>
-                            <select class="custom-select custom-select-sm" required>
-                                <option selected>ฟาร์ม</option>
-                                <option value="ฟาร์มโชคชัย">ฟาร์มโชคชัย</option>
-                                <option value="ฟาร์มไก่เจริญกิจ">ฟาร์มไก่เจริญกิจ</option>
-                                <option value="ฟาร์มไก่เนื้อรุ่งเรือง">
-                                    ฟาร์มไก่เนื้อรุ่งเรือง
-                                </option>
-                            </select>
+                            <label for="farm"></span>ฟาร์มที่สังกัด</label>
+                            <input class="form-control" type="text" id="ownerFarm" placeholder="ฟาร์มไก่เจริญกิจ" disabled>
                         </div>
                         <div class="form-group">
                             <label for="manageCoop">ดูแลเล้า</label>
-                            <span class="d-flex h6 small">สามารถจัดการผู้ดูแลเล้าได้ที่เล้าไก่</span>
                             <select id="inputState" class="form-control">
                                 <option selected>เล้า</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
+                                <option value="1">3</option>
+                                <option value="2">4</option>
                             </select>
                         </div>
                     </form>
