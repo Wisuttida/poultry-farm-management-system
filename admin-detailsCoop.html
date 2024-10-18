@@ -324,9 +324,9 @@
                     <!-- Page Heading -->
                     <div class="d-flex align-items-center mb-2">
                         <h1 class="m-0 h3 text-gray-800">เล้าไก่</h1>
-                        <div class="px-2" data-toggle="tooltip" title="เพิ่มฟาร์ม">
+                        <div class="px-2" data-toggle="tooltip" title="เพิ่มเล้า">
                             <a class="btn btn-primary btn-circle btn-sm" type="button" data-toggle="modal"
-                                data-target="#addCoop">
+                                data-target="#AddCoopModal">
                                 <i class="fas fa-plus"></i>
                             </a>
                         </div>
@@ -395,8 +395,7 @@
                                                         title="#">
                                                         <i class="fas fa-dizzy text-gray-800"></i>
                                                     </a>
-                                                    <a class="btn" type="button" data-toggle="modal"
-                                                        data-target="#manageDetaile" data-toggle="tooltip" title="#">
+                                                    <a class="btn" href="gerneral.html" data-toggle="tooltip" title="#">
                                                         <i class="fas fa-clipboard-list text-warning"></i>
                                                     </a>
                                                     <a class="btn delete" data-toggle="tooltip" title="#">
@@ -432,9 +431,8 @@
                                                         title="#">
                                                         <i class="fas fa-dizzy text-gray-800"></i>
                                                     </a>
-                                                    <a class="btn" type="button" data-toggle="modal"
-                                                        data-target="#manageDetaile" data-toggle="tooltip" title="#">
-                                                        <i class="fas fa-clipboard-list text-warning"></i>
+                                                    <a class="btn" href="gerneral.html" data-toggle="tooltip" title="#">
+                                                      <i class="fas fa-clipboard-list text-warning"></i>
                                                     </a>
                                                     <a class="btn delete" data-toggle="tooltip" title="#">
                                                         <i class="fas fa-trash-alt text-danger"></i>
@@ -465,68 +463,143 @@
 
     </div>
 
-    <!-- add coop -->
-    <div class="modal fade" id="addCoop" tabindex="-1" role="dialog" aria-labelledby="addCoop" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title text-primary" id="addCoop">เพิ่มเล้า</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form class="needs-validation" novalidate>
-                        <fieldset disabled>
-                            <div class="form-group">
-                                <label for="farm">ฟาร์ม</label>
-                                <input type="text" class="form-control" id="farm" value="ฟาร์มโชคชัย">
-                            </div>
-                        </fieldset>
-                        <div class="form-group">
-                            เล้า
-                            <select id="inputState" class="form-control">
-                                <option selected>1</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="startDate"><span style="color: #f50000;">*</span>วันที่เริ่ม</label>
-                            <input type="date" class="form-control " id="startDate" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="totalDay"><span style="color: #f50000;">*</span>จำนวนวัน</label>
-                            <input type="text" class="form-control" id="totalDay" placeholder="จำนวนวัน" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="expectedW"><span style="color: #f50000;">*</span>น้ำหนักที่ต้องการ(กก.)</label>
-                            <input type="text" class="form-control" id="expectedW" placeholder="น้ำหนักที่ต้องการ(กก.)"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label for="amountChicken"><span style="color: #f50000;">*</span>จำนวนไก่ทั้งหมด</label>
-                            <input type="text" class="form-control" id="amountChicken" placeholder="จำนวนไก่ทั้งหมด"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label for="manageCoop" class="mb-0">คนงานดูแลเล้า</label>
-                                <select id="inputState" class="form-control">
-                                <option selected>คนงาน</option>
-                                <option value="นรงณ์ชัย">นรงณ์ชัย</option>
-                                <option value="นรงณ์ชัย">นรงณ์ชัย</option>
-                            </select>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
-                    <button type="button" class="btn btn-primary">บันทึก</button>
-                </div>
+    <!-- AddCoop Modal-->
+    <div class="modal fade" id="AddCoopModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="flex-column">
+              <h3 class="modal-title font-weight-bold text-primary" id="exampleModalLabel">เพิ่มเล้าโดยผู้ดูแลระบบ</h3>
+              <h6 class="modal-title font-weight-bold" id="exampleModalLabel">ATTA Farm</h6>
             </div>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <form class="p-3" id="coopForm">
+            <!-- farmName Field (Readonly) -->
+            <div class="mb-3">
+              <label for="farmName" class="form-label">ชื่อฟาร์ม</label>
+              <input type="text" class="form-control" id="farmName" required>
+            </div>
+            <div class="form-group">
+              <label for="start-date" class="font-weight-bold">วันที่เริ่ม</label>
+              <input type="date" class="form-control" id="start-date" aria-describedby="dateHelp" placeholder="DD/MM/YYYY" max="" required>
+            </div>
+            <div class="form-group">
+              <label for="duration" class="font-weight-bold">ระยะเวลา (วัน)</label>
+              <input type="number" class="form-control" id="duration" required>
+            </div>
+            <div class="form-group">
+              <label for="end-date" class="font-weight-bold">วันที่สิ้นสุด</label>
+              <input type="date" class="form-control" id="end-date" readonly>
+            </div>
+            <div class="form-group">
+              <label for="amount-chicken" class="font-weight-bold">จำนวนไก่(ตัว)</label>
+              <input class="form-control" type="number" id="amount-chicken" required>
+            </div>
+            <div class="form-group">
+              <label for="expected-weight" class="font-weight-bold">น้ำหนักที่ต้องการ(กก)</label>
+              <input class="form-control" type="number" id="expected-weight" required>
+            </div>
+            <div class="form-group">
+              <label for="manageCoop" class="mb-0">คนงานดูแลเล้า</label>
+                  <select id="inputState" class="form-control">
+                  <option selected>คนงาน</option>
+                  <option value="นรงณ์ชัย">นรงณ์ชัย</option>
+                  <option value="นรงณ์ชัย">...</option>
+              </select>
+          </div>
+          </form>
+          <div class="p-3">
+            <button class="btn btn-info btn-user btn-block mb-3" type="button" id="saveFarmButton" onclick="saveInformation()">บันทึกข้อมูล</button>
+          </div>
         </div>
+      </div>
     </div>
+    <script>
+      // Set farm name in modal when it opens
+    function setFarmName(farmName) {
+      document.getElementById('farmName').value = farmName;
+
+      // Disable future dates for start-date
+      let today = new Date().toISOString().split('T')[0];
+      document.getElementById('start-date').setAttribute('max', today);
+    }
+
+    // Automatically calculate end-date based on start-date and duration
+    document.getElementById('duration').addEventListener('input', function() {
+      let startDate = new Date(document.getElementById('start-date').value);
+      let duration = parseInt(this.value);
+
+      if (!isNaN(duration) && startDate) {
+        startDate.setDate(startDate.getDate() + duration);
+        let endDate = startDate.toISOString().split('T')[0];
+        document.getElementById('end-date').value = endDate;
+      }
+    });
+
+    // Handle saving information and displaying success message
+    function saveInformation() {
+    let farmName = document.getElementById('farmName').value;
+    let startDate = document.getElementById('start-date').value;
+    let duration = document.getElementById('duration').value;
+    let endDate = document.getElementById('end-date').value;
+    let amountChicken = document.getElementById('amount-chicken').value;
+    let expectedWeight = document.getElementById('expected-weight').value;
+    let worker = document.getElementById('inputState').value;
+
+    if (startDate && duration && amountChicken && expectedWeight) {
+        // Display success message
+        alert("เพิ่มเล้าสำเร็จ");
+
+        // Add a new row to the table
+        let table = document.querySelector('#dataTable tbody');
+        let newRow = table.insertRow();
+
+        newRow.innerHTML = `
+            <td>${farmName}</td>
+            <td class="text-center">1</td>
+            <td>${startDate}</td>
+            <td>${endDate}</td>
+            <td class="text-right">${expectedWeight}</td>
+            <td class="text-right">0</td> <!-- Default current weight -->
+            <td class="text-right">${amountChicken}</td>
+            <td class="text-right">0</td> <!-- Default dead chickens -->
+            <td>
+                <div class="d-flex justify-content-center align-items-center">
+                    <a href="#" class="card shadow bg-info text-center text-decoration-none">
+                        <span class="p-1 text-white">${worker}</span>
+                    </a>
+                </div>
+            </td>
+            <td class="d-flex align-items-center justify-content-center">
+                <div class="d-flex align-items-center">
+                    <a class="btn" href="WeightOfChicken.html" data-toggle="tooltip" title="#">
+                        <i class="fas fa-weight text-success"></i>
+                    </a>
+                    <a class="btn" href="own_numberofchicken.html" data-toggle="tooltip" title="#">
+                        <i class="fas fa-dizzy text-gray-800"></i>
+                    </a>
+                    <a class="btn" type="button" data-toggle="modal" data-target="#manageDetaile" data-toggle="tooltip" title="#">
+                        <i class="fas fa-clipboard-list text-warning"></i>
+                    </a>
+                    <a class="btn delete" data-toggle="tooltip" title="#">
+                        <i class="fas fa-trash-alt text-danger"></i>
+                    </a>
+                </div>
+            </td>
+        `;
+
+        // Optionally, reset the form after saving
+        document.getElementById('coopForm').reset();
+        document.getElementById('end-date').value = ""; // Clear end-date
+    } else {
+        alert("Please fill in all required fields.");
+    }
+}
+
+    </script>
 
     <!-- manage Labour -->
     <div class="modal fade" id="manageLabour" tabindex="-1" role="dialog" aria-labelledby="manageLabour"
@@ -564,29 +637,7 @@
         </div>
     </div>
 
-    <!-- detaile -->
-    <div class="modal fade" id="manageDetaile" tabindex="-1" role="dialog" aria-labelledby="manageDetaile"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="manageDetaile">ข้อมูลคนงาน</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                        ปิด
-                    </button>
-                    <button type="button" class="btn btn-primary">แก้ไข</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
