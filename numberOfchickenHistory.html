@@ -295,28 +295,32 @@
 <script>
   // Add info
   function addRow() {
-    // get input values
-    var weight = document.getElementById('weight').value;
-    var date = document.getElementById('dateInput').value;
-    var actions = $("table td:last-child").html();
-    // get the html table
-    // 0 = the first table
-    var table = document.getElementsByTagName('table')[0];
+    var weight = document.getElementById('numberInput').value;
+      var date = document.getElementById('dateInput').value;
+      var recorder = document.getElementById('recorder').value;
+      var actions = $("table td:last-child").html();
+      // get the html table
+      // 0 = the first table
+      var table = document.getElementsByTagName('table')[0];
 
-    // add new empty row to the table
-    // 0 = in the top 
-    // table.rows.length = the end
-    // table.rows.length/2+1 = the center
-    var newRow = table.insertRow(table.rows.length / 2 + 3);
+      // add new empty row to the table
+      // 0 = in the top 
+      // table.rows.length = the end
+      // table.rows.length/2+1 = the center
+      var newRow = table.insertRow(table.rows.length-1);
 
-    // add cells to the row
-    var cel1 = newRow.insertCell(0);
-    var cel2 = newRow.insertCell(1);
-    var cel3 = newRow.insertCell(2);
-    // add values to the cells
-    cel1.innerHTML = date;
-    cel2.innerHTML = weight;
-    cel3.innerHTML = '<a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>';
+      // add cells to the row
+      var cel1 = newRow.insertCell(0);
+      var cel2 = newRow.insertCell(1);
+      var cel3 = newRow.insertCell(2);
+      var cel4 = newRow.insertCell(3);
+      var cel5 = newRow.insertCell(4);
+      // add values to the cells
+      cel1.innerHTML = date;
+      cel2.innerHTML = weight;
+      cel4.innerHTML = recorder;
+      cel3.innerHTML = '<button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#openPic"data-toggle="tooltip" data-placement="top" title="ดูรูปภาพ">ดูรูปภาพ</button>';
+      cel5.innerHTML = '<a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>';
   }
 
   // Delete row on delete button click
@@ -659,15 +663,15 @@
           <fieldset disabled>
             <div class="form-group">
                 <label for="disabledTextInput">ผู้บันทึก</label>
-                <input type="text" id="ผู้บันทึก" class="form-control"
-                    placeholder="สมคิด">
+                <input type="text" id="recorder" class="form-control"
+                    value="สมคิด">
             </div>
         </fieldset>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
-        <button type="submit" class="btn btn-primary" id="submitForm">บันทึก</button>
+        <button type="submit" class="btn btn-primary" id="submitForm" onClick="addRow()">บันทึก</button>
       </div>
     </div>
   </div>
