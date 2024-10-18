@@ -153,7 +153,7 @@
                         <h1 class="m-0 h3 text-gray-800">เล้าไก่</h1>
                         <div class="px-2" data-toggle="tooltip" title="เพิ่มฟาร์ม">
                             <a class="btn btn-primary btn-circle btn-sm" type="button" data-toggle="modal"
-                                data-target="#AddCoopModal">
+                                data-target="#addCoop">
                                 <i class="fas fa-plus"></i>
                             </a>
                         </div>
@@ -180,8 +180,8 @@
                                             <th>น้ำหนักปัจจุบัน(กก.)</th>
                                             <th>ไก่ทั้งหมด(ตัว)</th>
                                             <th>ไก่ตาย(ตัว)</th>
-                                            <th>คนงานดูแลเล้า</th>
-                                            <th>การจัดการ</th>
+                                            <th class="text-center">คนงานดูแลเล้า</th>
+                                            <th class="text-center">การจัดการ</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -193,8 +193,8 @@
                                             <th>น้ำหนักปัจจุบัน(กก.)</th>
                                             <th>ไก่ทั้งหมด(ตัว)</th>
                                             <th>ไก่ตาย(ตัว)</th>
-                                            <th>คนงานดูแลเล้า</th>
-                                            <th>การจัดการ</th>
+                                            <th class="text-center">คนงานดูแลเล้า</th>
+                                            <th class="text-center">การจัดการ</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -209,8 +209,12 @@
                                             <td>
                                                 <div class="d-flex justify-content-center align-items-center">
                                                     <a href="#"
-                                                        class="card shadow bg-info text-center text-decoration-none">
-                                                        <span class="p-1 text-white">นรงณ์ชัย</span>
+                                                        class="card shadow bg-info text-center text-decoration-none mx-1">
+                                                        <span class="p-1 text-white">รง</span>
+                                                    </a>
+                                                    <a href="#"
+                                                        class="card shadow bg-info text-center text-decoration-none mx-1">
+                                                        <span class="p-1 text-white">อร</span>
                                                     </a>
                                                 </div>
                                             </td>
@@ -222,15 +226,16 @@
                                                     </a>
                                                     <a class="btn" href="own_numberofchicken.html" data-toggle="tooltip"
                                                         title="#">
-                                                        <i class="fas fa-dizzy text-gray-800"></i>
+                                                        <img src="img/chicken-svgrepo-com1.svg"
+                                                            class="btn-small-block mb-1">
                                                     </a>
                                                     <a class="btn" type="button" data-toggle="modal"
-                                                        data-target="#manageLabour" data-toggle="tooltip" title="#">
+                                                        data-target="#LabourInFarm" data-toggle="tooltip" title="#">
                                                         <img src="img/farmer-success.png"
                                                             class="btn-small-block mb-1" />
                                                     </a>
-                                                    <a class="btn" type="button" data-toggle="modal"
-                                                        data-target="#manageDetaile" data-toggle="tooltip" title="#">
+                                                    <a class="btn" type="button" data-toggle="tooltip" title="#"
+                                                    href="own_detailCoop.html">
                                                         <i class="fas fa-clipboard-list text-warning"></i>
                                                     </a>
                                                     <a class="btn delete" data-toggle="tooltip" title="#">
@@ -240,18 +245,26 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="text-center">1</td>
+                                            <td class="text-center">2</td>
                                             <td>2024-09-01</td>
                                             <td>2024-11-01</td>
-                                            <td class="text-right">3.2</td>
-                                            <td class="text-right">0.5</td>
+                                            <td class="text-right">2.8</td>
+                                            <td class="text-right">0.3</td>
                                             <td class="text-right">1000</td>
-                                            <td class="text-right">20</td>
+                                            <td class="text-right">21</td>
                                             <td>
                                                 <div class="d-flex justify-content-center align-items-center">
                                                     <a href="#"
-                                                        class="card shadow bg-info text-center text-decoration-none">
-                                                        <span class="p-1 text-white">นรงณ์ชัย</span>
+                                                        class="card shadow bg-info text-center text-decoration-none mx-1">
+                                                        <span class="p-1 text-white">รง</span>
+                                                    </a>
+                                                    <a href="#"
+                                                        class="card shadow bg-info text-center text-decoration-none mx-1">
+                                                        <span class="p-1 text-white">สว่าง</span>
+                                                    </a>
+                                                    <a href="#"
+                                                        class="card shadow bg-info text-center text-decoration-none mx-1">
+                                                        <span class="p-1 text-white">บุญรอด</span>
                                                     </a>
                                                 </div>
                                             </td>
@@ -263,15 +276,16 @@
                                                     </a>
                                                     <a class="btn" href="own_numberofchicken.html" data-toggle="tooltip"
                                                         title="#">
-                                                        <i class="fas fa-dizzy text-gray-800"></i>
+                                                        <img src="img/chicken-svgrepo-com1.svg"
+                                                            class="btn-small-block mb-1">
                                                     </a>
                                                     <a class="btn" type="button" data-toggle="modal"
-                                                        data-target="#manageLabour" data-toggle="tooltip" title="#">
+                                                        data-target="#LabourInFarm" data-toggle="tooltip" title="#">
                                                         <img src="img/farmer-success.png"
                                                             class="btn-small-block mb-1" />
                                                     </a>
-                                                    <a class="btn" type="button" data-toggle="modal"
-                                                        data-target="#manageDetaile" data-toggle="tooltip" title="#">
+                                                    <a class="btn" type="button" data-toggle="tooltip" title="#"
+                                                    href="own_detailCoop.html">
                                                         <i class="fas fa-clipboard-list text-warning"></i>
                                                     </a>
                                                     <a class="btn delete" data-toggle="tooltip" title="#">
@@ -303,55 +317,76 @@
 
     </div>
 
-    <!-- AddCoop Modal-->
-    <div class="modal fade" id="AddCoopModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <!-- add coop -->
+    <div class="modal fade" id="addCoop" tabindex="-1" role="dialog" aria-labelledby="addCoop" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="flex-column">
-                        <h3 class="modal-title font-weight-bold text-primary" id="exampleModalLabel">Coop No.#</h3>
-                        <h6 class="modal-title font-weight-bold" id="exampleModalLabel">ATTA Farm</h6>
-                    </div>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
+                    <h5 class="modal-title text-primary" id="addCoop">เพิ่มเล้า</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="p-3">
-                    <div class="form-group">
-                        <label for="start-date" class="font-weight-bold">Start Date</label>
-                        <input type="date" class="form-control" id="start-date" aria-describedby="dateHelp"
-                            placeholder="DD/MM/YYYY">
-                    </div>
-                    <div class="form-group">
-                        <label for="end-date" class="font-weight-bold">End Date</label>
-                        <input type="date" class="form-control" id="end-date" placeholder="DD/MM/YYYY">
-                    </div>
-                    <div class="form-group">
-                        <label for="amount-chicken" class="font-weight-bold">Amount of chickens</label>
-                        <input class="form-control" type="text" id="amount-chicken" placeholder="Amount of chickens">
-                    </div>
-                    <div class="form-group">
-                        <label for="expected-weight" class="font-weight-bold">Expected Weight</label>
-                        <input class="form-control" type="text" id="expected-weight" placeholder="Expected Weight">
-                    </div>
-                </form>
-                <div class="p-3">
-                    <button class="btn btn-info btn-user btn-block mt-3 mb-3" type="button" data-dismiss="modal"
-                        id="saveFarmButton">Save information</button>
+                <div class="modal-body">
+                    <form class="needs-validation" novalidate>
+                        <fieldset disabled>
+                            <div class="form-group">
+                                <label for="farm">ฟาร์ม</label>
+                                <input type="text" class="form-control" id="farm" value="ฟาร์มโชคชัย">
+                            </div>
+                        </fieldset>
+                        <div class="form-group">
+                            <label for="coop"><span style="color: #f50000;">*</span>เล้า</label>
+                            <select id="inputState" class="form-control">
+                                <option selected>1</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="startDate"><span style="color: #f50000;">*</span>วันที่เริ่ม</label>
+                            <input type="date" class="form-control " id="startDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="totalDay"><span style="color: #f50000;">*</span>จำนวนวัน</label>
+                            <input type="text" class="form-control" id="totalDay" placeholder="จำนวนวัน" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expectedW"><span style="color: #f50000;">*</span>น้ำหนักที่ต้องการ(กก.)</label>
+                            <input type="text" class="form-control" id="expectedW" placeholder="น้ำหนักที่ต้องการ(กก.)"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="amountChicken"><span style="color: #f50000;">*</span>จำนวนไก่ทั้งหมด</label>
+                            <input type="text" class="form-control" id="amountChicken" placeholder="จำนวนไก่ทั้งหมด"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="manageCoop"></span>คนงานดูแลเล้า</label>
+                                <select id="inputState" class="form-control">
+                                <option selected>คนงาน</option>
+                                <option value="นรงณ์ชัย">นรงณ์ชัย</option>
+                                <option value="นรงณ์ชัย">นรงณ์ชัย</option>
+                            </select>
+                        </div>
+                    </form>
                 </div>
-
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+                    <button type="button" class="btn btn-primary">บันทึก</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- manage Labour -->
-    <div class="modal fade" id="manageLabour" tabindex="-1" role="dialog" aria-labelledby="manageLabour"
+    <!-- Labour In Farm -->
+    <div class="modal fade" id="LabourInFarm" tabindex="-1" role="dialog" aria-labelledby="LabourInFarm"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="manageLabour">จัดการคนงาน</h5>
+                    <h5 class="modal-title text-primary" id="LabourInFarm">จัดการคนงาน</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -359,17 +394,19 @@
                 <div class="modal-body">
                     <form class="needs-validation" novalidate>
                         <div class="form-group">
-                            <label for="farm"><span style="color: #f50000">*</span>ฟาร์มที่สังกัด</label>
-                            <select class="custom-select custom-select-sm" required>
-                                <option selected>ฟาร์ม</option>
-                                <option value="ฟาร์มโชคชัย">ฟาร์มโชคชัย</option>
-                                <option value="ฟาร์มไก่เจริญกิจ">ฟาร์มไก่เจริญกิจ</option>
-                                <option value="ฟาร์มไก่เนื้อรุ่งเรือง">
-                                    ฟาร์มไก่เนื้อรุ่งเรือง
-                                </option>
-                            </select>
+                            <label for="Labour">คนงานดูแลเล้า</label>
+                            <h6 class="small pl-3">นรงณ์ชัย (รง)</h6>
+                            <h6 class="small pl-3">อรอนงณ์ (อร)</h6>
                         </div>
                         <div class="form-group">
+                            <label for="addLabour"></span>เพิ่มคนงานดูแลเล้า</label>
+                            <select class="custom-select custom-select-sm" required>
+                                <option selected>คนงาน</option>
+                                <option value="นรงณ์ชัย">นรงณ์ชัย</option>
+                                <option value="อรอนงณ์">อรอนงณ์</option>
+                            </select>
+                        </div>
+                        <!-- <div class="form-group">
                             <label for="manageCoop">ดูแลเล้า</label>
                             <span class="d-flex h6 small">สามารถจัดการผู้ดูแลเล้าได้ที่เล้าไก่</span>
                             <select id="inputState" class="form-control">
@@ -377,7 +414,7 @@
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                             </select>
-                        </div>
+                        </div> -->
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -390,29 +427,8 @@
         </div>
     </div>
 
-    <!-- detaile -->
-    <div class="modal fade" id="manageDetaile" tabindex="-1" role="dialog" aria-labelledby="manageDetaile"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="manageDetaile">ข้อมูลคนงาน</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                        ปิด
-                    </button>
-                    <button type="button" class="btn btn-primary">แก้ไข</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">

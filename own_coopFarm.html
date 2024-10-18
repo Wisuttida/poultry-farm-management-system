@@ -181,8 +181,8 @@
                                             <th>น้ำหนักปัจจุบัน(กก.)</th>
                                             <th>ไก่ทั้งหมด(ตัว)</th>
                                             <th>ไก่ตาย(ตัว)</th>
-                                            <th>คนงานดูแลเล้า</th>
-                                            <th>การจัดการ</th>
+                                            <th class="text-center">คนงานดูแลเล้า</th>
+                                            <th class="text-center">การจัดการ</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -194,8 +194,8 @@
                                             <th>น้ำหนักปัจจุบัน(กก.)</th>
                                             <th>ไก่ทั้งหมด(ตัว)</th>
                                             <th>ไก่ตาย(ตัว)</th>
-                                            <th>คนงานดูแลเล้า</th>
-                                            <th>การจัดการ</th>
+                                            <th class="text-center">คนงานดูแลเล้า</th>
+                                            <th class="text-center">การจัดการ</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -210,8 +210,12 @@
                                             <td>
                                                 <div class="d-flex justify-content-center align-items-center">
                                                     <a href="#"
-                                                        class="card shadow bg-info text-center text-decoration-none">
-                                                        <span class="p-1 text-white">นรงณ์ชัย</span>
+                                                        class="card shadow bg-info text-center text-decoration-none mx-1">
+                                                        <span class="p-1 text-white">รง</span>
+                                                    </a>
+                                                    <a href="#"
+                                                        class="card shadow bg-info text-center text-decoration-none mx-1">
+                                                        <span class="p-1 text-white">อร</span>
                                                     </a>
                                                 </div>
                                             </td>
@@ -223,15 +227,16 @@
                                                     </a>
                                                     <a class="btn" href="own_numberofchicken.html" data-toggle="tooltip"
                                                         title="#">
-                                                        <i class="fas fa-dizzy text-gray-800"></i>
+                                                        <img src="img/chicken-svgrepo-com1.svg"
+                                                            class="btn-small-block mb-1">
                                                     </a>
                                                     <a class="btn" type="button" data-toggle="modal"
-                                                        data-target="#manageLabour" data-toggle="tooltip" title="#">
+                                                        data-target="#LabourInFarm" data-toggle="tooltip" title="#">
                                                         <img src="img/farmer-success.png"
                                                             class="btn-small-block mb-1" />
                                                     </a>
-                                                    <a class="btn" type="button" data-toggle="modal"
-                                                        data-target="#manageDetaile" data-toggle="tooltip" title="#">
+                                                    <a class="btn" type="button" data-toggle="tooltip" title="#"
+                                                    href="own_detailCoop.html">
                                                         <i class="fas fa-clipboard-list text-warning"></i>
                                                     </a>
                                                     <a class="btn delete" data-toggle="tooltip" title="#">
@@ -241,18 +246,26 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="text-center">1</td>
+                                            <td class="text-center">2</td>
                                             <td>2024-09-01</td>
                                             <td>2024-11-01</td>
-                                            <td class="text-right">3.2</td>
-                                            <td class="text-right">0.5</td>
+                                            <td class="text-right">2.8</td>
+                                            <td class="text-right">0.3</td>
                                             <td class="text-right">1000</td>
-                                            <td class="text-right">20</td>
+                                            <td class="text-right">21</td>
                                             <td>
                                                 <div class="d-flex justify-content-center align-items-center">
                                                     <a href="#"
-                                                        class="card shadow bg-info text-center text-decoration-none">
-                                                        <span class="p-1 text-white">นรงณ์ชัย</span>
+                                                        class="card shadow bg-info text-center text-decoration-none mx-1">
+                                                        <span class="p-1 text-white">รง</span>
+                                                    </a>
+                                                    <a href="#"
+                                                        class="card shadow bg-info text-center text-decoration-none mx-1">
+                                                        <span class="p-1 text-white">สว่าง</span>
+                                                    </a>
+                                                    <a href="#"
+                                                        class="card shadow bg-info text-center text-decoration-none mx-1">
+                                                        <span class="p-1 text-white">บุญรอด</span>
                                                     </a>
                                                 </div>
                                             </td>
@@ -264,15 +277,16 @@
                                                     </a>
                                                     <a class="btn" href="own_numberofchicken.html" data-toggle="tooltip"
                                                         title="#">
-                                                        <i class="fas fa-dizzy text-gray-800"></i>
+                                                        <img src="img/chicken-svgrepo-com1.svg"
+                                                            class="btn-small-block mb-1">
                                                     </a>
                                                     <a class="btn" type="button" data-toggle="modal"
-                                                        data-target="#manageLabour" data-toggle="tooltip" title="#">
+                                                        data-target="#LabourInFarm" data-toggle="tooltip" title="#">
                                                         <img src="img/farmer-success.png"
                                                             class="btn-small-block mb-1" />
                                                     </a>
-                                                    <a class="btn" type="button" data-toggle="modal"
-                                                        data-target="#manageDetaile" data-toggle="tooltip" title="#">
+                                                    <a class="btn" type="button" data-toggle="tooltip" title="#"
+                                                    href="own_detailCoop.html">
                                                         <i class="fas fa-clipboard-list text-warning"></i>
                                                     </a>
                                                     <a class="btn delete" data-toggle="tooltip" title="#">
@@ -323,7 +337,7 @@
                             </div>
                         </fieldset>
                         <div class="form-group">
-                            เล้า
+                            <label for="coop"><span style="color: #f50000;">*</span>เล้า</label>
                             <select id="inputState" class="form-control">
                                 <option selected>1</option>
                                 <option value="5">5</option>
@@ -350,7 +364,7 @@
                                 required>
                         </div>
                         <div class="form-group">
-                            <label for="manageCoop" class="mb-0">คนงานดูแลเล้า</label>
+                            <label for="manageCoop"></span>คนงานดูแลเล้า</label>
                                 <select id="inputState" class="form-control">
                                 <option selected>คนงาน</option>
                                 <option value="นรงณ์ชัย">นรงณ์ชัย</option>
@@ -367,13 +381,13 @@
         </div>
     </div>
 
-    <!-- manage Labour -->
-    <div class="modal fade" id="manageLabour" tabindex="-1" role="dialog" aria-labelledby="manageLabour"
+    <!-- Labour In Farm -->
+    <div class="modal fade" id="LabourInFarm" tabindex="-1" role="dialog" aria-labelledby="LabourInFarm"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="manageLabour">จัดการคนงาน</h5>
+                    <h5 class="modal-title text-primary" id="LabourInFarm">จัดการคนงาน</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -381,14 +395,16 @@
                 <div class="modal-body">
                     <form class="needs-validation" novalidate>
                         <div class="form-group">
-                            <label for="farm"><span style="color: #f50000">*</span>ฟาร์มที่สังกัด</label>
+                            <label for="Labour">คนงานดูแลเล้า</label>
+                            <h6 class="small pl-3">นรงณ์ชัย (รง)</h6>
+                            <h6 class="small pl-3">อรอนงณ์ (อร)</h6>
+                        </div>
+                        <div class="form-group">
+                            <label for="addLabour"></span>เพิ่มคนงานดูแลเล้า</label>
                             <select class="custom-select custom-select-sm" required>
-                                <option selected>ฟาร์ม</option>
-                                <option value="ฟาร์มโชคชัย">ฟาร์มโชคชัย</option>
-                                <option value="ฟาร์มไก่เจริญกิจ">ฟาร์มไก่เจริญกิจ</option>
-                                <option value="ฟาร์มไก่เนื้อรุ่งเรือง">
-                                    ฟาร์มไก่เนื้อรุ่งเรือง
-                                </option>
+                                <option selected>คนงาน</option>
+                                <option value="นรงณ์ชัย">นรงณ์ชัย</option>
+                                <option value="อรอนงณ์">อรอนงณ์</option>
                             </select>
                         </div>
                         <!-- <div class="form-group">
@@ -412,30 +428,7 @@
         </div>
     </div>
 
-    <!-- detaile -->
-    <div class="modal fade" id="manageDetaile" tabindex="-1" role="dialog" aria-labelledby="manageDetaile"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="manageDetaile">ข้อมูลคนงาน</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                        ปิด
-                    </button>
-                    <button type="button" class="btn btn-primary">แก้ไข</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
@@ -469,6 +462,7 @@
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+    
 
 </body>
 
