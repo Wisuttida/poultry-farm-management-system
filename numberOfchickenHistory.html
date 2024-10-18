@@ -293,10 +293,6 @@
 </style>
 
 <script>
-  // disable future date
-  const today = new Date().toISOString().split('T')[0];
-  document.getElementById('dateInput').setAttribute('max', today);
-
   // Add info
   function addRow() {
     // get input values
@@ -389,7 +385,7 @@
       <!-- slide bar -->
       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
         <li class="nav-item active ">
-          <a class="nav-link " href="#">
+          <a class="nav-link " href="labour_coop.html">
             <img src="img/beehive-farm-svgrepo-com.svg" class="img-profile py-2 px-2">
             <span>เล้าไก่</span>
           </a>
@@ -924,6 +920,19 @@
                  
       });
   });
+  </script>
+
+  <!-- delete confirm -->
+   <!-- delete table -->
+   <script>
+    document.addEventListener("click", function (event) {
+      if (event.target.closest(".delete")) {
+        const row = event.target.closest("tr");
+        if (confirm("คุณแน่ใจหรือว่าต้องการลบข้อมูลนี้?")) {
+          row.remove();  // ลบแถว
+        }
+      }
+    });
   </script>
 
   <!-- Bootstrap core JavaScript-->
