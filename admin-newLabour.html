@@ -10,7 +10,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>SB Admin 2 - Tables</title>
+    <title>admin-newLabour</title>
 
     <!-- Custom fonts for this template -->
     <link
@@ -550,13 +550,19 @@
                 
                 <!-- Full Name Field (Readonly) -->
                 <div class="mb-3">
-                  <label for="fullName" class="form-label">ชื่อ</label>
+                  <label for="fullName" class="form-label">ชื่อเล่น</label>
                   <input type="text" class="form-control" id="fullName" readonly>
+                </div>
+
+                <!-- add Second Name Field -->
+                <div class="mb-3">
+                  <label for="secondName" class="form-label">ชื่อ</label>
+                  <input type="text" class="form-control" id="secondName" required>
                 </div>
                 
                 <!-- date add labour -->
                 <div class="form-group">
-                  <label for="dateAddFarm" class="font-weight-bold">วันที่เพิ่มคนงาน</label>
+                  <label for="dateAddLabour" class="font-weight-bold">วันที่เพิ่มคนงาน</label>
                   <input type="date" class="form-control" id="dateAddFarm" placeholder="DD/MM/YYYY">
                 </div>
 
@@ -570,6 +576,7 @@
                   </select>
                   <div class="invalid-feedback">โปรดเลือกฟาร์ม</div>
                 </div>
+                
 
                 <!-- Chicken Coop Selection (Dropdown) -->
                 <div class="mb-3">
@@ -596,6 +603,9 @@
 
     <!-- script for add labour to farm -->
     <script>
+      // Disable future dates on the dateAddLabour field
+      document.getElementById('dateAddFarm').max = new Date().toISOString().split("T")[0];
+
       // Function to open the modal and set username, full name dynamically
       function openModal(id, name) {
         document.getElementById('username').value = id;
@@ -609,30 +619,34 @@
 
       // Function to handle form submission and remove the row from the table
       document.getElementById('farmWorkerForm').addEventListener('submit', function(event) {
-      event.preventDefault();
+        event.preventDefault();
 
-      // Get selected values
-      const username = document.getElementById('username').value;
-      const fullName = document.getElementById('fullName').value;
-      const farm = document.getElementById('farm').value;
-      const coop = document.getElementById('coop').value;
+        // Get selected values
+        const username = document.getElementById('username').value;
+        const fullName = document.getElementById('fullName').value;
+        const farm = document.getElementById('farm').value;
+        const coop = document.getElementById('coop').value;
+        const dateAddLabour = document.getElementById('dateAddFarm').value;
 
-      // Check if all values are valid (you can add more validation if necessary)
-      if (!farm || !coop) {
-        alert('กรุณากรอกข้อมูลให้ครบถ้วน');
-        return;
-      }
+        // Check if all values are valid
+        if (!farm || !coop || !dateAddLabour) {
+          alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+          return;
+        }
 
-      // Perform the row removal action
-      const row = document.querySelector(`tr[data-username="${username}"]`);
-      if (row) {
-        row.remove(); // Remove the row from the table
-      }
+        // Perform the row removal action
+        const row = document.querySelector(`tr[data-username="${username}"]`);
+        if (row) {
+          row.remove(); // Remove the row from the table
+        }
 
-      // Close the modal
-      const modal = bootstrap.Modal.getInstance(document.getElementById('addLabourToFarmModal'));
-      modal.hide();
-    });
+        // Show success message
+        alert('เพิ่มคนงานสู่ฟาร์มและเล้าสำเร็จ');
+
+        // Close the modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById('addLabourToFarmModal'));
+        modal.hide();
+      });
 
     </script>
 

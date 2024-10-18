@@ -10,7 +10,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>SB Admin 2 - Tables</title>
+    <title>admin-detailsFarm</title>
 
     <!-- Custom fonts for this template -->
     <link
@@ -401,14 +401,14 @@
                   <button
                     class="btn btn-primary"
                     data-toggle="modal"
-                    data-target="#AddCoopModal"
+                    data-target="#AddFarmModal"
                   >
                     เพิ่มฟาร์มโดยผู้ดูแลระบบ
                   </button>
                 </div>
 
                 <!--AddFarm-->
-                <div class="modal fade" id="AddCoopModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="AddFarmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -497,6 +497,8 @@
                       const dateAdded = document.getElementById("dateAddFarm").value;
                       const location = document.getElementById("ownerFarm").value.trim();
 
+                      
+
                       if (farmName && owner && dateAdded && location) {
                         // ค่าเริ่มต้นสำหรับจำนวนเล้า, จำนวนคนงาน, และจำนวนไก่
                         const numCoops = 0;
@@ -514,10 +516,9 @@
                             <td>${numChickens}</td>
                             <td>
                               <div style="display: flex; align-items: center">
-                                <div class="form-check mb-1">
-                                  <input class="form-check-input" type="checkbox" value="" />
-                                  <label class="form-check-label"></label>
-                                </div>
+                                <a class="AddCoopModal" title="AddCoopModal" data-toggle="modal" data-target="#AddCoopModal">
+                                  <i class="bi bi-plus-circle-fill" style="font-size: 16px;"></i>
+                                </a>
                                 <a class="edit" title="Edit">
                                   <i class="fas fa-clipboard-list" style="font-size: 19px"></i>
                                 </a>
@@ -531,7 +532,7 @@
                         table.insertAdjacentHTML("beforeend", newRow);
 
                         
-                        $('#AddCoopModal').modal('hide');
+                        $('#AddFarmModal').modal('hide');
 
                         
                         document.getElementById("nameFarm").value = '';
@@ -543,6 +544,7 @@
                       }
                     });
                 </script>
+
                 <div class="card-body">
                   <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -570,17 +572,20 @@
                         <tr>
                           <td id="farmNameCell">ฟาร์มเรือนขวัญ</td>
                           <td id="ownerNameCell">มลิวรรณ ทวนทอง</td>
-                          <td>10</td>
+                          <td id="totalCoopsCell">10</td>
                           <td>61</td>
                           <td>1000</td>
                           <td>
                               <div style="display: flex; align-items: center;">
-                                  <a class="edit" title="Edit" onclick="openModal('ฟาร์มเรือนขวัญ', 'มลิวรรณ ทวนทอง', '123 ถนน หมู่บ้าน', this)">
-                                      <i class="fas fa-clipboard-list" style="font-size: 19px;"></i>
-                                  </a>
-                                  <a class="delete" title="Delete">
-                                      <i class="fas fa-trash-alt" style="font-size: 16px;"></i>
-                                  </a>
+                                <a class="AddCoopModal" title="AddCoopModal" data-toggle="modal" data-target="#AddCoopModal" onclick="setFarmName('ฟาร์มเรือนขวัญ')">
+                                  <i class="bi bi-plus-circle-fill" style="font-size: 16px;"></i>
+                                </a>                              
+                                <a class="edit" title="Edit" onclick="openModal('ฟาร์มเรือนขวัญ', 'มลิวรรณ ทวนทอง', '123 ถนน หมู่บ้าน', this)">
+                                  <i class="fas fa-clipboard-list" style="font-size: 19px;"></i>
+                                </a>
+                                <a class="delete" title="Delete">
+                                    <i class="fas fa-trash-alt" style="font-size: 16px;"></i>
+                                </a>
                               </div>
                           </td>
                       </tr>
@@ -588,6 +593,110 @@
                     </table>
                   </div>
                 </div>
+
+                <!-- AddCoop Modal-->
+                <div class="modal fade" id="AddCoopModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <div class="flex-column">
+                          <h3 class="modal-title font-weight-bold text-primary" id="exampleModalLabel">Coop No.#</h3>
+                          <h6 class="modal-title font-weight-bold" id="exampleModalLabel">ATTA Farm</h6>
+                        </div>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">×</span>
+                        </button>
+                      </div>
+                      <form class="p-3" id="coopForm">
+                        <!-- farmName Field (Readonly) -->
+                        <div class="mb-3">
+                          <label for="farmName" class="form-label">ชื่อฟาร์ม</label>
+                          <input type="text" class="form-control" id="farmName" readonly>
+                        </div>
+                        <div class="form-group">
+                          <label for="start-date" class="font-weight-bold">วันที่เริ่ม</label>
+                          <input type="date" class="form-control" id="start-date" aria-describedby="dateHelp" placeholder="DD/MM/YYYY" max="" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="duration" class="font-weight-bold">ระยะเวลา (วัน)</label>
+                          <input type="number" class="form-control" id="duration" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="end-date" class="font-weight-bold">วันที่สิ้นสุด</label>
+                          <input type="date" class="form-control" id="end-date" readonly>
+                        </div>
+                        <div class="form-group">
+                          <label for="amount-chicken" class="font-weight-bold">จำนวนไก่(ตัว)</label>
+                          <input class="form-control" type="number" id="amount-chicken" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="expected-weight" class="font-weight-bold">น้ำหนักที่ต้องการ(กก)</label>
+                          <input class="form-control" type="number" id="expected-weight" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="manageCoop" class="mb-0">คนงานดูแลเล้า</label>
+                              <select id="inputState" class="form-control">
+                              <option selected>คนงาน</option>
+                              <option value="นรงณ์ชัย">นรงณ์ชัย</option>
+                              <option value="นรงณ์ชัย">...</option>
+                          </select>
+                      </div>
+                      </form>
+                      <div class="p-3">
+                        <button class="btn btn-info btn-user btn-block mb-3" type="button" id="saveFarmButton" onclick="saveInformation()">บันทึกข้อมูล</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <script>
+                  // Set farm name in modal when it opens
+                function setFarmName(farmName) {
+                  document.getElementById('farmName').value = farmName;
+
+                  // Disable future dates for start-date
+                  let today = new Date().toISOString().split('T')[0];
+                  document.getElementById('start-date').setAttribute('max', today);
+                }
+
+                // Automatically calculate end-date based on start-date and duration
+                document.getElementById('duration').addEventListener('input', function() {
+                  let startDate = new Date(document.getElementById('start-date').value);
+                  let duration = parseInt(this.value);
+
+                  if (!isNaN(duration) && startDate) {
+                    startDate.setDate(startDate.getDate() + duration);
+                    let endDate = startDate.toISOString().split('T')[0];
+                    document.getElementById('end-date').value = endDate;
+                  }
+                });
+
+                // Handle saving information and displaying success message
+                function saveInformation() {
+                let startDate = document.getElementById('start-date').value;
+                let duration = document.getElementById('duration').value;
+                let amountChicken = document.getElementById('amount-chicken').value;
+                let expectedWeight = document.getElementById('expected-weight').value;
+
+                if (startDate && duration && amountChicken && expectedWeight) {
+                  // Display success message
+                  alert("Data recorded successfully");
+
+                  // Get the current total number of coops
+                  let totalCoopsCell = document.getElementById('totalCoopsCell');
+                  let currentCoops = parseInt(totalCoopsCell.innerText);
+
+                  // Increment the number of coops by 1
+                  totalCoopsCell.innerText = currentCoops + 1;
+
+                  // Optionally, clear the form after saving
+                  document.getElementById('coopForm').reset();
+                  document.getElementById('end-date').value = ""; // Clear end-date
+                } else {
+                  alert("Please fill in all required fields.");
+                }
+              }
+
+                </script>
                 
                 <!-- Edit Farm Modal -->
                 <div class="modal fade" id="editFarmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
