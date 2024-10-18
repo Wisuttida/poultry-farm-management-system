@@ -37,31 +37,132 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
     />
+
+    <style>
+      body {
+          color: #404E67;
+          /* background: #F5F7FA; */
+          /* font-family: 'Open Sans', sans-serif; */
+        }
+    
+        .table-wrapper {
+          width: fit-content;
+          margin: auto;
+          /* background: #F5F7FA; */
+          /* padding: 20px; */
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+        }
+    
+        .table-title {
+          padding-bottom: 10px;
+          margin: 0 0 10px;
+        }
+    
+        .table-title h2 {
+          margin: 6px 0 0;
+          font-size: 22px;
+        }
+    
+        .table-title .add-new {
+          float: right;
+          height: 30px;
+          font-weight: bold;
+          font-size: 12px;
+          text-shadow: none;
+          min-width: 100px;
+          border-radius: 50px;
+          line-height: 13px;
+        }
+    
+        .table-title .add-new i {
+          margin-right: 4px;
+        }
+    
+        table.table {
+          table-layout: fixed;
+        }
+    
+        table.table tr th,
+        table.table tr td {
+          border-color: #e9e9e9;
+        }
+    
+        table.table th i {
+          font-size: 13px;
+          margin: 0 5px;
+          cursor: pointer;
+        }
+    
+        table.table th:last-child {
+          width: 100px;
+        }
+    
+        table.table td a {
+          cursor: pointer;
+          display: inline-block;
+          margin: 0 5px;
+          min-width: 24px;
+        }
+    
+        table.table td a.addCoop {
+          color: #27C46B;
+        }
+    
+        table.table td a.edit {
+          color: #FFC107;
+        }
+    
+        table.table td a.delete {
+          color: #E34724;
+        }
+    
+        table.table td i {
+          font-size: 19px;
+        }
+    
+        table.table td a.addCoop i {
+          font-size: 24px;
+          margin-right: -1px;
+          position: relative;
+          top: 3px;
+        }
+    
+        table.table .form-control {
+          height: 32px;
+          line-height: 32px;
+          box-shadow: none;
+          border-radius: 2px;
+        }
+    
+        table.table .form-control.error {
+          border-color: #f50000;
+        }
+    
+        table.table td .add {
+          display: none;
+        }
+        #totalCoopsCell{
+          text-align: right;
+        }
+        #totalLabour{
+          text-align: right;
+        }
+        #totalChicken{
+          text-align: right;
+        }
+      </style>
+
   </head>
 
   <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
       <!-- Sidebar -->
+      <!-- Sidebar -->
       <ul
         class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
         id="accordionSidebar"
       >
-        <!-- Sidebar - Brand -->
-        <a
-          class="sidebar-brand d-flex align-items-center"
-          href="admin-dashboard.html"
-        >
-          <div class="sidebar-brand-icon mb-2">
-            <i class="bi bi-laptop"></i>
-          </div>
-          <div class="sidebar-brand-text mx-3">ผู้ดูแลระบบ</div>
-        </a>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0" />
-
-        <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
           <a class="nav-link" href="admin-dashboard.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -72,34 +173,64 @@
         <!-- Divider -->
         <hr class="sidebar-divider" />
 
-        <!-- Heading -->
-        <div class="sidebar-heading">การจัดการบัญชีผู้ใช้งาน</div>
-
-        <!-- Nav Item - Charts -->
+        <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-          <a class="nav-link" href="admin-usermanagement.html">
-            <i class="bi bi-person-fill"></i>
-            <span>การจัดการบัญชีผู้ใช้งาน</span></a
+          <a
+            class="nav-link collapsed"
+            href="#"
+            data-toggle="collapse"
+            data-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
           >
+            <i class="fas fa-fw fa-cog"></i>
+            <span>การจัดการข้อมูล</span>
+          </a>
+          <div
+            id="collapseOne"
+            class="collapse"
+            aria-labelledby="headingOne"
+            data-parent="#accordionSidebar"
+          >
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="admin-usermanagement.html"
+                >บัญชีผู้ใช้</a
+              >
+              <a class="collapse-item" href="admin-detailsFarm.html"
+                >ฟาร์มไก่</a
+              >
+              <a class="collapse-item" href="admin-detailsCoop.html">เล้าไก่</a>
+            </div>
+          </div>
         </li>
 
-        <!-- Divider -->
-        <hr class="sidebar-divider" />
-
-        <!-- Heading -->
-        <div class="sidebar-heading">ข้อมูลของฟาร์มไก่</div>
-
-        <!-- Nav Item - Charts -->
+        <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-          <a class="nav-link" href="admin-detailsFarm.html">
-            <img src="img/beehive-farm-svgrepo-com.svg" class="img-profile py-2 px-2 ">
-            <!-- <i class="img/beehive-farm-svgrepo-com.svg"></i> -->
-            <span>การจัดการข้อมูลของฟาร์มไก่</span></a>
+          <a
+            class="nav-link collapsed"
+            href="#"
+            data-toggle="collapse"
+            data-target="#collapseTwo"
+            aria-expanded="true"
+            aria-controls="collapseTwo"
           >
+            <i class="fas fa-fw fa-cog"></i>
+            <span>การจัดการคนงาน</span>
+          </a>
+          <div
+            id="collapseTwo"
+            class="collapse"
+            aria-labelledby="headingTwo"
+            data-parent="#accordionSidebar"
+          >
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="admin-newLabour.html"
+                >ไม่มีสังกัด</a
+              >
+              <a class="collapse-item" href="admin-labour.html">มีสังกัด</a>
+            </div>
+          </div>
         </li>
-        
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block" />
 
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
@@ -516,7 +647,7 @@
                             <td>${numChickens}</td>
                             <td>
                               <div style="display: flex; align-items: center">
-                                <a class="AddCoopModal" title="AddCoopModal" data-toggle="modal" data-target="#AddCoopModal">
+                                <a class="addCoop" title="AddCoopModal" data-toggle="modal" data-target="#AddCoopModal">
                                   <i class="bi bi-plus-circle-fill" style="font-size: 16px;"></i>
                                 </a>
                                 <a class="edit" title="Edit">
@@ -573,18 +704,18 @@
                           <td id="farmNameCell">ฟาร์มเรือนขวัญ</td>
                           <td id="ownerNameCell">มลิวรรณ ทวนทอง</td>
                           <td id="totalCoopsCell">10</td>
-                          <td>61</td>
-                          <td>1000</td>
+                          <td id="totalLabour">61</td>
+                          <td id="totalChicken">1000</td>
                           <td>
-                              <div style="display: flex; align-items: center;">
-                                <a class="AddCoopModal" title="AddCoopModal" data-toggle="modal" data-target="#AddCoopModal" onclick="setFarmName('ฟาร์มเรือนขวัญ')">
-                                  <i class="bi bi-plus-circle-fill" style="font-size: 16px;"></i>
+                              <div style="display: flex; justify-content: space-between;">
+                                <a class="addCoop" title="เพิ่มเล้า" data-toggle="modal" data-target="#AddCoopModal" onclick="setFarmName('ฟาร์มเรือนขวัญ')">
+                                  <i class="bi bi-plus-circle-fill" style="font-size: 18px; top: -5px;"></i>
                                 </a>                              
-                                <a class="edit" title="Edit" onclick="openModal('ฟาร์มเรือนขวัญ', 'มลิวรรณ ทวนทอง', '123 ถนน หมู่บ้าน', this)">
-                                  <i class="fas fa-clipboard-list" style="font-size: 19px;"></i>
+                                <a class="edit" title="แก้ไขข้อมูล" onclick="openModal('ฟาร์มเรือนขวัญ', 'มลิวรรณ ทวนทอง', '123 ถนน หมู่บ้าน', this)">
+                                  <i class="fas fa-clipboard-list" style="font-size: 18px;"></i>
                                 </a>
-                                <a class="delete" title="Delete">
-                                    <i class="fas fa-trash-alt" style="font-size: 16px;"></i>
+                                <a class="delete" title="ลบข้อมูล">
+                                    <i class="fas fa-trash-alt" style="font-size: 17px;"></i>
                                 </a>
                               </div>
                           </td>
