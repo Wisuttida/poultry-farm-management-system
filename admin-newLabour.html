@@ -39,111 +39,116 @@
     />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7x1q3YC7PJnX+qCQl5gxS1hge8+tN1R7XlM" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7x1q3YC7PJnX+qCQl5gxS1hge8+tN1R7XlM"
+      crossorigin="anonymous"
+    />
 
     <style>
       body {
-      color: #404E67;
-      /* background: #F5F7FA; */
-      /* font-family: 'Open Sans', sans-serif; */
-    }
+        color: #404e67;
+        /* background: #F5F7FA; */
+        /* font-family: 'Open Sans', sans-serif; */
+      }
 
-    .table-wrapper {
-      width: fit-content;
-      margin: auto;
-      /* background: #F5F7FA; */
-      /* padding: 20px; */
-      box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-    }
+      .table-wrapper {
+        width: fit-content;
+        margin: auto;
+        /* background: #F5F7FA; */
+        /* padding: 20px; */
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+      }
 
-    .table-title {
-      padding-bottom: 10px;
-      margin: 0 0 10px;
-    }
+      .table-title {
+        padding-bottom: 10px;
+        margin: 0 0 10px;
+      }
 
-    .table-title h2 {
-      margin: 6px 0 0;
-      font-size: 22px;
-    }
+      .table-title h2 {
+        margin: 6px 0 0;
+        font-size: 22px;
+      }
 
-    .table-title .add-new {
-      float: right;
-      height: 30px;
-      font-weight: bold;
-      font-size: 12px;
-      text-shadow: none;
-      min-width: 100px;
-      border-radius: 50px;
-      line-height: 13px;
-    }
+      .table-title .add-new {
+        float: right;
+        height: 30px;
+        font-weight: bold;
+        font-size: 12px;
+        text-shadow: none;
+        min-width: 100px;
+        border-radius: 50px;
+        line-height: 13px;
+      }
 
-    .table-title .add-new i {
-      margin-right: 4px;
-    }
+      .table-title .add-new i {
+        margin-right: 4px;
+      }
 
-    table.table {
-      table-layout: fixed;
-    }
+      table.table {
+        table-layout: fixed;
+      }
 
-    table.table tr th,
-    table.table tr td {
-      border-color: #e9e9e9;
-    }
+      table.table tr th,
+      table.table tr td {
+        border-color: #e9e9e9;
+      }
 
-    table.table th i {
-      font-size: 13px;
-      margin: 0 5px;
-      cursor: pointer;
-    }
+      table.table th i {
+        font-size: 13px;
+        margin: 0 5px;
+        cursor: pointer;
+      }
 
-    table.table th:last-child {
-      width: 100px;
-    }
+      table.table th:last-child {
+        width: 100px;
+      }
 
-    table.table td a {
-      cursor: pointer;
-      display: inline-block;
-      margin: 0 5px;
-      min-width: 24px;
-    }
+      table.table td a {
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 5px;
+        min-width: 24px;
+      }
 
-    table.table td a.add {
-      color: #27C46B;
-    }
+      table.table td a.add {
+        color: #27c46b;
+      }
 
-    table.table td a.edit {
-      color: #FFC107;
-    }
+      table.table td a.edit {
+        color: #ffc107;
+      }
 
-    table.table td a.delete {
-      color: #E34724;
-    }
+      table.table td a.delete {
+        color: #e34724;
+      }
 
-    table.table td i {
-      font-size: 19px;
-    }
+      table.table td i {
+        font-size: 19px;
+      }
 
-    table.table td a.add i {
-      font-size: 24px;
-      margin-right: -1px;
-      position: relative;
-      top: 3px;
-    }
+      table.table td a.add i {
+        font-size: 24px;
+        margin-right: -1px;
+        position: relative;
+        top: 3px;
+      }
 
-    table.table .form-control {
-      height: 32px;
-      line-height: 32px;
-      box-shadow: none;
-      border-radius: 2px;
-    }
+      table.table .form-control {
+        height: 32px;
+        line-height: 32px;
+        box-shadow: none;
+        border-radius: 2px;
+      }
 
-    table.table .form-control.error {
-      border-color: #f50000;
-    }
+      table.table .form-control.error {
+        border-color: #f50000;
+      }
 
-    table.table td .add {
-      display: none;
-    }
+      table.table td .add {
+        display: none;
+      }
     </style>
   </head>
 
@@ -441,71 +446,84 @@
           <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
       </ul>
-      
-          <!-- Begin Page Content -->
-          <div class="container-fluid">
-            
-            <!-- DataTales Example -->
-            <div class="container-fluid" style="margin-top: 5%;">
-              
-              <!-- DataTales Example -->
-              <div class="card shadow mb-4">
-                <div
-                  class="card-header py-3 d-flex justify-content-between align-items-center"
+
+      <!-- Begin Page Content -->
+      <div class="container-fluid">
+        <div class="d-flex align-items-center mt-4">
+          <h1 class="ml-4 h3 text-gray-800">ข้อมูลของคนงานที่ไม่มีสังกัด</h1>
+        </div>
+        <!-- DataTales Example -->
+        <div class="container-fluid" style="margin-top: 1%">
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div
+              class="card-header py-3 d-flex justify-content-between align-items-center"
+            >
+              <h6 class="m-0 font-weight-bold text-primary">
+                ข้อมูลของคนงานที่ไม่มีสังกัด
+              </h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table
+                  class="table table-bordered"
+                  id="dataTable"
+                  width="100%"
+                  cellspacing="0"
                 >
-                  <h6 class="m-0 font-weight-bold text-primary">
-                    ข้อมูลของคนงานที่ไม่มีสังกัด
-                  </h6>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                      <thead>
-                        <tr>
-                          <th>ชื่อบัญชีผู้ใช้</th>
-                          <th>ชื่อคนงาน</th>                          
-                          <th style="width: 175px;">การจัดการคนงาน</th>
-                        </tr>
-                      </thead>
-                      <tfoot>
-                        <tr>
-                            <th>ชื่อบัญชีผู้ใช้</th>
-                            <th>ชื่อคนงาน</th>
-                            <th>การจัดการคนงาน</th>
-                          </tr>
-                      </tfoot>
-                      <tbody>
-                        <tr>
-                          <td>phaarwii67</td>
-                          <td>พันเกล้า	ติณรัตน์</td>
-                          <td>
-                            <div style="display: flex; margin-left: 5%;" >
-                              <a class="edit" title="Edit" onclick="openModal('phaarwii67','พันเกล้า ติณรัตน์')">
-                                <i class="fas fa-clipboard-list" style="font-size: 20px;"></i>
-                              </a>
-                              <a
-                                class="delete"
-                                title="Delete"
-                                onclick="delInfo(this);"
-                                data-toggle="tooltip"
-                                style=" margin-left: 7%;"
-                              >
-                                <i
-                                  class="fas fa-trash-alt"
-                                  style="font-size: 16px"
-                                ></i>
-                              </a>
-                            </div>
-                          </td>
-                      </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+                  <thead>
+                    <tr>
+                      <th>ชื่อบัญชีผู้ใช้</th>
+                      <th>ชื่อคนงาน</th>
+                      <th style="width: 175px">การจัดการคนงาน</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>ชื่อบัญชีผู้ใช้</th>
+                      <th>ชื่อคนงาน</th>
+                      <th>การจัดการคนงาน</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <tr>
+                      <td>phaarwii67</td>
+                      <td>พันเกล้า ติณรัตน์</td>
+                      <td>
+                        <div style="display: flex; margin-left: 5%">
+                          <a
+                            class="edit"
+                            title="Edit"
+                            onclick="openModal('phaarwii67','พันเกล้า ติณรัตน์')"
+                          >
+                            <i
+                              class="fas fa-clipboard-list"
+                              style="font-size: 20px"
+                            ></i>
+                          </a>
+                          <a
+                            class="delete"
+                            title="Delete"
+                            onclick="delInfo(this);"
+                            data-toggle="tooltip"
+                            style="margin-left: 7%"
+                          >
+                            <i
+                              class="fas fa-trash-alt"
+                              style="font-size: 16px"
+                            ></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-          <!-- /.container-fluid -->
-           <!-- Footer -->
+        </div>
+        <!-- /.container-fluid -->
+        <!-- Footer -->
         <footer class="sticky-footer bg-white">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
@@ -514,12 +532,10 @@
           </div>
         </footer>
         <!-- End of Footer -->
-          </div>
-        <!-- End of Main Content -->
-
-        
       </div>
-      <!-- End of Content Wrapper -->
+      <!-- End of Main Content -->
+    </div>
+    <!-- End of Content Wrapper -->
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
@@ -566,14 +582,26 @@
       </div>
     </div>
 
-    
     <!-- modals add labour to farm -->
-    <div class="modal fade" id="addLabourToFarmModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="addLabourToFarmModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">การเพิ่มคนงานเข้าสู่ฟาร์ม</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <h5 class="modal-title" id="exampleModalLabel">
+              การเพิ่มคนงานเข้าสู่ฟาร์ม
+            </h5>
+            <button
+              class="close"
+              type="button"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
               <span aria-hidden="true">×</span>
             </button>
           </div>
@@ -583,25 +611,47 @@
                 <!-- Username Field (Readonly) -->
                 <div class="mb-3">
                   <label for="username" class="form-label">ชื่อผู้ใช้งาน</label>
-                  <input type="text" class="form-control" id="username" readonly>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    readonly
+                  />
                 </div>
-                
+
                 <!-- Full Name Field (Readonly) -->
                 <div class="mb-3">
                   <label for="fullName" class="form-label">ชื่อเล่น</label>
-                  <input type="text" class="form-control" id="fullName" readonly>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="fullName"
+                    readonly
+                  />
                 </div>
 
                 <!-- add Second Name Field -->
                 <div class="mb-3">
                   <label for="secondName" class="form-label">ชื่อ</label>
-                  <input type="text" class="form-control" id="secondName" required>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="secondName"
+                    required
+                  />
                 </div>
-                
+
                 <!-- date add labour -->
                 <div class="form-group">
-                  <label for="dateAddLabour" class="font-weight-bold">วันที่เพิ่มคนงาน</label>
-                  <input type="date" class="form-control" id="dateAddFarm" placeholder="DD/MM/YYYY">
+                  <label for="dateAddLabour" class="font-weight-bold"
+                    >วันที่เพิ่มคนงาน</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="dateAddFarm"
+                    placeholder="DD/MM/YYYY"
+                  />
                 </div>
 
                 <!-- Farm Selection (Dropdown) -->
@@ -614,7 +664,6 @@
                   </select>
                   <div class="invalid-feedback">โปรดเลือกฟาร์ม</div>
                 </div>
-                
 
                 <!-- Chicken Coop Selection (Dropdown) -->
                 <div class="mb-3">
@@ -630,7 +679,9 @@
 
                 <!-- Submit Button -->
                 <div class="modal-footer">
-                  <button type="submit" class="btn btn-primary">บันทึกการเปลี่ยนแปลง</button>
+                  <button type="submit" class="btn btn-primary">
+                    บันทึกการเปลี่ยนแปลง
+                  </button>
                 </div>
               </form>
             </div>
@@ -642,59 +693,67 @@
     <!-- script for add labour to farm -->
     <script>
       // Disable future dates on the dateAddLabour field
-      document.getElementById('dateAddFarm').max = new Date().toISOString().split("T")[0];
+      document.getElementById("dateAddFarm").max = new Date()
+        .toISOString()
+        .split("T")[0];
 
       // Function to open the modal and set username, full name dynamically
       function openModal(id, name) {
-        document.getElementById('username').value = id;
-        document.getElementById('fullName').value = name;
+        document.getElementById("username").value = id;
+        document.getElementById("fullName").value = name;
 
-        var myModal = new bootstrap.Modal(document.getElementById('addLabourToFarmModal'), {
-          keyboard: false
-        });
+        var myModal = new bootstrap.Modal(
+          document.getElementById("addLabourToFarmModal"),
+          {
+            keyboard: false,
+          }
+        );
         myModal.show();
       }
 
       // Function to handle form submission and remove the row from the table
-      document.getElementById('farmWorkerForm').addEventListener('submit', function(event) {
-        event.preventDefault();
+      document
+        .getElementById("farmWorkerForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
 
-        // Get selected values
-        const username = document.getElementById('username').value;
-        const fullName = document.getElementById('fullName').value;
-        const farm = document.getElementById('farm').value;
-        const coop = document.getElementById('coop').value;
-        const dateAddLabour = document.getElementById('dateAddFarm').value;
+          // Get selected values
+          const username = document.getElementById("username").value;
+          const fullName = document.getElementById("fullName").value;
+          const farm = document.getElementById("farm").value;
+          const coop = document.getElementById("coop").value;
+          const dateAddLabour = document.getElementById("dateAddFarm").value;
 
-        // Check if all values are valid
-        if (!farm || !coop || !dateAddLabour) {
-          alert('กรุณากรอกข้อมูลให้ครบถ้วน');
-          return;
-        }
+          // Check if all values are valid
+          if (!farm || !coop || !dateAddLabour) {
+            alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+            return;
+          }
 
-        // Perform the row removal action
-        const row = document.querySelector(`tr[data-username="${username}"]`);
-        if (row) {
-          row.remove(); // Remove the row from the table
-        }
+          // Perform the row removal action
+          const row = document.querySelector(`tr[data-username="${username}"]`);
+          if (row) {
+            row.remove(); // Remove the row from the table
+          }
 
-        // Show success message
-        alert('เพิ่มคนงานสู่ฟาร์มและเล้าสำเร็จ');
+          // Show success message
+          alert("เพิ่มคนงานสู่ฟาร์มและเล้าสำเร็จ");
 
-        // Close the modal
-        const modal = bootstrap.Modal.getInstance(document.getElementById('addLabourToFarmModal'));
-        modal.hide();
-      });
-
+          // Close the modal
+          const modal = bootstrap.Modal.getInstance(
+            document.getElementById("addLabourToFarmModal")
+          );
+          modal.hide();
+        });
     </script>
 
     <!--delete-->
     <script>
-      document.addEventListener("click", function(event) {
+      document.addEventListener("click", function (event) {
         if (event.target.closest(".delete")) {
           const row = event.target.closest("tr");
           if (confirm("คุณแน่ใจหรือว่าต้องการลบข้อมูลนี้?")) {
-            row.remove();  // ลบแถว
+            row.remove(); // ลบแถว
           }
         }
       });
@@ -718,8 +777,15 @@
     <script src="js/demo/datatables-demo.js"></script>
 
     <!-- Bootstrap JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybZuecKFnPQcI9i1MOsQpq6rQpK7l11m57j0eNK2fAYjHkVf" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0ey6+5O2p7u6y4PMLT24Mb6I1jvuZJ9z5jq6cazvKsv+f5Z5IH413L3" crossorigin="anonymous"></script>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz4fnFO9gybZuecKFnPQcI9i1MOsQpq6rQpK7l11m57j0eNK2fAYjHkVf"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+      integrity="sha384-cn7l7gDp0ey6+5O2p7u6y4PMLT24Mb6I1jvuZJ9z5jq6cazvKsv+f5Z5IH413L3"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
