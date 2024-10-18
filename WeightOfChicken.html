@@ -229,61 +229,18 @@
     <div id="wrapper">
       <!--sidebar-->
       <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">
-            <img src="img/Farm by iconSvg.co (1).svg" class="img-profile pb-2">
-            <span>ฟาร์ม</span>
-          </a>
-        </li>
-
-        <!-- Divider -->
-        <hr class="mb-0 sidebar-divider">
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFarm" aria-expanded="true"
-            aria-controls="collapseFarm">
+        <li class="nav-item active ">
+          <a class="nav-link " href="labour_coop.html">
             <img src="img/beehive-farm-svgrepo-com.svg" class="img-profile py-2 px-2">
             <span>เล้าไก่</span>
           </a>
-          <div id="collapseFarm" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="own_coopFarm.html">ฟาร์มโชคชัย</a>
-              <a class="collapse-item" href="own_coopFarm2.html">ฟาร์มไก่เนื้อรุ่งเรือง</a>
-              <a class="collapse-item" href="own_coopFarm3.html">ฟาร์มไก่เจริญกิจ</a>
-            </div>
-          </div>
         </li>
-
-        <hr class="mb-0 sidebar-divider">
-
-        <hr class="mb-0 sidebar-divider">
-
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-            aria-controls="collapseTwo">
-            <img src="img/farmer.png" class="img-profile py-2 px-2">
-            <span>คนงาน</span>
-          </a>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="own_labourInFarm.html">คนงานดูแลเล้า</a>
-              <a class="collapse-item" href="own_labourNew.html">คนงานใหม่</a>
-            </div>
-          </div>
-        </li>
-
-        <hr class="mb-0 sidebar-divider">
-
         <!-- Divider -->
         <hr class="sidebar-divider">
-
-
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
           <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
-
       </ul>
       <div class="container-fluid pt-4">
         <!-- Page Heading -->
@@ -610,6 +567,18 @@
                 }
             });
         });
+    </script>
+
+    <!-- delete table -->
+    <script>
+      document.addEventListener("click", function (event) {
+        if (event.target.closest(".delete")) {
+          const row = event.target.closest("tr");
+          if (confirm("คุณแน่ใจหรือว่าต้องการลบข้อมูลนี้?")) {
+            row.remove();  // ลบแถว
+          }
+        }
+      });
     </script>
 
   <!-- Bootstrap core JavaScript-->
