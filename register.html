@@ -99,7 +99,13 @@
                                                 </div>
                                                 <span id="name-error" class="error-message" style="margin-left: 3%;"></span>
                                             </div>
-                                            <div class="userName-group">
+                                            <div class="nickName-group mb-3">
+                                                <span class="star">*</span>ชื่อเล่น<br>
+                                                <input type="text" class="form-control form-control-user" id="nickName"
+                                                    placeholder="ชื่อเล่น">
+                                                <span id="nickName-error" class="error-message"></span>
+                                            </div>
+                                            <div class="userName-group mb-3">
                                                 <span class="star">*</span>ชื่อบัญชีผู้ใช้<br>
                                                 <input type="text" class="form-control form-control-user" id="userName"
                                                     placeholder="ชื่อบัญชีผู้ใช้">
@@ -138,7 +144,7 @@
                                                         id="Password" placeholder="รหัสผ่าน">
                                                     <small id="passwordHelpInline" class="text-muted">
                                                         ควรมีความยาว 8-20 ตัวอักษร
-                                                    </small>
+                                                    </small><br>
                                                     <span id="password-error" class="error-message"></span>
                                                 </div>
                                                 <div class="col-sm-6">
@@ -175,6 +181,7 @@
                 const firstName = document.getElementById("FirstName").value.trim();
                 const lastName = document.getElementById("LastName").value.trim();
                 const userName = document.getElementById("userName").value.trim();
+                const nickName = document.getElementById("nickName").value.trim();
                 const email = document.getElementById("Email").value.trim();
                 const line = document.getElementById("line").value.trim();
                 const password = document.getElementById("Password").value.trim();
@@ -187,6 +194,7 @@
                 document.getElementById("name-error").textContent = "";
                 document.getElementById("fname-error").textContent = "";
                 document.getElementById("lname-error").textContent = "";
+                document.getElementById("nickName-error").textContent = "";
                 document.getElementById("userName-error").textContent = "";
                 document.getElementById("email-error").textContent = "";
                 document.getElementById("line-error").textContent = "";
@@ -219,6 +227,11 @@
                     document.getElementById("userName-error").textContent = "กรุณากรอกชื่อบัญชีผู้ใช้";
                     isValid = false;
                 }
+                // Validate nickName
+                if (nickName === "") {
+                    document.getElementById("nickName-error").textContent = "กรุณากรอกชื่อเล่น";
+                    isValid = false;
+                }
 
                 // Validate line ID
                 if (line === "" && email === "") {
@@ -229,7 +242,7 @@
 
                 // Validate password
                 if (password.length < 8) {
-                    document.getElementById("password-error").textContent = "กรุณากรอกรหัสผ่านอย่างน้อย 8 ตัวอักษร";
+                    document.getElementById("password-error").textContent = "กรุณากรอกรหัสผ่านความยาวอย่างน้อย 8 ตัวอักษร";
                     isValid = false;
                 }
 
