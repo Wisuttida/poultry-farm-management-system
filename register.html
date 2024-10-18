@@ -19,115 +19,147 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    
+
+    <style>
+        .error-message {
+            color: red;
+            font-size: 12px;
+        }
+        .star{
+            color: red;
+        }
+    </style>
 
 </head>
 
 <body class="bg-gradient-primary">
 
-    <div class="container">
-        <div class="row justify-content-center">
-        <div class="col-xl-10 col-lg-12 col-md-9">
-		
-        <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
-                <!-- Nested Row within Card Body -->
-                <div class="row mb-10">
-                    <!--div class="col-lg-5 d-none d-lg-block bg-register-image"></div-->
-                    <div class="col-lg-6 d-none d-lg-block text-center" style="margin-top: 10%;">
-                    	<img src="./img/login3.png" height="600" width="452">
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="pt-5 pb-3 pr-4 pl-4">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">สร้างบัญชีผู้ใช้</h1>
-                            </div>
-                            <form class="user" style="font-size: 15px;">
-                                <div class="form-group" style="margin-left: 1%;">
-                                    <span style="color: red;">*</span>คำนำหน้า<br>
-                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="owner" id="mr" value="นาย">
-                                        <label class="form-check-label" for="owner">นาย</label>
-                                      </div>
-                                      <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="labour" id="mrs" value="นาง">
-                                        <label class="form-check-label" for="labour">นาง</label>
-                                      </div>
-                                      <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="labour" id="ms" value="นางสาว">
-                                        <label class="form-check-label" for="labour">นางสาว</label>
-                                      </div>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-10 col-lg-12 col-md-9">
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="card-body p-0">
+                            <!-- Nested Row within Card Body -->
+                            <div class="row mb-10">
+                                <div class="col-lg-6 d-none d-lg-block text-center" style="margin-top: 10%;">
+                                    <img src="./img/login3.png" height="600" width="452">
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <span style="color: red;">*</span>ชื่อ<br>
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="ชื่อ">
+                                <div class="col-lg-6">
+                                    <div class="pt-5 pb-3 pr-4 pl-4">
+                                        <div class="text-center">
+                                            <h1 class="h4 text-gray-900 mb-4">สร้างบัญชีผู้ใช้</h1>
+                                        </div>
+                                        <form class="user" id="registerForm" onsubmit="return validateForm()"
+                                            style="font-size: 15px;">
+                                            <div class="pronoun form-group" style="margin-left: 1%;" id="pronoun">
+                                                <span class="star">*</span>คำนำหน้า<br>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="pronoun"
+                                                        value="นาย">
+                                                    <label class="form-check-label" for="owner">นาย</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="pronoun"
+                                                        value="นาง">
+                                                    <label class="form-check-label" for="labour">นาง</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="pronoun"
+                                                        value="นางสาว">
+                                                    <label class="form-check-label" for="labour">นางสาว</label>
+                                                </div>
+                                                <span id="pronoun-error" class="error-message"></span>
+                                            </div>
+                                            <div class="name form-group row" id="name">
+                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                    <span class="star">*</span>ชื่อ<br>
+                                                    <input type="text" class="form-control form-control-user"
+                                                        id="FirstName" placeholder="ชื่อ">
+                                                    <span id="fname-error" class="error-message"></span>
+
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <span class="star">*</span>นามสกุล<br>
+                                                    <input type="text" class="form-control form-control-user"
+                                                        id="LastName" placeholder="นามสกุล">
+                                                    <span id="lname-error" class="error-message"></span>
+
+                                                </div>
+                                                <span id="name-error" class="error-message" style="margin-left: 3%;"></span>
+                                            </div>
+                                            <div class="userName-group">
+                                                <span class="star">*</span>ชื่อบัญชีผู้ใช้<br>
+                                                <input type="text" class="form-control form-control-user" id="userName"
+                                                    placeholder="ชื่อบัญชีผู้ใช้">
+                                                <span id="userName-error" class="error-message"></span>
+                                            </div>
+                                            <div class="role form-group" id="role" style="margin-left: 1%;">
+                                                <span class="star">*</span>ตำแหน่ง<br>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="role"
+                                                        value="เจ้าของฟาร์ม">
+                                                    <label class="form-check-label" for="owner">เจ้าของฟาร์ม</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="role"
+                                                        value="คนงาน">
+                                                    <label class="form-check-label" for="labour">คนงาน</label>
+                                                </div>
+                                                <span id="role-error" class="error-message"></span>
+                                            </div>
+                                            <div class="email form-group">
+                                                <span>Email Address</span><br>
+                                                <input type="email" class="form-control form-control-user" id="Email"
+                                                    placeholder="Email Address">
+                                                <span id="email-error" class="error-message"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <span>Line ID</span><br>
+                                                <input type="text" class="form-control form-control-user" id="line"
+                                                    placeholder="Line ID">
+                                                <span id="line-error" class="error-message"></span>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                                    <span class="star">*</span>รหัสผ่าน<br>
+                                                    <input type="password" class="form-control form-control-user"
+                                                        id="Password" placeholder="รหัสผ่าน">
+                                                    <small id="passwordHelpInline" class="text-muted">
+                                                        ควรมีความยาว 8-20 ตัวอักษร
+                                                    </small>
+                                                    <span id="password-error" class="error-message"></span>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <span class="star">*</span>ยืนยันรหัสผ่าน<br>
+                                                    <input type="password" class="form-control form-control-user"
+                                                        id="RepeatPassword" placeholder="ยืนยันรหัสผ่าน">
+                                                    <span id="repeatpass-error" class="error-message"></span>
+                                                </div>
+                                            </div>
+                                            <button type="submit"
+                                                class="btn btn-primary btn-user btn-block"><a href="own_coopFarm.html" style="color: white;">สร้างบัญชีผู้ใช้</a></button>
+                                        </form>
+                                        <hr>
+                                        <div class="text-center">
+                                            <a class="small" href="forgot-password.html">ลืมรหัสผ่าน?</a>
+                                        </div>
+                                        <div class="text-center">
+                                            <a class="small" href="login.html">มีบัญชีผู้ใช้แล้ว? เข้าสู่ระบบ!</a>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <span style="color: red;">*</span>นามสกุล<br>
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="นามสกุล">
-                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <span style="color: red;">*</span>ชื่อบัญชีผู้ใช้<br>
-                                    <input type="username" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="ชื่อบัญชีผู้ใช้">
-                                </div>
-                                <div class="form-group" style="margin-left: 1%;">
-                                    <span style="color: red;">*</span>ตำแหน่ง<br>
-                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="owner" id="owner" value="option1">
-                                        <label class="form-check-label" for="owner">เจ้าของฟาร์ม</label>
-                                      </div>
-                                      <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="labour" id="labour" value="option2">
-                                        <label class="form-check-label" for="labour">คนงาน</label>
-                                      </div>
-                                </div>
-                                <div class="form-group">
-                                    <span style="color: red;">*</span>Email Address<br>
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Address">
-                                </div>
-                                <div class="form-group">
-                                    <span style="color: red;">*</span>Line ID<br>
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Line ID">
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <span style="color: red;">*</span>รหัสผ่าน<br>
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="รหัสผ่าน">
-                                            <small id="passwordHelpInline" class="text-muted">
-                                                ควรมีความยาว 8-20 ตัวอักษร
-                                              </small>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <span style="color: red;">*</span>ยืนยันรหัสผ่าน<br>
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="ยืนยันรหัสผ่าน">
-                                    </div>
-                                </div>
-                                <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                    สร้างบัญชีผู้ใช้
-                                </a>
-                                <!--hr>
-                                <a href="index.html" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> Register with Google
-                                </a>
-                                <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                                </a-->
-                            </form>
-                            <hr>
-                            <div class="text-center">
-                                <a class="small" href="forgot-password.html">ลืมรหัสผ่าน?</a>
-                            </div>
-                            <div class="text-center">
-                                <a class="small" href="login.html">มีบัญชีผู้ใช้แล้ว? เข้าสู่ระบบ!</a>
                             </div>
                         </div>
                     </div>
@@ -135,21 +167,98 @@
             </div>
         </div>
 
-        </div>
-        </div>
-		
-    </div>
+        <script>
+            // Validate form
+            function validateForm() {
+                let isValid = true;
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                const firstName = document.getElementById("FirstName").value.trim();
+                const lastName = document.getElementById("LastName").value.trim();
+                const userName = document.getElementById("userName").value.trim();
+                const email = document.getElementById("Email").value.trim();
+                const line = document.getElementById("line").value.trim();
+                const password = document.getElementById("Password").value.trim();
+                const repeatPassword = document.getElementById("RepeatPassword").value.trim();
+                const pronoun = document.querySelector('input[name="pronoun"]:checked');
+                const role = document.querySelector('input[name="role"]:checked');
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                // Clear previous error messages
+                document.getElementById("pronoun-error").textContent = "";
+                document.getElementById("name-error").textContent = "";
+                document.getElementById("fname-error").textContent = "";
+                document.getElementById("lname-error").textContent = "";
+                document.getElementById("userName-error").textContent = "";
+                document.getElementById("email-error").textContent = "";
+                document.getElementById("line-error").textContent = "";
+                document.getElementById("password-error").textContent = "";
+                document.getElementById("repeatpass-error").textContent = "";
+                document.getElementById("role-error").textContent = "";
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+                // Validate name
+                if (firstName === "" && lastName === "") {
+                    document.getElementById("name-error").textContent = "กรุณากรอกชื่อและนามสกุล";
+                    isValid = false;
+                }
+                if (firstName === "" && lastName != "") {
+                    document.getElementById("fname-error").textContent = "กรุณากรอกชื่อ";
+                    isValid = false;
+                }
+                else if (lastName === "" && firstName != "") {
+                    document.getElementById("lname-error").textContent = "กรุณากรอกนามสกุล";
+                    isValid = false;
+                }
 
-</body>
+                // Validate pronoun
+                if (!pronoun) {
+                    document.getElementById("pronoun-error").textContent = "กรุณาเลือกคำนำหน้า";
+                    isValid = false;
+                }
 
-</html>
+                // Validate username
+                if (userName === "") {
+                    document.getElementById("userName-error").textContent = "กรุณากรอกชื่อบัญชีผู้ใช้";
+                    isValid = false;
+                }
+
+                // Validate line ID
+                if (line === "" && email === "") {
+                    document.getElementById("line-error").textContent = "กรุณากรอก อีเมล หรือ Line ID";
+                    document.getElementById("email-error").textContent = "กรุณากรอก อีเมล หรือ Line ID";
+                    isValid = false;
+                }
+
+                // Validate password
+                if (password.length < 8) {
+                    document.getElementById("password-error").textContent = "กรุณากรอกรหัสผ่านอย่างน้อย 8 ตัวอักษร";
+                    isValid = false;
+                }
+
+                // Validate password match
+                if (password !== repeatPassword) {
+                    document.getElementById("repeatpass-error").textContent = "รหัสผ่านไม่ตรงกัน";
+                    isValid = false;
+                }
+
+                // Validate role
+                if (!role) {
+                    document.getElementById("role-error").textContent = "กรุณาเลือกตำแหน่ง";
+                    isValid = false;
+                }
+
+                return isValid;
+            }
+        </script>
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="js/sb-admin-2.min.js"></script>
+
+    </body>
+
+    </html>
