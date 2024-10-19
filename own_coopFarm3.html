@@ -151,7 +151,7 @@
                     <!-- Page Heading -->
                     <div class="d-flex align-items-center mb-2">
                         <h1 class="m-0 h3 text-gray-800">เล้าไก่</h1>
-                        <div class="px-2" data-toggle="tooltip" title="เพิ่มฟาร์ม">
+                        <div class="px-2" data-toggle="tooltip" title="เพิ่มเล้า">
                             <a class="btn btn-primary btn-circle btn-sm" type="button" data-toggle="modal"
                                 data-target="#addCoop">
                                 <i class="fas fa-plus"></i>
@@ -220,26 +220,27 @@
                                             </td>
                                             <td class="d-flex align-items-center justify-content-center">
                                                 <div class="d-flex align-items-center ">
-                                                    <a class="btn" href="WeightOfChicken.html" data-toggle="tooltip"
-                                                        title="#">
-                                                        <i class="fas fa-weight text-success"></i>
+                                                    <a class="btn" href="own_Weightofchicken.html">
+                                                        <i class="fas fa-weight text-success" data-toggle="tooltip"
+                                                            title="เพิ่มน้ำหนักไก่"></i>
                                                     </a>
-                                                    <a class="btn" href="own_numberofchicken.html" data-toggle="tooltip"
-                                                        title="#">
+                                                    <a class="btn" href="own_numberofchicken.html">
                                                         <img src="img/chicken-svgrepo-com1.svg"
-                                                            class="btn-small-block mb-1">
+                                                            class="btn-small-block mb-1" data-toggle="tooltip"
+                                                            title="เพิ่มไก่ตาย">
                                                     </a>
                                                     <a class="btn" type="button" data-toggle="modal"
-                                                        data-target="#LabourInFarm" data-toggle="tooltip" title="#">
-                                                        <img src="img/farmer-success.png"
-                                                            class="btn-small-block mb-1" />
+                                                        data-target="#LabourInFarm">
+                                                        <img src="img/farmer-success.png" class="btn-small-block mb-1"
+                                                            data-toggle="tooltip" title="จัดการคนงาน" />
                                                     </a>
-                                                    <a class="btn" type="button" data-toggle="tooltip" title="#"
-                                                    href="own_detailCoop.html">
-                                                        <i class="fas fa-clipboard-list text-warning"></i>
+                                                    <a class="btn" type="button" href="own_detailCoop.html">
+                                                        <i class="fas fa-clipboard-list text-warning"
+                                                            data-toggle="tooltip" title="ข้อมูลเล้า"></i>
                                                     </a>
-                                                    <a class="btn delete" data-toggle="tooltip" title="#">
-                                                        <i class="fas fa-trash-alt text-danger"></i>
+                                                    <a class="btn delete">
+                                                        <i class="fas fa-trash-alt text-danger" data-toggle="tooltip"
+                                                            title="ลบ"></i>
                                                     </a>
                                                 </div>
                                             </td>
@@ -270,26 +271,27 @@
                                             </td>
                                             <td class="d-flex align-items-center justify-content-center">
                                                 <div class="d-flex align-items-center ">
-                                                    <a class="btn" href="WeightOfChicken.html" data-toggle="tooltip"
-                                                        title="#">
-                                                        <i class="fas fa-weight text-success"></i>
+                                                    <a class="btn" href="own_Weightofchicken.html">
+                                                        <i class="fas fa-weight text-success" data-toggle="tooltip"
+                                                            title="เพิ่มน้ำหนักไก่"></i>
                                                     </a>
-                                                    <a class="btn" href="own_numberofchicken.html" data-toggle="tooltip"
-                                                        title="#">
+                                                    <a class="btn" href="own_numberofchicken.html">
                                                         <img src="img/chicken-svgrepo-com1.svg"
-                                                            class="btn-small-block mb-1">
+                                                            class="btn-small-block mb-1" data-toggle="tooltip"
+                                                            title="เพิ่มไก่ตาย">
                                                     </a>
                                                     <a class="btn" type="button" data-toggle="modal"
-                                                        data-target="#LabourInFarm" data-toggle="tooltip" title="#">
-                                                        <img src="img/farmer-success.png"
-                                                            class="btn-small-block mb-1" />
+                                                        data-target="#LabourInFarm">
+                                                        <img src="img/farmer-success.png" class="btn-small-block mb-1"
+                                                            data-toggle="tooltip" title="จัดการคนงาน" />
                                                     </a>
-                                                    <a class="btn" type="button" data-toggle="tooltip" title="#"
-                                                    href="own_detailCoop.html">
-                                                        <i class="fas fa-clipboard-list text-warning"></i>
+                                                    <a class="btn" type="button" href="own_detailCoop.html">
+                                                        <i class="fas fa-clipboard-list text-warning"
+                                                            data-toggle="tooltip" title="ข้อมูลเล้า"></i>
                                                     </a>
-                                                    <a class="btn delete" data-toggle="tooltip" title="#">
-                                                        <i class="fas fa-trash-alt text-danger"></i>
+                                                    <a class="btn delete">
+                                                        <i class="fas fa-trash-alt text-danger" data-toggle="tooltip"
+                                                            title="ลบ"></i>
                                                     </a>
                                                 </div>
                                             </td>
@@ -364,7 +366,7 @@
                         </div>
                         <div class="form-group">
                             <label for="manageCoop"></span>คนงานดูแลเล้า</label>
-                                <select id="inputState" class="form-control">
+                            <select id="inputState" class="form-control">
                                 <option selected>คนงาน</option>
                                 <option value="นรงณ์ชัย">นรงณ์ชัย</option>
                                 <option value="นรงณ์ชัย">นรงณ์ชัย</option>
@@ -428,7 +430,7 @@
     </div>
 
 
-    
+
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
@@ -467,3 +469,10 @@
 </body>
 
 </html>
+
+<!--tooltip-->
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
