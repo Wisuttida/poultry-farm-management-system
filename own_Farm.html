@@ -19,7 +19,8 @@
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link href="css/owner.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/owner.css">
+
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
@@ -142,11 +143,11 @@
                 <div class="container-fluid pt-4">
 
                     <!-- Page Heading -->
-                    <div class="d-flex align-items-center mb-3">
+                    <div class="d-flex align-items-center mb-2">
                         <h1 class="m-0 h3 text-gray-800">ฟาร์ม</h1>
                         <div class="px-2" data-toggle="tooltip" title="เพิ่มฟาร์ม">
                             <a class="btn btn-primary btn-circle btn-sm" type="button" data-toggle="modal"
-                                data-target="#AddCoopModal">
+                                data-target="#AddFarm">
                                 <i class="fas fa-plus"></i>
                             </a>
                         </div>
@@ -287,7 +288,7 @@
     </div>
 
     <!--AddFarm-->
-    <div class="modal fade" id="AddCoopModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="AddFarm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -588,3 +589,10 @@
 </body>
 
 </html>
+
+<!--tooltip-->
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
