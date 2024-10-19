@@ -1,791 +1,617 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
 
-    <title>admin-newLabour</title>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-    <!-- Custom fonts for this template -->
-    <link
-      href="vendor/fontawesome-free/css/all.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-      rel="stylesheet"
-    />
+  <title>admin-newLabour</title>
 
-    <!-- Custom styles for this template -->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet" />
 
-    <!-- Custom styles for this page -->
-    <link
-      href="vendor/datatables/dataTables.bootstrap4.min.css"
-      rel="stylesheet"
-    />
+  <!-- Custom styles for this template -->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
 
-    <!-- bootstrap icon from title -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
-    />
+  <!-- Custom styles for this page -->
+  <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7x1q3YC7PJnX+qCQl5gxS1hge8+tN1R7XlM"
-      crossorigin="anonymous"
-    />
+  <!-- bootstrap icon from title -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 
-    <style>
-      body {
-        color: #404e67;
-        /* background: #F5F7FA; */
-        /* font-family: 'Open Sans', sans-serif; */
-      }
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7x1q3YC7PJnX+qCQl5gxS1hge8+tN1R7XlM" crossorigin="anonymous" />
 
-      .table-wrapper {
-        width: fit-content;
-        margin: auto;
-        /* background: #F5F7FA; */
-        /* padding: 20px; */
-        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-      }
+  <style>
+    body {
+      color: #404e67;
+      /* background: #F5F7FA; */
+      /* font-family: 'Open Sans', sans-serif; */
+    }
 
-      .table-title {
-        padding-bottom: 10px;
-        margin: 0 0 10px;
-      }
+    .table-wrapper {
+      width: fit-content;
+      margin: auto;
+      /* background: #F5F7FA; */
+      /* padding: 20px; */
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    }
 
-      .table-title h2 {
-        margin: 6px 0 0;
-        font-size: 22px;
-      }
+    .table-title {
+      padding-bottom: 10px;
+      margin: 0 0 10px;
+    }
 
-      .table-title .add-new {
-        float: right;
-        height: 30px;
-        font-weight: bold;
-        font-size: 12px;
-        text-shadow: none;
-        min-width: 100px;
-        border-radius: 50px;
-        line-height: 13px;
-      }
+    .table-title h2 {
+      margin: 6px 0 0;
+      font-size: 22px;
+    }
 
-      .table-title .add-new i {
-        margin-right: 4px;
-      }
+    .table-title .add-new {
+      float: right;
+      height: 30px;
+      font-weight: bold;
+      font-size: 12px;
+      text-shadow: none;
+      min-width: 100px;
+      border-radius: 50px;
+      line-height: 13px;
+    }
 
-      table.table {
-        table-layout: fixed;
-      }
+    .table-title .add-new i {
+      margin-right: 4px;
+    }
 
-      table.table tr th,
-      table.table tr td {
-        border-color: #e9e9e9;
-      }
+    table.table {
+      table-layout: fixed;
+    }
 
-      table.table th i {
-        font-size: 13px;
-        margin: 0 5px;
-        cursor: pointer;
-      }
+    table.table tr th,
+    table.table tr td {
+      border-color: #e9e9e9;
+    }
 
-      table.table th:last-child {
-        width: 100px;
-      }
+    table.table th i {
+      font-size: 13px;
+      margin: 0 5px;
+      cursor: pointer;
+    }
 
-      table.table td a {
-        cursor: pointer;
-        display: inline-block;
-        margin: 0 5px;
-        min-width: 24px;
-      }
+    table.table th:last-child {
+      width: 100px;
+    }
 
-      table.table td a.add {
-        color: #27c46b;
-      }
+    table.table td a {
+      cursor: pointer;
+      display: inline-block;
+      margin: 0 5px;
+      min-width: 24px;
+    }
 
-      table.table td a.edit {
-        color: #ffc107;
-      }
+    table.table td a.add {
+      color: #27c46b;
+    }
 
-      table.table td a.delete {
-        color: #e34724;
-      }
+    table.table td a.edit {
+      color: #ffc107;
+    }
 
-      table.table td i {
-        font-size: 19px;
-      }
+    table.table td a.delete {
+      color: #e34724;
+    }
 
-      table.table td a.add i {
-        font-size: 24px;
-        margin-right: -1px;
-        position: relative;
-        top: 3px;
-      }
+    table.table td i {
+      font-size: 19px;
+    }
 
-      table.table .form-control {
-        height: 32px;
-        line-height: 32px;
-        box-shadow: none;
-        border-radius: 2px;
-      }
+    table.table td a.add i {
+      font-size: 24px;
+      margin-right: -1px;
+      position: relative;
+      top: 3px;
+    }
 
-      table.table .form-control.error {
-        border-color: #f50000;
-      }
+    table.table .form-control {
+      height: 32px;
+      line-height: 32px;
+      box-shadow: none;
+      border-radius: 2px;
+    }
 
-      table.table td .add {
-        display: none;
-      }
-    </style>
-  </head>
+    table.table .form-control.error {
+      border-color: #f50000;
+    }
 
-  <body id="page-top">
-    <nav
-      class="navbar navbar-expand navbar-light bg-white topbar static-top shadow"
-    >
-      <a href="admin-dashboard.html" class="nav-link">
-        <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
-          <i class="fas fa-dove"></i>
-        </button>
-        <span class="d-none d-sm-inline-block tex-primary">Home Page</span>
-      </a>
-      <ul class="navbar-nav ml-auto">
-        <!-- Nav Item - Alerts -->
-        <li class="nav-item dropdown no-arrow mx-1">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="alertsDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <i class="fas fa-bell fa-fw"></i>
-            <!-- Counter - Alerts -->
-            <span class="badge badge-danger badge-counter">3+</span>
-          </a>
-          <!-- Dropdown - Alerts -->
-          <div
-            class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-            aria-labelledby="alertsDropdown"
-          >
-            <h6 class="dropdown-header">Alerts Center</h6>
-            <a class="dropdown-item d-flex align-items-center" href="#">
-              <div class="mr-3">
-                <div class="icon-circle bg-primary">
-                  <i class="fas fa-file-alt text-white"></i>
-                </div>
-              </div>
-              <div>
-                <div class="small text-gray-500">December 12, 2019</div>
-                <span class="font-weight-bold"
-                  >A new monthly report is ready to download!</span
-                >
-              </div>
-            </a>
-            <a class="dropdown-item d-flex align-items-center" href="#">
-              <div class="mr-3">
-                <div class="icon-circle bg-success">
-                  <i class="fas fa-donate text-white"></i>
-                </div>
-              </div>
-              <div>
-                <div class="small text-gray-500">December 7, 2019</div>
-                $290.29 has been deposited into your account!
-              </div>
-            </a>
-            <a class="dropdown-item d-flex align-items-center" href="#">
-              <div class="mr-3">
-                <div class="icon-circle bg-warning">
-                  <i class="fas fa-exclamation-triangle text-white"></i>
-                </div>
-              </div>
-              <div>
-                <div class="small text-gray-500">December 2, 2019</div>
-                Spending Alert: We've noticed unusually high spending for your
-                account.
-              </div>
-            </a>
-            <a class="dropdown-item text-center small text-gray-500" href="#"
-              >Show All Alerts</a
-            >
-          </div>
-        </li>
+    table.table td .add {
+      display: none;
+    }
+  </style>
+</head>
 
-        <!-- Nav Item - Messages -->
-        <li class="nav-item dropdown no-arrow mx-1">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="messagesDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <i class="fas fa-envelope fa-fw"></i>
-            <!-- Counter - Messages -->
-            <span class="badge badge-danger badge-counter">7</span>
-          </a>
-          <!-- Dropdown - Messages -->
-          <div
-            class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-            aria-labelledby="messagesDropdown"
-          >
-            <h6 class="dropdown-header">Message Center</h6>
-            <a class="dropdown-item d-flex align-items-center" href="#">
-              <div class="dropdown-list-image mr-3">
-                <img
-                  class="rounded-circle"
-                  src="img/undraw_profile_1.svg"
-                  alt="..."
-                />
-                <div class="status-indicator bg-success"></div>
-              </div>
-              <div class="font-weight-bold">
-                <div class="text-truncate">
-                  Hi there! I am wondering if you can help me with a problem
-                  I've been having.
-                </div>
-                <div class="small text-gray-500">Emily Fowler · 58m</div>
-              </div>
-            </a>
-            <a class="dropdown-item d-flex align-items-center" href="#">
-              <div class="dropdown-list-image mr-3">
-                <img
-                  class="rounded-circle"
-                  src="img/undraw_profile_2.svg"
-                  alt="..."
-                />
-                <div class="status-indicator"></div>
-              </div>
-              <div>
-                <div class="text-truncate">
-                  I have the photos that you ordered last month, how would you
-                  like them sent to you?
-                </div>
-                <div class="small text-gray-500">Jae Chun · 1d</div>
-              </div>
-            </a>
-            <a class="dropdown-item d-flex align-items-center" href="#">
-              <div class="dropdown-list-image mr-3">
-                <img
-                  class="rounded-circle"
-                  src="img/undraw_profile_3.svg"
-                  alt="..."
-                />
-                <div class="status-indicator bg-warning"></div>
-              </div>
-              <div>
-                <div class="text-truncate">
-                  Last month's report looks great, I am very happy with the
-                  progress so far, keep up the good work!
-                </div>
-                <div class="small text-gray-500">Morgan Alvarez · 2d</div>
-              </div>
-            </a>
-            <a class="dropdown-item d-flex align-items-center" href="#">
-              <div class="dropdown-list-image mr-3">
-                <img
-                  class="rounded-circle"
-                  src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                  alt="..."
-                />
-                <div class="status-indicator bg-success"></div>
-              </div>
-              <div>
-                <div class="text-truncate">
-                  Am I a good boy? The reason I ask is because someone told me
-                  that people say this to all dogs, even if they aren't good...
-                </div>
-                <div class="small text-gray-500">Chicken the Dog · 2w</div>
-              </div>
-            </a>
-            <a class="dropdown-item text-center small text-gray-500" href="#"
-              >Read More Messages</a
-            >
-          </div>
-        </li>
-        <li class="nav-item dropdown no-arrow">
-          <a
-            href="#"
-            class="nav-link dropdown-toggle"
-            id="userDropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            <span class="mr-2 d-none d-lg-inline text-gray-600 small"
-              >username</span
-            >
-            <img
-              class="img-profile rounded-circle"
-              src="img/undraw_profile_3.svg"
-            />
-          </a>
-          <div
-            class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-            aria-labelledby="userDropdown"
-          >
-            <a class="dropdown-item" href="#">
-              <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-              บัญชีผู้ใช้
-            </a>
-            <a class="dropdown-item" href="#">
-              <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-              ตั้งค่า
-            </a>
-            <div class="dropdown-divider"></div>
-            <a
-              class="dropdown-item"
-              href="#"
-              data-toggle="modal"
-              data-target="#logoutModal"
-            >
-              <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-              ออกจากระบบ
-            </a>
-          </div>
-        </li>
-      </ul>
-    </nav>
-    <!-- End of Topbar -->
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-      <!-- Sidebar -->
-      <ul
-        class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
-        id="accordionSidebar"
-      >
-        <li class="nav-item active">
-          <a class="nav-link" href="admin-dashboard.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a
-          >
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider" />
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-          <a
-            class="nav-link collapsed"
-            href="#"
-            data-toggle="collapse"
-            data-target="#collapseOne"
-            aria-expanded="true"
-            aria-controls="collapseOne"
-          >
-            <i class="fas fa-fw fa-cog"></i>
-            <span>การจัดการข้อมูล</span>
-          </a>
-          <div
-            id="collapseOne"
-            class="collapse"
-            aria-labelledby="headingOne"
-            data-parent="#accordionSidebar"
-          >
-            <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="admin-usermanagement.html"
-                >บัญชีผู้ใช้</a
-              >
-              <a class="collapse-item" href="admin-detailsFarm.html"
-                >ฟาร์มไก่</a
-              >
-              <a class="collapse-item" href="admin-detailsCoop.html">เล้าไก่</a>
-            </div>
-          </div>
-        </li>
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-          <a
-            class="nav-link collapsed"
-            href="#"
-            data-toggle="collapse"
-            data-target="#collapseTwo"
-            aria-expanded="true"
-            aria-controls="collapseTwo"
-          >
-            <i class="fas fa-fw fa-cog"></i>
-            <span>การจัดการคนงาน</span>
-          </a>
-          <div
-            id="collapseTwo"
-            class="collapse"
-            aria-labelledby="headingTwo"
-            data-parent="#accordionSidebar"
-          >
-            <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="admin-newLabour.html"
-                >ไม่มีสังกัด</a
-              >
-              <a class="collapse-item" href="admin-labour.html">มีสังกัด</a>
-            </div>
-          </div>
-        </li>
-
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-          <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
-      </ul>
-
-      <!-- Begin Page Content -->
-      <div class="container-fluid">
-        <div class="d-flex align-items-center mt-4">
-          <h1 class="ml-4 h3 text-gray-800">ข้อมูลของคนงานที่ไม่มีสังกัด</h1>
-        </div>
-        <!-- DataTales Example -->
-        <div class="container-fluid" style="margin-top: 1%">
-          <!-- DataTales Example -->
-          <div class="card shadow mb-4">
-            <div
-              class="card-header py-3 d-flex justify-content-between align-items-center"
-            >
-              <h6 class="m-0 font-weight-bold text-primary">
-                ข้อมูลของคนงานที่ไม่มีสังกัด
-              </h6>
-            </div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table
-                  class="table table-bordered"
-                  id="dataTable"
-                  width="100%"
-                  cellspacing="0"
-                >
-                  <thead>
-                    <tr>
-                      <th>ชื่อบัญชีผู้ใช้</th>
-                      <th>ชื่อคนงาน</th>
-                      <th style="width: 175px">การจัดการคนงาน</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th>ชื่อบัญชีผู้ใช้</th>
-                      <th>ชื่อคนงาน</th>
-                      <th>การจัดการคนงาน</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    <tr>
-                      <td>phaarwii67</td>
-                      <td>พันเกล้า ติณรัตน์</td>
-                      <td>
-                        <div style="display: flex; margin-left: 5%">
-                          <a
-                            class="edit"
-                            title="Edit"
-                            onclick="openModal('phaarwii67','พันเกล้า ติณรัตน์')"
-                          >
-                            <i
-                              class="fas fa-clipboard-list"
-                              style="font-size: 20px"
-                            ></i>
-                          </a>
-                          <a
-                            class="delete"
-                            title="Delete"
-                            onclick="delInfo(this);"
-                            data-toggle="tooltip"
-                            style="margin-left: 7%"
-                          >
-                            <i
-                              class="fas fa-trash-alt"
-                              style="font-size: 16px"
-                            ></i>
-                          </a>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /.container-fluid -->
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Copyright &copy; Your Website 2020</span>
-            </div>
-          </div>
-        </footer>
-        <!-- End of Footer -->
-      </div>
-      <!-- End of Main Content -->
-    </div>
-    <!-- End of Content Wrapper -->
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
+<body id="page-top">
+  <nav class="navbar navbar-expand navbar-light bg-white topbar static-top shadow">
+    <a href="admin-dashboard.html" class="nav-link">
+      <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+        <i class="fas fa-dove"></i>
+      </button>
+      <span class="d-none d-sm-inline-block tex-primary">Home Page</span>
     </a>
+    <ul class="navbar-nav ml-auto">
+      <!-- Nav Item - Alerts -->
+      <li class="nav-item dropdown no-arrow mx-1">
+        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-bell fa-fw"></i>
+          <!-- Counter - Alerts -->
+          <span class="badge badge-danger badge-counter">3+</span>
+        </a>
+        <!-- Dropdown - Alerts -->
+        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+          aria-labelledby="alertsDropdown">
+          <h6 class="dropdown-header">Alerts Center</h6>
+          <a class="dropdown-item d-flex align-items-center" href="#">
+            <div class="mr-3">
+              <div class="icon-circle bg-primary">
+                <i class="fas fa-file-alt text-white"></i>
+              </div>
+            </div>
+            <div>
+              <div class="small text-gray-500">December 12, 2019</div>
+              <span class="font-weight-bold">A new monthly report is ready to download!</span>
+            </div>
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="#">
+            <div class="mr-3">
+              <div class="icon-circle bg-success">
+                <i class="fas fa-donate text-white"></i>
+              </div>
+            </div>
+            <div>
+              <div class="small text-gray-500">December 7, 2019</div>
+              $290.29 has been deposited into your account!
+            </div>
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="#">
+            <div class="mr-3">
+              <div class="icon-circle bg-warning">
+                <i class="fas fa-exclamation-triangle text-white"></i>
+              </div>
+            </div>
+            <div>
+              <div class="small text-gray-500">December 2, 2019</div>
+              Spending Alert: We've noticed unusually high spending for your
+              account.
+            </div>
+          </a>
+          <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+        </div>
+      </li>
 
-    <!-- Logout Modal-->
-    <div
-      class="modal fade"
-      id="logoutModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button
-              class="close"
-              type="button"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            Select "Logout" below if you are ready to end your current session.
-          </div>
-          <div class="modal-footer">
-            <button
-              class="btn btn-secondary"
-              type="button"
-              data-dismiss="modal"
-            >
-              Cancel
-            </button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+      <!-- Nav Item - Messages -->
+      <li class="nav-item dropdown no-arrow mx-1">
+        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-envelope fa-fw"></i>
+          <!-- Counter - Messages -->
+          <span class="badge badge-danger badge-counter">7</span>
+        </a>
+        <!-- Dropdown - Messages -->
+        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+          aria-labelledby="messagesDropdown">
+          <h6 class="dropdown-header">Message Center</h6>
+          <a class="dropdown-item d-flex align-items-center" href="#">
+            <div class="dropdown-list-image mr-3">
+              <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="..." />
+              <div class="status-indicator bg-success"></div>
+            </div>
+            <div class="font-weight-bold">
+              <div class="text-truncate">
+                Hi there! I am wondering if you can help me with a problem
+                I've been having.
+              </div>
+              <div class="small text-gray-500">Emily Fowler · 58m</div>
+            </div>
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="#">
+            <div class="dropdown-list-image mr-3">
+              <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="..." />
+              <div class="status-indicator"></div>
+            </div>
+            <div>
+              <div class="text-truncate">
+                I have the photos that you ordered last month, how would you
+                like them sent to you?
+              </div>
+              <div class="small text-gray-500">Jae Chun · 1d</div>
+            </div>
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="#">
+            <div class="dropdown-list-image mr-3">
+              <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="..." />
+              <div class="status-indicator bg-warning"></div>
+            </div>
+            <div>
+              <div class="text-truncate">
+                Last month's report looks great, I am very happy with the
+                progress so far, keep up the good work!
+              </div>
+              <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+            </div>
+          </a>
+          <a class="dropdown-item d-flex align-items-center" href="#">
+            <div class="dropdown-list-image mr-3">
+              <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="..." />
+              <div class="status-indicator bg-success"></div>
+            </div>
+            <div>
+              <div class="text-truncate">
+                Am I a good boy? The reason I ask is because someone told me
+                that people say this to all dogs, even if they aren't good...
+              </div>
+              <div class="small text-gray-500">Chicken the Dog · 2w</div>
+            </div>
+          </a>
+          <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown no-arrow">
+        <a href="#" class="nav-link dropdown-toggle" id="userDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <span class="mr-2 d-none d-lg-inline text-gray-600 small">username</span>
+          <img class="img-profile rounded-circle" src="img/undraw_profile_3.svg" />
+        </a>
+        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+          <a class="dropdown-item" href="#">
+            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+            บัญชีผู้ใช้
+          </a>
+          <a class="dropdown-item" href="#">
+            <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+            ตั้งค่า
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+            ออกจากระบบ
+          </a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <!-- End of Topbar -->
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+      <li class="nav-item active">
+        <a class="nav-link" href="admin-dashboard.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider" />
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+          aria-controls="collapseOne">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>การจัดการข้อมูล</span>
+        </a>
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="admin-usermanagement.html">บัญชีผู้ใช้</a>
+            <a class="collapse-item" href="admin-detailsFarm.html">ฟาร์มไก่</a>
+            <a class="collapse-item" href="admin-detailsCoop.html">เล้าไก่</a>
           </div>
         </div>
-      </div>
-    </div>
+      </li>
 
-    <!-- modals add labour to farm -->
-    <div
-      class="modal fade"
-      id="addLabourToFarmModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              การเพิ่มคนงานเข้าสู่ฟาร์ม
-            </h5>
-            <button
-              class="close"
-              type="button"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">×</span>
-            </button>
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
+          aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>การจัดการคนงาน</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="admin-newLabour.html">ไม่มีสังกัด</a>
+            <a class="collapse-item" href="admin-labour.html">มีสังกัด</a>
           </div>
-          <div class="modal-body">
-            <div class="container">
-              <form id="farmWorkerForm">
-                <!-- Username Field (Readonly) -->
-                <div class="mb-3">
-                  <label for="username" class="form-label">ชื่อผู้ใช้งาน</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="username"
-                    readonly
-                  />
-                </div>
+        </div>
+      </li>
 
-                <!-- Full Name Field (Readonly) -->
-                <div class="mb-3">
-                  <label for="fullName" class="form-label">ชื่อเล่น</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="fullName"
-                    readonly
-                  />
-                </div>
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+    </ul>
 
-                <!-- add Second Name Field -->
-                <div class="mb-3">
-                  <label for="secondName" class="form-label">ชื่อ</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="secondName"
-                    required
-                  />
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <div class="d-flex align-items-center mt-4">
+            <h1 class="ml-4 h3 text-gray-800">ข้อมูลของคนงานที่ไม่มีสังกัด</h1>
+          </div>
+          <!-- DataTales Example -->
+          <div class="container-fluid" style="margin-top: 1%">
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+              <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                <h6 class="m-0 font-weight-bold text-primary">
+                  ข้อมูลของคนงานที่ไม่มีสังกัด
+                </h6>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>ชื่อบัญชีผู้ใช้</th>
+                        <th>ชื่อคนงาน</th>
+                        <th style="width: 175px">การจัดการคนงาน</th>
+                      </tr>
+                    </thead>
+                    <tfoot>
+                      <tr>
+                        <th>ชื่อบัญชีผู้ใช้</th>
+                        <th>ชื่อคนงาน</th>
+                        <th>การจัดการคนงาน</th>
+                      </tr>
+                    </tfoot>
+                    <tbody>
+                      <tr>
+                        <td>phaarwii67</td>
+                        <td>พันเกล้า ติณรัตน์</td>
+                        <td>
+                          <div style="display: flex; margin-left: 5%">
+                            <a class="edit" title="แก้ไขข้อมูล" data-toggle="tooltip"
+                              onclick="openModal('phaarwii67','พันเกล้า ติณรัตน์')">
+                              <i class="fas fa-clipboard-list" style="font-size: 20px"></i>
+                            </a>
+                            <a class="delete" title="ลบ" onclick="delInfo(this);" data-toggle="tooltip"
+                              style="margin-left: 7%">
+                              <i class="fas fa-trash-alt" style="font-size: 16px"></i>
+                            </a>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-
-                <!-- date add labour -->
-                <div class="form-group">
-                  <label for="dateAddLabour" class="font-weight-bold"
-                    >วันที่เพิ่มคนงาน</label
-                  >
-                  <input
-                    type="date"
-                    class="form-control"
-                    id="dateAddFarm"
-                    placeholder="DD/MM/YYYY"
-                  />
-                </div>
-
-                <!-- Farm Selection (Dropdown) -->
-                <div class="mb-3">
-                  <label for="farm" class="form-label">ฟาร์ม</label>
-                  <select name="farm" class="form-select" id="farm" required>
-                    <option value="" disabled selected>เลือกฟาร์ม</option>
-                    <option value="farm1">ฟาร์ม A</option>
-                    <option value="farm2">ฟาร์ม B</option>
-                  </select>
-                  <div class="invalid-feedback">โปรดเลือกฟาร์ม</div>
-                </div>
-
-                <!-- Chicken Coop Selection (Dropdown) -->
-                <div class="mb-3">
-                  <label for="coop" class="form-label">เล้าไก่</label>
-                  <select class="form-select" id="coop" required>
-                    <option value="" disabled selected>เลือกเล้าไก่</option>
-                    <option value="1">เล้า 1</option>
-                    <option value="2">เล้า 2</option>
-                    <option value="3">เล้า 3</option>
-                  </select>
-                  <div class="invalid-feedback">โปรดเลือกเล้า</div>
-                </div>
-
-                <!-- Submit Button -->
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-primary">
-                    บันทึกการเปลี่ยนแปลง
-                  </button>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
+          <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+      </div>
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2020</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+    </div>
+  </div>
+
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Select "Logout" below if you are ready to end your current session.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">
+            Cancel
+          </button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- script for add labour to farm -->
-    <script>
-      // Disable future dates on the dateAddLabour field
-      document.getElementById("dateAddFarm").max = new Date()
-        .toISOString()
-        .split("T")[0];
+  <!-- modals add labour to farm -->
+  <div class="modal fade" id="addLabourToFarmModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            การเพิ่มคนงานเข้าสู่ฟาร์ม
+          </h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <form id="farmWorkerForm">
+              <!-- Username Field (Readonly) -->
+              <div class="mb-3">
+                <label for="username" class="form-label">ชื่อผู้ใช้งาน</label>
+                <input type="text" class="form-control" id="username" readonly />
+              </div>
 
-      // Function to open the modal and set username, full name dynamically
-      function openModal(id, name) {
-        document.getElementById("username").value = id;
-        document.getElementById("fullName").value = name;
+              <!-- Full Name Field (Readonly) -->
+              <div class="mb-3">
+                <label for="fullName" class="form-label">ชื่อเล่น</label>
+                <input type="text" class="form-control" id="fullName" readonly />
+              </div>
 
-        var myModal = new bootstrap.Modal(
-          document.getElementById("addLabourToFarmModal"),
-          {
-            keyboard: false,
-          }
-        );
-        myModal.show();
-      }
+              <!-- add Second Name Field -->
+              <div class="mb-3">
+                <label for="secondName" class="form-label">ชื่อ</label>
+                <input type="text" class="form-control" id="secondName" required />
+              </div>
 
-      // Function to handle form submission and remove the row from the table
-      document
-        .getElementById("farmWorkerForm")
-        .addEventListener("submit", function (event) {
-          event.preventDefault();
+              <!-- date add labour -->
+              <div class="form-group">
+                <label for="dateAddLabour" class="font-weight-bold">วันที่เพิ่มคนงาน</label>
+                <input type="date" class="form-control" id="dateAddFarm" placeholder="DD/MM/YYYY" />
+              </div>
 
-          // Get selected values
-          const username = document.getElementById("username").value;
-          const fullName = document.getElementById("fullName").value;
-          const farm = document.getElementById("farm").value;
-          const coop = document.getElementById("coop").value;
-          const dateAddLabour = document.getElementById("dateAddFarm").value;
+              <!-- Farm Selection (Dropdown) -->
+              <div class="mb-3">
+                <label for="farm" class="form-label">ฟาร์ม</label>
+                <select name="farm" class="form-select" id="farm" required>
+                  <option value="" disabled selected>เลือกฟาร์ม</option>
+                  <option value="farm1">ฟาร์ม A</option>
+                  <option value="farm2">ฟาร์ม B</option>
+                </select>
+                <div class="invalid-feedback">โปรดเลือกฟาร์ม</div>
+              </div>
 
-          // Check if all values are valid
-          if (!farm || !coop || !dateAddLabour) {
-            alert("กรุณากรอกข้อมูลให้ครบถ้วน");
-            return;
-          }
+              <!-- Chicken Coop Selection (Dropdown) -->
+              <div class="mb-3">
+                <label for="coop" class="form-label">เล้าไก่</label>
+                <select class="form-select" id="coop" required>
+                  <option value="" disabled selected>เลือกเล้าไก่</option>
+                  <option value="1">เล้า 1</option>
+                  <option value="2">เล้า 2</option>
+                  <option value="3">เล้า 3</option>
+                </select>
+                <div class="invalid-feedback">โปรดเลือกเล้า</div>
+              </div>
 
-          // Perform the row removal action
-          const row = document.querySelector(`tr[data-username="${username}"]`);
-          if (row) {
-            row.remove(); // Remove the row from the table
-          }
+              <!-- Submit Button -->
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">
+                  บันทึกการเปลี่ยนแปลง
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          // Show success message
-          alert("เพิ่มคนงานสู่ฟาร์มและเล้าสำเร็จ");
+  <!-- script for add labour to farm -->
+  <script>
+    // Disable future dates on the dateAddLabour field
+    document.getElementById("dateAddFarm").max = new Date()
+      .toISOString()
+      .split("T")[0];
 
-          // Close the modal
-          const modal = bootstrap.Modal.getInstance(
-            document.getElementById("addLabourToFarmModal")
-          );
-          modal.hide();
-        });
-    </script>
+    // Function to open the modal and set username, full name dynamically
+    function openModal(id, name) {
+      document.getElementById("username").value = id;
+      document.getElementById("fullName").value = name;
 
-    <!--delete-->
-    <script>
-      document.addEventListener("click", function (event) {
-        if (event.target.closest(".delete")) {
-          const row = event.target.closest("tr");
-          if (confirm("คุณแน่ใจหรือว่าต้องการลบข้อมูลนี้?")) {
-            row.remove(); // ลบแถว
-          }
+      var myModal = new bootstrap.Modal(
+        document.getElementById("addLabourToFarmModal"),
+        {
+          keyboard: false,
         }
+      );
+      myModal.show();
+    }
+
+    // Function to handle form submission and remove the row from the table
+    document
+      .getElementById("farmWorkerForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Get selected values
+        const username = document.getElementById("username").value;
+        const fullName = document.getElementById("fullName").value;
+        const farm = document.getElementById("farm").value;
+        const coop = document.getElementById("coop").value;
+        const dateAddLabour = document.getElementById("dateAddFarm").value;
+
+        // Check if all values are valid
+        if (!farm || !coop || !dateAddLabour) {
+          alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+          return;
+        }
+
+        // Perform the row removal action
+        const row = document.querySelector(`tr[data-username="${username}"]`);
+        if (row) {
+          row.remove(); // Remove the row from the table
+        }
+
+        // Show success message
+        alert("เพิ่มคนงานสู่ฟาร์มและเล้าสำเร็จ");
+
+        // Close the modal
+        const modal = bootstrap.Modal.getInstance(
+          document.getElementById("addLabourToFarmModal")
+        );
+        modal.hide();
       });
-    </script>
+  </script>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!--delete-->
+  <script>
+    document.addEventListener("click", function (event) {
+      if (event.target.closest(".delete")) {
+        const row = event.target.closest("tr");
+        if (confirm("คุณแน่ใจหรือว่าต้องการลบข้อมูลนี้?")) {
+          row.remove(); // ลบแถว
+        }
+      }
+    });
+  </script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Page level custom scripts -->
-    <script src="js/demo/datatables-demo.js"></script>
+  <!-- Page level plugins -->
+  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-    <!-- Bootstrap JS and Popper.js -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz4fnFO9gybZuecKFnPQcI9i1MOsQpq6rQpK7l11m57j0eNK2fAYjHkVf"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-      integrity="sha384-cn7l7gDp0ey6+5O2p7u6y4PMLT24Mb6I1jvuZJ9z5jq6cazvKsv+f5Z5IH413L3"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <!-- Page level custom scripts -->
+  <script src="js/demo/datatables-demo.js"></script>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz4fnFO9gybZuecKFnPQcI9i1MOsQpq6rQpK7l11m57j0eNK2fAYjHkVf" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+    integrity="sha384-cn7l7gDp0ey6+5O2p7u6y4PMLT24Mb6I1jvuZJ9z5jq6cazvKsv+f5Z5IH413L3" crossorigin="anonymous"></script>
+</body>
+
 </html>
+<!--tooltip-->
+<script>
+  $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
