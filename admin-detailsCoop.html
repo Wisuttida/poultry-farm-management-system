@@ -391,10 +391,12 @@
                                                         title="บันทึกน้ำหนักไก่">
                                                         <i class="fas fa-weight text-success"></i>
                                                     </a>
-                                                    <a class="btn" href="own_numberofchicken.html" data-toggle="tooltip"
-                                                        title="บันทึกไก่ตาย">
-                                                        <i class="fas fa-dizzy text-gray-800"></i>
-                                                    </a>
+                                                    <a class="btn" href="own_numberofchicken.html">
+                                                      <img src="img/chicken-svgrepo-com1.svg"
+                                                          class="btn-small-block mb-1"
+                                                          data-toggle="tooltip"
+                                                          title="เพิ่มไก่ตาย">
+                                                  </a>
                                                     <a class="btn" href="gerneral.html" data-toggle="tooltip" title="ข้อมูลทั่วไป">
                                                         <i class="fas fa-clipboard-list text-warning"></i>
                                                     </a>
@@ -427,10 +429,12 @@
                                                         title="บันทึกน้ำหนักไก่">
                                                         <i class="fas fa-weight text-success"></i>
                                                     </a>
-                                                    <a class="btn" href="own_numberofchicken.html" data-toggle="tooltip"
-                                                        title="บันทึกไก่ตาย">
-                                                        <i class="fas fa-dizzy text-gray-800"></i>
-                                                    </a>
+                                                    <a class="btn" href="own_numberofchicken.html">
+                                                      <img src="img/chicken-svgrepo-com1.svg"
+                                                          class="btn-small-block mb-1"
+                                                          data-toggle="tooltip"
+                                                          title="เพิ่มไก่ตาย">
+                                                  </a>
                                                     <a class="btn" href="gerneral.html" data-toggle="tooltip" title="ข้อมูลทั่วไป">
                                                       <i class="fas fa-clipboard-list text-warning"></i>
                                                     </a>
@@ -512,7 +516,7 @@
           </div>
           </form>
           <div class="p-3">
-            <button class="btn btn-info btn-user btn-block mb-3" type="button" id="saveFarmButton" onclick="saveInformation()">บันทึกข้อมูล</button>
+            <button class="btn btn-info btn-user btn-block mb-3" type="button" id="saveFarmButton" onclick="saveInformation()">บันทึก</button>
           </div>
         </div>
       </div>
@@ -676,3 +680,10 @@
 </body>
 
 </html>
+
+<!--tooltip-->
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
