@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -8,9 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>own-Farm</title>
-
-
+    <title>own-farm</title>
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -23,8 +21,6 @@
 
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
-
 
 
 <body id="page-top">
@@ -75,12 +71,11 @@
             </li>
         </ul>
     </nav>
-
     <div id="wrapper">
         <!--sidebar-->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <li class="nav-item active">
-                <a class="nav-link" href="own_Farm.html">
+                <a class="nav-link" href="own_test.html">
                     <img src="img/Farm by iconSvg.co (1).svg" class="img-profile pb-2">
                     <span>ฟาร์ม</span>
                 </a>
@@ -96,7 +91,7 @@
                     <img src="img/beehive-farm-svgrepo-com.svg" class="img-profile py-1 px-1">
                     <span>เล้าไก่</span>
                 </a>
-                <div id="collapseFarm" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div id="collapseFarm" class="collapse show" aria-labelledby="headingTwo">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="own_coopFarm.html">ฟาร์มโชคชัย</a>
                         <a class="collapse-item" href="own_coopFarm2.html">ฟาร์มไก่เนื้อรุ่งเรือง</a>
@@ -107,7 +102,18 @@
 
             <hr class="mb-0 sidebar-divider">
 
-
+            <!--<li class="nav-item ">
+                    <a class="nav-link collapsed" href="#"> 
+                        <img src="img/farmer.png" class="img-profile py-2 px-2">
+                        <span>คนงาน</span>
+                    </a>
+                    <div class="">
+                        <a class="pt-0 nav-link active" href="#"><span class="ml-5">คนงานดูแลเล้า</span></a>
+                        <a class="pt-0 nav-link active" href="#"><span class="ml-5">คนงานใหม่</span></a>
+                    </div>
+                    
+                </li>-->
+            <!-- Divider -->
             <hr class="mb-0 sidebar-divider">
 
             <li class="nav-item">
@@ -116,28 +122,21 @@
                     <img src="img/farmer.png" class="img-profile py-1 px-1">
                     <span>คนงาน</span>
                 </a>
-                <div id="collapseLabourer" class="collapse" aria-labelledby="headingLabourer"
-                    data-parent="#accordionSidebar">
+                <div id="collapseLabourer" class="collapse" aria-labelledby="headingLabourer">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="own_labourInFarm.html">คนงานดูแลเล้า</a>
                         <a class="collapse-item" href="own_labourNew.html">คนงานใหม่</a>
                     </div>
                 </div>
             </li>
-
             <hr class="mb-0 sidebar-divider">
-
             <!-- Divider -->
             <hr class="sidebar-divider">
-
-
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
-
         </ul>
-        <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
             <div id="content">
                 <div class="container-fluid pt-4">
@@ -295,7 +294,7 @@
         </div>
 
     </div>
-
+    
     <!--AddFarm-->
     <div class="modal fade" id="AddFarm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -575,6 +574,7 @@
     </script>
 
 
+
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -591,14 +591,8 @@
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key="></script>
-
 </body>
-
 </html>
-
 <!--tooltip-->
 <script>
     $(document).ready(function () {
