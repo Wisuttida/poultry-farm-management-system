@@ -372,193 +372,198 @@
       </div>
     </ul>
 
-    <!-- Begin Page Content -->
-    <div class="container-fluid">
-      <!-- Page Heading -->
-      <h1 class="h3 mb-2 mt-4 text-gray-800">การจัดการบัญชีผู้ใช้งาน</h1>
-      <!-- DataTales Example -->
-      <div class="card shadow mb-4">
-        <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">
-            บัญชีผู้ใช้งานทั้งหมด
-          </h6>
-        </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Username</th>
-                  <th>Line</th>
-                  <th>Gmail</th>
-                  <th>Role</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                  <th>Username</th>
-                  <th>Line</th>
-                  <th>Gmail</th>
-                  <th>Role</th>
-                  <th>Action</th>
-                </tr>
-              </tfoot>
-              <tbody>
-                <tr>
-                  <td>thaaek32</td>
-                  <td>paaritaaphrrsaaskul</td>
-                  <td>paaritaaphrrsaaskul@gmail.com</td>
-                  <td>เจ้าของฟาร์ม</td>
-                  <td>
-                    <div style="display: flex; justify-content: space-between;">
-                      <div class="form-check mb-1">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                          data-toggle="tooltip" title="verifyAccount" />
-                        <label class="form-check-label" for="flexCheckDefault"></label>
-                      </div>
-                      <a class="edit" title="Edit"
-                        onclick="openModal('thaaek32', 'Regionalpaaritaaphrrsaaskul', 'paaritaaphrrsaaskul@gmail.com', 'owner')">
-                        <i class="fas fa-clipboard-list" style="font-size: 19px"></i>
-                      </a>
-                      <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip">
-                        <i class="fas fa-trash-alt" style="font-size: 16px"></i>
-                      </a>
-                    </div>
-                  </td>
-                </tr>
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <!-- Page Heading -->
+          <h1 class="h3 mb-2 mt-4 text-gray-800">การจัดการบัญชีผู้ใช้งาน</h1>
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">
+                บัญชีผู้ใช้งานทั้งหมด
+              </h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Username</th>
+                      <th>Line</th>
+                      <th>Gmail</th>
+                      <th>Role</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Username</th>
+                      <th>Line</th>
+                      <th>Gmail</th>
+                      <th>Role</th>
+                      <th>Action</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                    <tr>
+                      <td>thaaek32</td>
+                      <td>paaritaaphrrsaaskul</td>
+                      <td>paaritaaphrrsaaskul@gmail.com</td>
+                      <td>เจ้าของฟาร์ม</td>
+                      <td>
+                        <div style="display: flex; justify-content: space-between;">
+                          <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                              data-toggle="tooltip" title="verifyAccount" />
+                            <label class="form-check-label" for="flexCheckDefault"></label>
+                          </div>
+                          <a class="edit" title="แก้ไขข้อมูล" data-toggle="tooltip"
+                            onclick="openModal('thaaek32', 'Regionalpaaritaaphrrsaaskul', 'paaritaaphrrsaaskul@gmail.com', 'owner')">
+                            <i class="fas fa-clipboard-list" style="font-size: 19px"></i>
+                          </a>
+                          <a class="delete" title="ลบ" onclick="delInfo(this);" data-toggle="tooltip">
+                            <i class="fas fa-trash-alt" style="font-size: 16px"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
 
-                <tr>
-                  <td>hecchriyramy</td>
-                  <td>kkhanthulaa</td>
-                  <td>kkhanthulaa@gmail.com</td>
-                  <td>เจ้าของฟาร์ม</td>
-                  <td>
-                    <div style="display: flex; justify-content: space-between;">
-                      <div class="form-check mb-1">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                          data-toggle="tooltip" title="verifyAccount" />
-                        <label class="form-check-label" for="flexCheckDefault"></label>
-                      </div>
-                      <a class="edit" title="Edit"
-                        onclick="openModal('thaaek32', 'Regionalpaaritaaphrrsaaskul', 'paaritaaphrrsaaskul@gmail.com', 'owner')">
-                        <i class="fas fa-clipboard-list" style="font-size: 19px"></i>
-                      </a>
-                      <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip">
-                        <i class="fas fa-trash-alt" style="font-size: 16px"></i>
-                      </a>
-                    </div>
-                  </td>
-                </tr>
+                    <tr>
+                      <td>hecchriyramy</td>
+                      <td>kkhanthulaa</td>
+                      <td>kkhanthulaa@gmail.com</td>
+                      <td>เจ้าของฟาร์ม</td>
+                      <td>
+                        <div style="display: flex; justify-content: space-between;">
+                          <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                              data-toggle="tooltip" title="verifyAccount" />
+                            <label class="form-check-label" for="flexCheckDefault"></label>
+                          </div>
+                          <a class="edit" title="แก้ไขข้อมูล" data-toggle="tooltip"
+                            onclick="openModal('thaaek32', 'Regionalpaaritaaphrrsaaskul', 'paaritaaphrrsaaskul@gmail.com', 'owner')">
+                            <i class="fas fa-clipboard-list" style="font-size: 19px"></i>
+                          </a>
+                          <a class="delete" title="ลบ" onclick="delInfo(this);" data-toggle="tooltip">
+                            <i class="fas fa-trash-alt" style="font-size: 16px"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
 
-                <tr>
-                  <td>sraayuth90</td>
-                  <td>phdungphl51</td>
-                  <td>phdungphl51@gmail.com</td>
-                  <td>เจ้าของฟาร์ม</td>
-                  <td>
-                    <div style="display: flex; justify-content: space-between;">
-                      <div class="form-check mb-1">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                          data-toggle="tooltip" title="verifyAccount" />
-                        <label class="form-check-label" for="flexCheckDefault"></label>
-                      </div>
-                      <a class="edit" title="Edit"
-                        onclick="openModal('thaaek32', 'Regionalpaaritaaphrrsaaskul', 'paaritaaphrrsaaskul@gmail.com', 'owner')">
-                        <i class="fas fa-clipboard-list" style="font-size: 19px"></i>
-                      </a>
-                      <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip">
-                        <i class="fas fa-trash-alt" style="font-size: 16px"></i>
-                      </a>
-                    </div>
-                  </td>
-                </tr>
+                    <tr>
+                      <td>sraayuth90</td>
+                      <td>phdungphl51</td>
+                      <td>phdungphl51@gmail.com</td>
+                      <td>เจ้าของฟาร์ม</td>
+                      <td>
+                        <div style="display: flex; justify-content: space-between;">
+                          <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                              data-toggle="tooltip" title="verifyAccount" />
+                            <label class="form-check-label" for="flexCheckDefault"></label>
+                          </div>
+                          <a class="edit" title="แก้ไขข้อมูล" data-toggle="tooltip"
+                            onclick="openModal('thaaek32', 'Regionalpaaritaaphrrsaaskul', 'paaritaaphrrsaaskul@gmail.com', 'owner')">
+                            <i class="fas fa-clipboard-list" style="font-size: 19px"></i>
+                          </a>
+                          <a class="delete" title="ลบ" onclick="delInfo(this);" data-toggle="tooltip">
+                            <i class="fas fa-trash-alt" style="font-size: 16px"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
 
-                <tr>
-                  <td>cchilaaphrnyaapaolhit</td>
-                  <td>yaphaaphrpraanii</td>
-                  <td>yaphaaphrpraannii@gmail.com</td>
-                  <td>เจ้าของฟาร์ม</td>
-                  <td>
-                    <div style="display: flex; justify-content: space-between;">
-                      <div class="form-check mb-1">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                          data-toggle="tooltip" title="verifyAccount" />
-                        <label class="form-check-label" for="flexCheckDefault"></label>
-                      </div>
-                      <a class="edit" title="Edit"
-                        onclick="openModal('thaaek32', 'Regionalpaaritaaphrrsaaskul', 'paaritaaphrrsaaskul@gmail.com', 'owner')">
-                        <i class="fas fa-clipboard-list" style="font-size: 19px"></i>
-                      </a>
-                      <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip">
-                        <i class="fas fa-trash-alt" style="font-size: 16px"></i>
-                      </a>
-                    </div>
-                  </td>
-                </tr>
+                    <tr>
+                      <td>cchilaaphrnyaapaolhit</td>
+                      <td>yaphaaphrpraanii</td>
+                      <td>yaphaaphrpraannii@gmail.com</td>
+                      <td>เจ้าของฟาร์ม</td>
+                      <td>
+                        <div style="display: flex; justify-content: space-between;">
+                          <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                              data-toggle="tooltip" title="verifyAccount" />
+                            <label class="form-check-label" for="flexCheckDefault"></label>
+                          </div>
+                          <a class="edit" title="แก้ไขข้อมูล" data-toggle="tooltip"
+                            onclick="openModal('thaaek32', 'Regionalpaaritaaphrrsaaskul', 'paaritaaphrrsaaskul@gmail.com', 'owner')">
+                            <i class="fas fa-clipboard-list" style="font-size: 19px"></i>
+                          </a>
+                          <a class="delete" title="ลบ" onclick="delInfo(this);" data-toggle="tooltip">
+                            <i class="fas fa-trash-alt" style="font-size: 16px"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
 
-                <tr>
-                  <td>nathcchsakdinaksamhrwcch</td>
-                  <td>sdis49</td>
-                  <td>sdis49@gmail.com</td>
-                  <td>ผู้ดูแลระบบ</td>
-                  <td>
-                    <div style="display: flex;justify-content: space-between;">
-                      <div class="form-check mb-1">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                          data-toggle="tooltip" title="verifyAccount" />
-                        <label class="form-check-label" for="flexCheckDefault"></label>
-                      </div>
-                      <a class="edit" title="Edit"
-                        onclick="openModal('thaaek32', 'Regionalpaaritaaphrrsaaskul', 'paaritaaphrrsaaskul@gmail.com', 'owner')">
-                        <i class="fas fa-clipboard-list" style="font-size: 19px"></i>
-                      </a>
-                      <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip">
-                        <i class="fas fa-trash-alt" style="font-size: 16px"></i>
-                      </a>
-                    </div>
-                  </td>
-                </tr>
+                    <tr>
+                      <td>nathcchsakdinaksamhrwcch</td>
+                      <td>sdis49</td>
+                      <td>sdis49@gmail.com</td>
+                      <td>ผู้ดูแลระบบ</td>
+                      <td>
+                        <div style="display: flex; justify-content: space-between;">
+                          <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                              data-toggle="tooltip" title="verifyAccount" />
+                            <label class="form-check-label" for="flexCheckDefault"></label>
+                          </div>
+                          <a class="edit" title="แก้ไขข้อมูล" data-toggle="tooltip"
+                            onclick="openModal('thaaek32', 'Regionalpaaritaaphrrsaaskul', 'paaritaaphrrsaaskul@gmail.com', 'owner')">
+                            <i class="fas fa-clipboard-list" style="font-size: 19px"></i>
+                          </a>
+                          <a class="delete" title="ลบ" onclick="delInfo(this);" data-toggle="tooltip">
+                            <i class="fas fa-trash-alt" style="font-size: 16px"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
 
-                <tr>
-                  <td>phaarwii67</td>
-                  <td>pkhamenk</td>
-                  <td>pkhamenk@gmail.com</td>
-                  <td>คนงาน</td>
-                  <td>
-                    <div style="display: flex;justify-content: space-between;">
-                      <div class="form-check mb-1">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                          data-toggle="tooltip" title="verifyAccount" />
-                        <label class="form-check-label" for="flexCheckDefault"></label>
-                      </div>
-                      <a class="edit" title="Edit"
-                        onclick="openModal('thaaek32', 'Regionalpaaritaaphrrsaaskul', 'paaritaaphrrsaaskul@gmail.com', 'owner')">
-                        <i class="fas fa-clipboard-list" style="font-size: 19px"></i>
-                      </a>
-                      <a class="delete" title="Delete" onclick="delInfo(this);" data-toggle="tooltip">
-                        <i class="fas fa-trash-alt" style="font-size: 16px"></i>
-                      </a>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+                    <tr>
+                      <td>phaarwii67</td>
+                      <td>pkhamenk</td>
+                      <td>pkhamenk@gmail.com</td>
+                      <td>คนงาน</td>
+                      <td>
+                        <div style="display: flex; justify-content: space-between;">
+                          <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                              data-toggle="tooltip" title="verifyAccount" />
+                            <label class="form-check-label" for="flexCheckDefault"></label>
+                          </div>
+                          <a class="edit" title="แก้ไขข้อมูล" data-toggle="tooltip"
+                            onclick="openModal('thaaek32', 'Regionalpaaritaaphrrsaaskul', 'paaritaaphrrsaaskul@gmail.com', 'owner')">
+                            <i class="fas fa-clipboard-list" style="font-size: 19px"></i>
+                          </a>
+                          <a class="delete" title="ลบ" onclick="delInfo(this);" data-toggle="tooltip">
+                            <i class="fas fa-trash-alt" style="font-size: 16px"></i>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
+          <!-- Footer -->
+          <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+              <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Your Website 2020</span>
+              </div>
+            </div>
+          </footer>
+          <!-- End of Footer -->
         </div>
       </div>
-      <!-- footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2021</span>
-          </div>
-        </div>
-      </footer>
     </div>
   </div>
-  
-    <!-- /.container-fluid -->
+
+  <!-- /.container-fluid -->
   </div>
   <!-- End of Main Content -->
 
@@ -764,3 +769,9 @@
 </body>
 
 </html>
+<!--tooltip-->
+<script>
+  $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
