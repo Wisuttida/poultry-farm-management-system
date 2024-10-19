@@ -409,12 +409,13 @@
                               type="button"
                               data-toggle="modal"
                               data-target="#manageLabour"
-                              data-toggle="tooltip"
-                              title="manageLabour"
+                              
                             >
                               <img
                                 src="img/farmer-success.png"
                                 class="btn-small-block mb-1"
+                                data-toggle="tooltip"
+                                title="ข้อมูลคนงาน"
                               />
                             </a>
                             <a
@@ -422,15 +423,15 @@
                               type="button"
                               data-toggle="modal"
                               data-target="#manageDetaile"
-                              data-toggle="tooltip"
-                              title="Edit"
+                              
                             >
-                              <i class="fas fa-clipboard-list text-warning"></i>
+                              <i class="fas fa-clipboard-list text-warning" data-toggle="tooltip"
+                              title="แก้ไขข้อมูล"></i>
                             </a>
                             <a
                               class="btn delete"
                               data-toggle="tooltip"
-                              title="Delete"
+                              title="ลบ"
                             >
                               <i class="fas fa-trash-alt text-danger"></i>
                             </a>
@@ -476,12 +477,13 @@
                               type="button"
                               data-toggle="modal"
                               data-target="#manageLabour"
-                              data-toggle="tooltip"
-                              title="manageLabour"
+                              
                             >
                               <img
                                 src="img/farmer-success.png"
                                 class="btn-small-block mb-1"
+                                data-toggle="tooltip"
+                                title="ข้อมูลคนงาน"
                               />
                             </a>
                             <a
@@ -489,15 +491,15 @@
                               type="button"
                               data-toggle="modal"
                               data-target="#manageDetaile"
-                              data-toggle="tooltip"
-                              title="Edit"
+                              
                             >
-                              <i class="fas fa-clipboard-list text-warning"></i>
+                              <i class="fas fa-clipboard-list text-warning" data-toggle="tooltip"
+                              title="แก้ไขข้อมูล"></i>
                             </a>
                             <a
                               class="btn delete"
                               data-toggle="tooltip"
-                              title="Delete"
+                              title="ลบ"
                             >
                               <i class="fas fa-trash-alt text-danger"></i>
                             </a>
@@ -1102,3 +1104,9 @@
     <script src="js/demo/datatables-demo.js"></script>
   </body>
 </html>
+<!--tooltip-->
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
